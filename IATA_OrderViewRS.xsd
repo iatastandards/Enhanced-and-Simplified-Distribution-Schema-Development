@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersMessage" elementFormDefault="qualified" version="11.000" xmlns:cns="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersCommonTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersMessage"><xs:import namespace="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersCommonTypes" schemaLocation="IATA_OffersAndOrdersCommonTypes.xsd"/>
+<xs:element name="IATA_OrderViewRS">
+<xs:annotation>
+<xs:documentation>The OrderCreate/ OrderView transaction is a multi-function message that may:
+
+1) Request specified inventory to be held (and returns a reference to the held inventory)
+
+2) Request that an order to be created (returning the complete view of the Order)
+
+3) Request additions to order data elements (e.g. add frequent flyer data)</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:choice minOccurs="1" maxOccurs="1">
+<xs:element name="Error" type="cns:ErrorType" minOccurs="1" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>Contains information related to errors detected during processing of the preceding request.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="Response" type="cns:OrderViewResponseType" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Order View response information.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:choice>
+<xs:element name="AugmentationPoint" type="AugmentationPoint" minOccurs="0" maxOccurs="1"></xs:element>
+<xs:element name="Party" type="cns:PartyType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>NDC Message/ Transaction Party(s) information. Note that information about parties is intended for business use, it is not intended for transaction authentication and routing of the message.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="PayloadAttributes" type="cns:IATA_PayloadStandardAttributesType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>IATA Standard Payload Attributes</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="PaymentFunctions" type="cns:PaymentFunctionsOrderType" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>Information related to the settlement of a transaction through monetary or other compensations. For example, a payment may be applied to an entire Order or individual Order Items.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:complexType name="AugmentationPoint">
+<xs:annotation>
+<xs:documentation>Implementer-Augmented Structure.</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:any namespace="##other" processContents="lax" minOccurs="1" maxOccurs="unbounded"></xs:any>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersMessage" elementFormDefault="qualified" version="3.000" xmlns:cns="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersCommonTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersMessage"><xs:import namespace="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersCommonTypes" schemaLocation="IATA_OffersAndOrdersCommonTypes.xsd"/>
+<xs:element name="IATA_UpdateServiceNotifRQ">
+<xs:annotation>
+<xs:documentation>OM updates the details of the Service during the timeframe of delivery. Information such as providing the OM with the assigned bag tag ID, number of bags checked in, weight of the bag, any Passenger security information collected, seat allocation. (any additional elements collected at the OM side that need to be sent to the Airline OM).</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="AugmentationPoint" type="AugmentationPoint" minOccurs="0" maxOccurs="1"></xs:element>
+<xs:element name="Party" type="cns:PartyType" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>NDC Message/ Transaction Party(s) information. Note that information about parties is intended for business use, it is not intended for transaction authentication and routing of the message.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="PayloadAttributes" type="cns:IATA_PayloadStandardAttributesType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>IATA Standard Payload attributes</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="Request" type="cns:UpdateServiceNotifRequestType" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Update Service  Notif request information.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:complexType name="AugmentationPoint">
+<xs:annotation>
+<xs:documentation>Implementer-Augmented Structure.</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:any namespace="##other" processContents="lax" minOccurs="1" maxOccurs="unbounded"></xs:any>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
