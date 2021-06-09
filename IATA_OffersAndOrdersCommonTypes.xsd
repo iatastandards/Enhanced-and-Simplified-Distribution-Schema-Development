@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<!-- edited with XMLSpy v2019 rel. 3 (x64) (http://www.altova.com) by Andrew Blake (IATA LOCATION GENEVA) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersCommonTypes" targetNamespace="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersCommonTypes" elementFormDefault="qualified" version="1.0">
 	<xs:complexType name="AcceptedOrderItemType">
 		<xs:annotation>
@@ -398,6 +397,11 @@
 			<xs:element name="BookingStatusCode" type="ServiceBookingStatusCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Indicates the current status of a Service booking.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DeliveryStatusCode" type="ServiceDeliveryStatusCodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Indicates the current status of a Service delivery</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="DescText" type="TextType" minOccurs="0" maxOccurs="1">
@@ -1445,7 +1449,7 @@
 	</xs:complexType>
 	<xs:simpleType name="AllianceCodeContentType">
 		<xs:annotation>
-			<xs:documentation>Enumeration set for the Alliance Code BDT. {codeListName}PADIS 9906{/codeListName} </xs:documentation>
+			<xs:documentation>Enumeration set for the Alliance Code BDT. {codeListAgencyName}ATSB Codeset{/codeListAgencyName} {codeListName}PADIS 9906{/codeListName} </xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:length value="3"/>
@@ -2000,7 +2004,7 @@
 	</xs:complexType>
 	<xs:simpleType name="BDC_AnalysisResultCodeContentType">
 		<xs:annotation>
-			<xs:documentation>Enumeration set for the BDC Analysis Result Code Type BDT. {codeListAgencyIdentifier}PADIS RES{/codeListAgencyIdentifier} {codeListAgencyName}PADIS{/codeListAgencyName} </xs:documentation>
+			<xs:documentation>Enumeration set for the BDC Analysis Result Code Type BDT. {codeListAgencyName}PADIS{/codeListAgencyName} {codeListName}RES{/codeListName} </xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token"/>
 	</xs:simpleType>
@@ -2068,45 +2072,12 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="BinaryObjectType">
+	<xs:simpleType name="BinaryObjectType">
 		<xs:annotation>
 			<xs:documentation>A binary object is a sequence of binary digits (bits).</xs:documentation>
 		</xs:annotation>
-		<xs:simpleContent>
-			<xs:extension base="xs:base64Binary">
-				<xs:attribute name="CharacterSetCode" type="xs:token" use="optional">
-					<xs:annotation>
-						<xs:documentation>The character set of the binary object if the Multipurpose Internet Mail Extensions (MIME) type is text.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="EncodingCode" type="xs:token" use="optional">
-					<xs:annotation>
-						<xs:documentation>Specifies the decoding algorithm of the binary object.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="FileName" type="xs:token" use="optional">
-					<xs:annotation>
-						<xs:documentation>The filename of the binary object.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="Format" type="xs:string" use="optional">
-					<xs:annotation>
-						<xs:documentation>The format of the binary content.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="MIME_Code" type="xs:token" use="optional">
-					<xs:annotation>
-						<xs:documentation>The Multipurpose Internet Mail Extensions (MIME) media type of the binary object.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="UniformResourceID" type="xs:anyURI" use="optional">
-					<xs:annotation>
-						<xs:documentation>The Uniform Resource Identifier that identifies where the Binary Object is located.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
+		<xs:restriction base="xs:base64Binary"/>
+	</xs:simpleType>
 	<xs:simpleType name="BoardingGateID_Type">
 		<xs:annotation>
 			<xs:documentation>The boarding gate identifier.</xs:documentation>
@@ -3307,7 +3278,6 @@
 					<xs:documentation>Amount filed by the airport in the currency applicable to the geographical location of the airport.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AirportCur" type="CodeType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Station" type="StationType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Location or facility where air or surface transportation originates, stops and/or terminates, and where passengers and/or cargo can be taken on or off. 
@@ -3923,7 +3893,7 @@
 	</xs:complexType>
 	<xs:simpleType name="CreditCardVendorCodeContentType">
 		<xs:annotation>
-			<xs:documentation>ENUM to specify the CC vendor code in case FOID is a Credit Card (e.g. VI, MC, etc). </xs:documentation>
+			<xs:documentation>ENUM to specify the CC vendor code in case FOID is a Credit Card (e.g. VI, MC, etc). {codeListAgencyIdentifier}ISO{/codeListAgencyIdentifier} {codeListAgencyName}https://www.iso.org/{/codeListAgencyName} {codeListName}Merchant category codes{/codeListName} {codeListIdentifier}18245{/codeListIdentifier} </xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[0-9a-zA-Z]{1,2}"/>
@@ -4790,7 +4760,7 @@
 					<xs:documentation>IATA 3-letter code defining the city or airport code.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Time" type="TimeType" minOccurs="0" maxOccurs="1">
+			<xs:element name="Time" type="TimeOfDayType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The customer's requested departure time.</xs:documentation>
 				</xs:annotation>
@@ -5945,26 +5915,10 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="First6DigitsTextType">
+	<xs:simpleType name="First6DigitsTextType">
 		<xs:annotation>
 			<xs:documentation>BDT to represent the First 6 digits of a payment card.</xs:documentation>
 		</xs:annotation>
-		<xs:simpleContent>
-			<xs:extension base="First6DigitsTextValue">
-				<xs:attribute name="LangCode" type="xs:token" use="optional">
-					<xs:annotation>
-						<xs:documentation>The identifier of the language used in the corresponding text string.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="LangLocaleID" type="xs:token" use="optional">
-					<xs:annotation>
-						<xs:documentation>The identification of the locale of the language</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="First6DigitsTextValue">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[0-9]{6}"/>
 		</xs:restriction>
@@ -7705,7 +7659,7 @@
 	</xs:complexType>
 	<xs:complexType name="KeyValueType">
 		<xs:sequence>
-			<xs:element name="RSAKeyValue" type="RSAKeyValueType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RSA_KeyValue" type="RSA_KeyValueType" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:simpleType name="LangCodeContentType">
@@ -8007,20 +7961,12 @@
 		</xs:annotation>
 		<xs:restriction base="MeasurementSystemCodeContentType"/>
 	</xs:simpleType>
-	<xs:complexType name="MeasureType">
+	<xs:simpleType name="MeasureType">
 		<xs:annotation>
 			<xs:documentation>A measure is a numeric value determined by measuring an object along with the specified unit of measure.</xs:documentation>
 		</xs:annotation>
-		<xs:simpleContent>
-			<xs:extension base="xs:decimal">
-				<xs:attribute name="UnitCode" type="xs:token" use="optional">
-					<xs:annotation>
-						<xs:documentation>The type of unit of measure.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
+		<xs:restriction base="xs:decimal"/>
+	</xs:simpleType>
 	<xs:complexType name="MediaListType">
 		<xs:annotation>
 			<xs:documentation>Media data list definition.</xs:documentation>
@@ -8361,11 +8307,7 @@
  - [Carrier] Airline Designator Code</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="BaggageAllowance" type="BaggageAllowanceType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>The amount of checked or carry-on luggage the airline will allow per passenger.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element name="BaggageAssociations" type="BaggageAssociationsType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="BaggageDisclosureRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Reference to a Bag Disclosure ID within this message.</xs:documentation>
@@ -10772,7 +10714,7 @@
 					<xs:documentation>IATA 3-letter code defining the city or airport code.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Time" type="TimeType" minOccurs="0" maxOccurs="1">
+			<xs:element name="Time" type="TimeOfDayType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The customer's requested departure time.</xs:documentation>
 				</xs:annotation>
@@ -13533,16 +13475,6 @@
 					<xs:documentation>Piece allowance description and additional information.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PieceDimensionAllowance" type="DimensionAllowanceType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Baggage dimension allowance with application information.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PieceWeightAllowance" type="WeightAllowanceType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Baggage weight allowance with application information.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="TotalQty" type="QtyType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Maximum pieces of baggage allowed.
@@ -14363,50 +14295,12 @@
 		</xs:annotation>
 		<xs:restriction base="xs:decimal"/>
 	</xs:simpleType>
-	<xs:complexType name="RateType">
+	<xs:simpleType name="RateType">
 		<xs:annotation>
 			<xs:documentation>A rate is a quantity, amount, frequency, or dimensionless factor, measured against an independent base unit, expressed as a quotient.</xs:documentation>
 		</xs:annotation>
-		<xs:simpleContent>
-			<xs:extension base="xs:decimal">
-				<xs:attribute name="BaseCurCode" type="xs:token" use="optional">
-					<xs:annotation>
-						<xs:documentation>The currency of the denominator</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="BaseMultiplierValue" type="xs:decimal" use="optional">
-					<xs:annotation>
-						<xs:documentation>The multiplier of the Rate. Base Unit, Code or Rate. Base Currency. Code</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="BaseUnitCode" type="xs:token" use="optional">
-					<xs:annotation>
-						<xs:documentation>The unit of measure of the denominator</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="CurCode" type="xs:token" use="optional">
-					<xs:annotation>
-						<xs:documentation>The currency of the numerator</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="Format" type="xs:string" use="optional">
-					<xs:annotation>
-						<xs:documentation>Whether the number is an integer, decimal, real number or percentage</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="MultiplierValue" type="xs:decimal" use="optional">
-					<xs:annotation>
-						<xs:documentation>The multiplier of the Rate. Unit. Code or Rate. Currency. Code</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="UnitCode" type="xs:token" use="optional">
-					<xs:annotation>
-						<xs:documentation>The unit of measure of the numerator</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
+		<xs:restriction base="xs:decimal"/>
+	</xs:simpleType>
 	<xs:simpleType name="RBD_CodeContentType">
 		<xs:annotation>
 			<xs:documentation>Enumeration values of RBD Codes as per PADIS codeset 9800. {codeListAgencyName}IATA{/codeListAgencyName} {codeListIdentifier}PADIS 9800{/codeListIdentifier} </xs:documentation>
@@ -14533,7 +14427,7 @@
 			<xs:maxLength value="256"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="RefundFOPType">
+	<xs:complexType name="RefundFOP_Type">
 		<xs:annotation>
 			<xs:documentation>Refund FOP</xs:documentation>
 		</xs:annotation>
@@ -15091,7 +14985,7 @@
  Uses PADIS REA Codeset.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="RefundFOP" type="RefundFOPType" minOccurs="0" maxOccurs="1">
+			<xs:element name="RefundFOP" type="RefundFOP_Type" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Refund FOP</xs:documentation>
 				</xs:annotation>
@@ -15301,7 +15195,7 @@
 	<xs:simpleType name="RoundingPrecisionCodeType">
 		<xs:restriction base="RoundingPrecisionCodeContentType"/>
 	</xs:simpleType>
-	<xs:complexType name="RSAKeyValueType">
+	<xs:complexType name="RSA_KeyValueType">
 		<xs:sequence>
 			<xs:element name="Exponent" type="BinaryObjectType" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="Modulus" type="BinaryObjectType" minOccurs="1" maxOccurs="1"/>
@@ -19196,7 +19090,7 @@
 					<xs:documentation>IATA defined code identifying a city or station.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PricingTime" type="TimeType" minOccurs="0" maxOccurs="1">
+			<xs:element name="PricingTime" type="TimeOfDayType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Booked Itinerary Pricing Time. Example: 09:15</xs:documentation>
 				</xs:annotation>
@@ -19265,7 +19159,7 @@
 					<xs:documentation>The date that the document was originally issued.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="IssueTime" type="TimeType" minOccurs="0" maxOccurs="1">
+			<xs:element name="IssueTime" type="TimeOfDayType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The time that the document was originally issued.</xs:documentation>
 				</xs:annotation>
@@ -19375,7 +19269,7 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:simpleType name="TimeType">
+	<xs:simpleType name="TimeOfDayType">
 		<xs:annotation>
 			<xs:documentation>Time is a point in the 24 hour clock expressed in hours, minutes and seconds. It has no implicit reference to a time zone.</xs:documentation>
 		</xs:annotation>
