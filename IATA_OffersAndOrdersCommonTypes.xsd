@@ -1,13 +1,214 @@
 <?xml version="1.0"?>
+<!-- edited with XMLSpy v2019 rel. 3 (x64) (http://www.altova.com) by Andrew Blake (IATA LOCATION GENEVA) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersCommonTypes" targetNamespace="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersCommonTypes" elementFormDefault="qualified" version="1.0">
-	<xs:complexType name="AcceptedOrderItemType">
+	<xs:complexType name="AARootType">
 		<xs:annotation>
-			<xs:documentation>Acceptance of Schedule Change. The Seller can accept a change to an Order so that the customer is in a 'ready to fly' state. The reference to the related Order Item IDs is shown in the attributes.</xs:documentation>
+			<xs:documentation>Temp node for navigation</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="OrderItemRefID" type="ID_Type" minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="Ack" type="AckType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Reference to an Order Item ID within this message.</xs:documentation>
+					<xs:documentation>The Acknowledgement document is a simple notification from party to party acknowledging the receipt of another transaction such as an inventory release or an updated order
+ 
+ It may also provide information indicating the status of the document.
+ 
+ This document is used consistently as an optional response to a notification transaction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AirlineProfileNotif" type="AirlineProfileNotifType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Notification payload information.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AirlineProfileRequest" type="AirlineProfileRequestType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="AirlineProfileResponse" type="AirlineProfileResponseType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="AirShoppingRequest" type="AirShoppingRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AirShoppingResponse" type="AirShoppingResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information related to the response.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DocNotif" type="DocNotifType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Document information for AirDocNotifRQ.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InventoryReleaseNotif" type="InventoryReleaseNotifType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Notification payload information.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OfferPriceRequest" type="OfferPriceRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Offer Price Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OfferPriceResponse" type="OfferPriceResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Offer Price information related to the response.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderCancelRequest" type="OrderCancelRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation> Request for Order Cancel</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderCancelResponse" type="OrderCancelResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information related to the response for Order Cancel</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderChangeNotif" type="OrderChangeNotifType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Payload information for OrderChangeNotifRQ.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderChangeRequest" type="OrderChangeRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request for Order Change</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderClosingNotifRequest" type="OrderClosingNotifRequestType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="OrderCreateRequest" type="OrderCreateRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for Order Create message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderHistoryRequest" type="OrderHistoryRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request for Order History</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderHistoryResponse" type="OrderHistoryResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information related to the response for Order History</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderListRequest" type="OrderListRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request for Order List</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderListResponse" type="OrderListResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Response for Order list</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderQuotePayload" type="OrderQuotePayloadType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Physical container for message data elements</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderReshopRequest" type="OrderReshopRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for Order Reshop message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderReshopResponse" type="OrderReshopResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for Order Reshop message
+ </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderRetrieveRequest" type="OrderRetrieveRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for Order Retrieve message
+ </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderRulesRequest" type="OrderRulesRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for Order Rules message
+ </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderRulesResponse" type="OrderRulesResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for Order Rules message
+ </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderSalesInfoAccountingDocNotifRequest" type="OrderSalesInfoAccountingDocNotifRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderSalesInfoNotifRequest" type="OrderSalesInfoNotifRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderViewResponse" type="OrderViewResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information related to the response.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SeatAvailRequest" type="SeatAvailRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SeatAvailResponse" type="SeatAvailResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information related to the response.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceDeliveryNotifRequest" type="ServiceDeliveryNotifRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Service Delivery Notification Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceDeliveryRequest" type="ServiceDeliveryRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Service Delivery Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceDeliveryResponse" type="ServiceDeliveryResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information related to the response.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceListRequest" type="ServiceListRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceListResponse" type="ServiceListResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information related to the response.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceStatusChangeNotifRequest" type="ServiceStatusChangeNotifRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UpdateServiceNotifRequest" type="UpdateServiceNotifRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AcceptCancelledOfferType">
+		<xs:annotation>
+			<xs:documentation>Function to accept the deletion of an OrderItem from the existing Order.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="OfferID" type="ID_Type" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>An Offer ID</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Airline designator or CRS code of the owner/ assigner of the Offer ID, typically used for offer ordering purposes. Example: UA, BA
+ 
+ Encoding Scheme: IATA/ A4A (two or three character) Airline or CRS Designator Code</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -17,16 +218,14 @@
 			<xs:documentation>Function to accept a new OfferItem and adding it to the existing Order</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
-			<xs:element name="CreateOrderItem" type="CreateOrderItemType" minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="CreateOrderItemList" type="CreateOrderItemListType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Used for selling by value (long sells) rather than selling by reference.</xs:documentation>
+					<xs:documentation>This is a collection of Create Order Item's.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SelectedPricedOffer" type="SelectedPricedOfferType" minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="SelectedPricedOfferList" type="SelectedPricedOfferListType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Offer selected by the Passenger for requesting an Order to be created. Multiple Offers can be requested at the same time, each of which could originate from different shopping responses (each with their own ResponseIDs).
- 
- Each Offer selected could reference (via the OfferID) either standard Offers from an AirShoppingRS message (potentially with Flight-related services) or A-La-Carte Offers (containing optional ancillary services). These standard Offers and 'a-la-carte' Offers would need to be consistent with the applicability rules defined by their relations (passengers or segments eligible for the enclosed OfferItems) and would be combined to produce a single Order, returned by the OrderViewRS message.</xs:documentation>
+					<xs:documentation>This is a collection of Selected Offer's</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>
@@ -39,11 +238,6 @@
 			<xs:element name="OfferRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Reference to an Offer ID for which this Payment applies.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ShoppingResponseRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Reference to a shopping response ID.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -177,11 +371,6 @@
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether or not the owner is the ORA or POA.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="PaymentTimeLimitDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The time limit by which a commitment to pay must be made for the given Order Item. Upon expiry it is expected that the Order item is removed from the Order. If no value is returned, then no advice has been given.
@@ -310,14 +499,6 @@
 					<xs:documentation>Accounted Order is An individually priced item within an Accounted Order, made up of one or more Services. May or may not be a selected Offer Item (e.g. non-chargeable Services available on request such as a wheelchair).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="OrderKeys" type="OrderStructureKeyType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>A uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
- Comment:
- A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
- An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="OrignalOrderID" type="ID_Type" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Carrier assigned ID which uniquely identifies a specific Order across several messages.</xs:documentation>
@@ -326,11 +507,6 @@
 			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether the owner is the ORA or POA.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PaxGroup" type="PaxGroupType" minOccurs="0" maxOccurs="1">
@@ -409,6 +585,11 @@
 					<xs:documentation>Free text for textual description.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="internalValue" type="PriceType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The amount of money expected, required, or given in payment for something.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="PaxRefID" type="ID_Type" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Reference to a Passenger ID within this message</xs:documentation>
@@ -433,7 +614,7 @@
 					<xs:documentation>Reference to another service instance.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SettlementInfo" type="InterlineSettlementInfoType" minOccurs="0" maxOccurs="1">
+			<xs:element name="SettlementInfo" type="SettlementInfoType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Information related to the value of a product or service as it pertains to interline transactions.</xs:documentation>
 				</xs:annotation>
@@ -568,11 +749,6 @@
 			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether or not the owner is the ORA or POA.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PaymentTimeLimit" type="PaymentTimeLimitType" minOccurs="0" maxOccurs="1">
@@ -1198,11 +1374,6 @@
 					<xs:documentation>Information related to publicizing a product, organization, or venture so as to increase sales or public awareness.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ShoppingResponse" type="ShoppingResponseType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Facilitates the tracking of what was Offered and contains an identifier unique to the source Airline for a set of product Offers returned in response to a shopping request.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="Warning" type="WarningType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Contains information related to potential business errors detected during processing of the preceding request.</xs:documentation>
@@ -1245,11 +1416,6 @@
 			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether or not the owner is the ORA or POA.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PaymentTimeLimit" type="PaymentTimeLimitType" minOccurs="0" maxOccurs="1">
@@ -2784,6 +2950,38 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="ChangeDetailsType">
+		<xs:sequence>
+			<xs:element name="DataListsOptional" type="DataListsOptionalType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Data List definition for this message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Order" type="ChangesToOrderType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>History Order is a uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
+ Comment:
+ A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
+ An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaymentFunctions" type="PaymentFunctionsOrderType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TicketDocInfo" type="TicketDocInfoType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information corresponding to a group of 1 to 4 Tickets for a single Origin Destination and a single Passenger.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Warning" type="WarningType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Contains information related to potential business errors detected during processing of the preceding request.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="ChangedOfferType">
 		<xs:annotation>
 			<xs:documentation>Changed Offer : A proposal to sell a specific set of products or Services under specific conditions, for a certain price. Can be the response to a shopping request. 
@@ -2795,7 +2993,7 @@
  - [Carrier] Airline Designator Code</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="AddedOfferItem" type="AddedOfferItemType" minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="AddedOfferItem" type="AddedOfferItemType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A priced grouping of one or more services within an Added Offer.
  The Offer Item assigns a total price for all included services for all passengers and all segments referenced. Once constructed, the OfferItem cannot be modified.</xs:documentation>
@@ -2949,8 +3147,8 @@
 					<xs:documentation>ATSB Codeset: CHT Indicates to the Seller the type of change.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="New" type="NewType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="Old" type="OldType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="New" type="ChangeDetailsType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Old" type="ChangeDetailsType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="ReasonCode" type="CodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>ATSB Codeset: CHR Indicating the reason for change.</xs:documentation>
@@ -3000,7 +3198,12 @@
 			<xs:documentation>Change Order Choice</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
-			<xs:element name="AcceptChange" type="AcceptedOrderItemType" minOccurs="1" maxOccurs="1">
+			<xs:element name="AcceptCancelledOffer" type="AcceptCancelledOfferType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Function to accept the deletion of an OrderItem from the existing Order.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AcceptChange" type="SelectedOrderItemType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Acceptance of Schedule Change. The Seller can accept a change to an Order so that the customer is in a 'ready to fly' state. The reference to the related Order Item IDs is shown in the attributes.</xs:documentation>
 				</xs:annotation>
@@ -3010,14 +3213,14 @@
 					<xs:documentation>Function used by seller to inform the airline that it is accepting the proposed Order, as it has been repriced and returned in the preceding OrderReshopRS.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="CancelOrder" type="CancelOrderRefType" minOccurs="1" maxOccurs="1">
+			<xs:element name="CreateOrderItemList" type="CreateOrderItemListType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Ability to cancel an entire Order</xs:documentation>
+					<xs:documentation>This is a collection of Create Order Item's.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="UpdateOrderItem" type="UpdateOrderItemType" minOccurs="1" maxOccurs="1">
+			<xs:element name="SelectedPricedOfferList" type="SelectedPricedOfferListType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Collection of functions used by the seller to request the airline to commit changes to an existing Order. These may be adding, removing or replacing Order Items (with potential refund conditions, in case of cancellations). The actions possible are determined by the airline and communicated to the seller at the time of an OrderReshopRS (which precedes OrderChangeRQ). It is up to the seller to then accept the proposed actions from the OrderReshopRS by echoing these functions in this OrderServicing structure</xs:documentation>
+					<xs:documentation>This is a collection of Selected Offer's</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="UpdatePax" type="OrderChangeUpdatePaxType" minOccurs="1" maxOccurs="1">
@@ -3078,11 +3281,6 @@
 			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether the owner is the ORA or POA.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="StatusCode" type="OrderStatusCodeType" minOccurs="0" maxOccurs="1">
@@ -3164,6 +3362,312 @@
 			<xs:element name="Refund" type="RefundType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Contains refund type, payment type and amount attributes for a specific product, purpose, or service.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangesToOrderItemType">
+		<xs:annotation>
+			<xs:documentation>An individually priced item within an Ordered Order, made up of one or more Services. May or may not be a selected Offer Item (e.g. non-chargeable Services available on request such as a wheelchair).</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="BilateralTimeLimit" type="BilateralTimeLimitType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A bilaterally agreed limitation or restriction of time.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CabinTypeList" type="CabinTypeListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>List of Cabin Types
+ Technical object only</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CancelRestrictions" type="CancelRestrictionsType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>These are a set of qualifying conditions/rules/restrictions that are related to a constrained priced grouping of services for the Cancellation action.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ChangeRestrictions" type="ChangeRestrictionsType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>These are a set of qualifying conditions/rules/restriction that are related to a constrained priced grouping of services for a Change/modification action.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Commission" type="CommissionType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>An amount of money, typically a set percentage of the value involved, paid to an agent in a commercial transaction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CreationDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Order Item creation Timestamp.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DepositTimeLimitDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The date by which a deposit must be paid for an order item.
+ Examples: 2015-01-13T13:59:38Z</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DiffPrice" type="PriceDifferentialType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>For each OfferItem, this function allows the airline to inform the seller about amount differential type if this OfferItem is chosen.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DisclosureRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>References a Disclosure ID.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FareDetail" type="FareDetailType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The amount charged by the carrier for the carriage of a passenger and his allowable free baggage.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GrandTotalAmount" type="AmountType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reflects the Differential Total Amount and the Penalty Total Amount, if netted.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NamingTimeLimitDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The time by which an Order Item must be completed with individual passenger names.
+ Examples: 2015-01-13T13:59:38Z</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderItemID" type="ID_Type" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Carrier assigned ID which exists uniquely within an Order.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaymentTimeLimitDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The time limit by which a commitment to pay must be made for the given Order Item. Upon expiry it is expected that the Order item is removed from the Order. If no value is returned, then no advice has been given.
+ 
+ For example: PaymentTimeLimitDateTime: 2015-01-01T12:53:12Z - indicates the date time by which payment commitment is required.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PenaltyRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Reference to a Penalty ID.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Price" type="PriceType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The amount of money expected, required, or given in payment for something.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PriceGuaranteeTimeLimitDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The length of time the price of an Order Item is guaranteed. In the absence of the price guarantee time limit, the price is not guaranteed. Upon expiry, the price may no longer be guaranteed and either the Order should be repriced, which may result in a new RepricedOffer, or a new shopping process may begin.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ReusableInd" type="IndType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>If Reusable = true, indicates that part of the value of the OrderItem may be reused for reshopping or refund. Exact reusable amount is unknown until Seller requests to reshop or to process a refund for this OrderItem.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SellerFollowUpAction" type="SellerFollowUpActionType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A seller followup action following involuntary change means a subsequent action required to an Order Item after a schedule change.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Service" type="ChangeToServiceType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+ At the time of shopping, a service can be sold to multiple passengers on a given journey. 
+ At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceTaxonomy" type="ServiceTaxonomyType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Used in the context of the Industry Service Category Taxonomy to define a Service to the Seller or to request a collection of Services from an Airline. For more information on what values should be placed within these fields, see the implementation guide at:
+ https://guides.developer.iata.org/docs/industry-taxonomy</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SpecialServiceList" type="SpecialServiceListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>List of Special service types.
+ Technical object only</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StatusCode" type="OrderItemStatusCodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Indicates the current status of an Order Item.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="WebAddressURI" type="URI_Type" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Deep linking into another site to complete the transaction. E.g. to bring the customer directly to a page to continue with a purchase of a specific offer.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangesToOrderType">
+		<xs:annotation>
+			<xs:documentation>History Order is a uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
+ Comment:
+ A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
+ An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="BilateralTimeLimit" type="BilateralTimeLimitType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A bilaterally agreed limitation or restriction of time.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BookingRef" type="BookingRefType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information related to a booking or reservation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Commission" type="CommissionType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>An amount of money, typically a set percentage of the value involved, paid to an agent in a commercial transaction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CreationDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The date time by which the order is created.
+ Examples: 2018-09-05T15:52:01Z</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DepositTimeLimitDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The date by which a deposit must be paid for an order
+ Examples: 2015-01-13T13:59:38Z</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LastModifiedDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The date time by which the order is modified.
+ Examples: 2018-09-05T15:52:01Z</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NamingTimeLimitDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The time by which an Order must be completed with individual passenger names.
+ Examples: 2015-01-13T13:59:38Z</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderID" type="ID_Type" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Carrier assigned ID which uniquely identifies a specific Order across several messages.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderItem" type="ChangesToOrderItemType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>An individually priced item within an Ordered Order, made up of one or more Services. May or may not be a selected Offer Item (e.g. non-chargeable Services available on request such as a wheelchair).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderVersionNumber" type="OrderVersionNumberType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Version of the Order used to track the evolution of an Order and the changes made to it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrignalOrderID" type="ID_Type" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Carrier assigned ID which uniquely identifies a specific Order across several messages.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaxGroup" type="PaxGroupType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A number of individual passengers traveling under one commercial name that associates them. E.g. a Tour group or a group for sales allotment from airline to agency.
+ Group bookings are subject to special booking rules and may be eligible for special fare rules. Usage and nature of groups is left to bilateral agreements.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StatusCode" type="OrderStatusCodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Indicates the current status of an Order
+ E.g. OK (Confirmed)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TotalPrice" type="PriceType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The amount of money expected, required, or given in payment for something.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="WebAddressURI" type="URI_Type" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Deep linking into another site to complete the transaction. E.g. to bring the customer directly to a page to continue with a purchase of a specific offer.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangeToServiceType">
+		<xs:annotation>
+			<xs:documentation>The instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+ At the time of shopping, a service can be sold to multiple passengers on a given journey. 
+ At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="BookingRef" type="BookingRefType" minOccurs="0" maxOccurs="3">
+				<xs:annotation>
+					<xs:documentation>Information related to a booking or reservation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BookingStatusCode" type="ServiceBookingStatusCodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Indicates the current status of a Service booking.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DescText" type="TextType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Free text for textual description.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaxRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reference to a Passenger ID within this message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceAssociation" type="ServiceAssociationType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Change To Service Association</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceID" type="ID_Type" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Uniquely Identifies a Service within the context of one message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reference to another service instance.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceTaxonomy" type="ServiceTaxonomyType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Used in the context of the Industry Service Category Taxonomy to define a Service to the Seller or to request a collection of Services from an Airline. For more information on what values should be placed within these fields, see the implementation guide at:
+ https://guides.developer.iata.org/docs/industry-taxonomy</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StatusCode" type="CodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Status of the Service instance. See PADIS Codelist 4405 for possible values.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UnchangedInd" type="IndType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Indicated that this service is unchanged after reshopping.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ValidatingCarrier" type="CarrierType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
+ Business Identifier Fields :
+ - Airline Designator Code
+ - Duplicate Designator Indicator
+ - Name</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -3862,11 +4366,6 @@
  Encoding Scheme: IATA/ A4A (two or three character) Airline or CRS Designator Code</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether the owner is the ORA or POA.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="WebAddressURI" type="URI_Type" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Deep linking into another site to complete the transaction. E.g. to bring the customer directly to a page to continue with a purchase of a specific offer.</xs:documentation>
@@ -4022,33 +4521,6 @@
 			</xs:element>
 		</xs:choice>
 	</xs:complexType>
-	<xs:complexType name="CurrentOrderType">
-		<xs:sequence>
-			<xs:element name="Order" type="OrderedOrderType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
- Comment:
- A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
- An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PaymentFunctions" type="PaymentFunctionsOrderType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TicketDocInfo" type="TicketDocInfoType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information corresponding to a group of 1 to 4 Tickets for a single Origin Destination and a single Passenger.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Warning" type="WarningType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Contains information related to potential business errors detected during processing of the preceding request.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="CypherDataType">
 		<xs:annotation>
 			<xs:documentation>Cypher Data.</xs:documentation>
@@ -4057,6 +4529,78 @@
 			<xs:element name="CypherValue" type="BinaryObjectType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Cypher Value.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DataListsOptionalType">
+		<xs:annotation>
+			<xs:documentation>Data List definition for this message.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="BaggageAllowanceList" type="BaggageAllowanceListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Baggage allowance data list definition</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BaggageDisclosureList" type="BaggageDisclosureListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Baggage disclosure data list definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContactInfoList" type="ContactInfoListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Contact info data list definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DisclosureList" type="DisclosureListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Disclosure data list definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MediaList" type="MediaListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Media data list definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OriginDestList" type="OriginDestOptListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Origin Destination data list definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaxJourneyList" type="PaxJourneyListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Journey data list definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaxList" type="PaxListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Passenger data list definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PenaltyList" type="PenaltyListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Penalty data list definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PriceClassList" type="PriceClassListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Price Class data list definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SeatProfileList" type="SeatProfileListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Seat Profile data list definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceDefinitionList" type="ServiceDefinitionListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Service Definition data list definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TermsList" type="TermsListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Offer/Order Terms list</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -4084,11 +4628,6 @@
 			<xs:element name="DisclosureList" type="DisclosureListType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Disclosure data list definition.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="FareList" type="FareListType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Fare List definition</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="MediaList" type="MediaListType" minOccurs="0" maxOccurs="1">
@@ -4371,23 +4910,6 @@
 		</xs:annotation>
 		<xs:restriction base="DeckCodeContentType"/>
 	</xs:simpleType>
-	<xs:complexType name="DeleteOrderItemOfferItemType">
-		<xs:annotation>
-			<xs:documentation>Function to accept the deletion of an OrderItem from the existing Order.</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="OfferID" type="ID_Type" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>An Offer ID</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OfferRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Reference to an Offer ID</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="DeliveredOrderItemType">
 		<xs:annotation>
 			<xs:documentation>Delivered Order item is an individually priced item within a Delivered Order, made up of one or more Services. May or may not be a selected Offer Item (e.g. non-chargeable Services available on request such as a wheelchair).</xs:documentation>
@@ -4436,11 +4958,6 @@
 			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether or not the owner is the ORA or POA.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Price" type="PriceType" minOccurs="1" maxOccurs="1">
@@ -4530,11 +5047,6 @@
 			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether the owner is the ORA or POA.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TotalPrice" type="PriceType" minOccurs="0" maxOccurs="1">
@@ -4637,7 +5149,7 @@
 					<xs:documentation>Reference to another service instance.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SettlementInfo" type="InterlineSettlementInfoType" minOccurs="0" maxOccurs="1">
+			<xs:element name="SettlementInfo" type="SettlementInfoType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Information related to the value of a product or service as it pertains to interline transactions.</xs:documentation>
 				</xs:annotation>
@@ -4760,7 +5272,7 @@
 					<xs:documentation>IATA 3-letter code defining the city or airport code.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Time" type="TimeOfDayType" minOccurs="0" maxOccurs="1">
+			<xs:element name="Time" type="TimeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The customer's requested departure time.</xs:documentation>
 				</xs:annotation>
@@ -5620,47 +6132,6 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="FareGroupType">
-		<xs:annotation>
-			<xs:documentation>Change to 'Defines types of fares. Examples include: Defines types of fares. Examples include: Published Fares, Dynamic Discounted Fares, Negotiated Fares, One Way Fare, Private Fares</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="FareCode" type="CodeType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Fare Type Code.
- Examples:
- 70J - Published Fares
- 70K - Dynamic Discounted Fares
- 749 - Negotiated Fares
- 756 - One Way Fare
- 758 - Private Fares
- Encoding Scheme: PADIS codeset element 9910 - Fare Qualifier</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="FareDetail" type="FareDetailType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>The amount charged by the carrier for the carriage of a passenger and his allowable free baggage.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="FareGroupID" type="ID_Type" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Unique identifier for this Fare Group</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="FareListType">
-		<xs:annotation>
-			<xs:documentation>Fare List definition</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="FareGroup" type="FareGroupType" minOccurs="1" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Change to 'Defines types of fares. Examples include: Defines types of fares. Examples include: Published Fares, Dynamic Discounted Fares, Negotiated Fares, One Way Fare, Private Fares</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="FarePriceTypeType">
 		<xs:annotation>
 			<xs:documentation>The type of fair price applied to a Fare Detail (e.g. filed amount, net amount, or a sell amount).</xs:documentation>
@@ -6041,11 +6512,6 @@
 					<xs:documentation>Total segment time including the combined air time and connection times of any legs.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="InterlineSettlementInfo" type="InterlineSettlementInfoType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Information related to the value of a product or service as it pertains to interline transactions.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="MarketingCarrierFlightNumberText" type="FlightNumberTextType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The numerical designation of a flight as it is marketed by a carrier.</xs:documentation>
@@ -6090,6 +6556,11 @@
 					<xs:documentation>Defines the operational flight segment type (e.g. Open, Passive, Service).
  
  Encoding Scheme: IATA PADIS 1.4 Codeset FST - Flight Segment Type</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SettlementInfo" type="SettlementInfoType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Information related to the value of a product or service as it pertains to interline transactions.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TicketlessInd" type="IndType" minOccurs="0" maxOccurs="1">
@@ -6283,11 +6754,6 @@
 					<xs:documentation>This is a container for a flight request type which allow multiple specified origin and destinations to be input in this type of request.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ShoppingResponse" type="ShoppingResponseType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Facilitates the tracking of what was Offered and contains an identifier unique to the source Airline for a set of product Offers returned in response to a shopping request.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="FOID_Type">
@@ -6451,222 +6917,6 @@
 			<xs:element name="PTC" type="IATA_PTC_CodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Type code applying to the Passenger which typically drives pricing (e.g. ADT, CHD, etc).</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="HistoricOrderType">
-		<xs:annotation>
-			<xs:documentation>History Order is a uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
- Comment:
- A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
- An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="BilateralTimeLimit" type="BilateralTimeLimitType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>A bilaterally agreed limitation or restriction of time.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="BookingRef" type="BookingRefType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information related to a booking or reservation.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Commission" type="CommissionType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>An amount of money, typically a set percentage of the value involved, paid to an agent in a commercial transaction.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="CreationDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>The date time by which the order is created.
- Examples: 2018-09-05T15:52:01Z</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="DepositTimeLimitDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>The date by which a deposit must be paid for an order
- Examples: 2015-01-13T13:59:38Z</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="LastModifiedDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>The date time by which the order is modified.
- Examples: 2018-09-05T15:52:01Z</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="NamingTimeLimitDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>The time by which an Order must be completed with individual passenger names.
- Examples: 2015-01-13T13:59:38Z</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderID" type="ID_Type" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Carrier assigned ID which uniquely identifies a specific Order across several messages.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderItem" type="OrderedOrderItemType" minOccurs="1" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>An individually priced item within an Ordered Order, made up of one or more Services. May or may not be a selected Offer Item (e.g. non-chargeable Services available on request such as a wheelchair).</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderVersionNumber" type="OrderVersionNumberType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Version of the Order used to track the evolution of an Order and the changes made to it.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrignalOrderID" type="ID_Type" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Carrier assigned ID which uniquely identifies a specific Order across several messages.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether the owner is the ORA or POA.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PaxGroup" type="PaxGroupType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A number of individual passengers traveling under one commercial name that associates them. E.g. a Tour group or a group for sales allotment from airline to agency.
- Group bookings are subject to special booking rules and may be eligible for special fare rules. Usage and nature of groups is left to bilateral agreements.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="StatusCode" type="OrderStatusCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates the current status of an Order
- E.g. OK (Confirmed)</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TotalPrice" type="PriceType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>The amount of money expected, required, or given in payment for something.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="WebAddressURI" type="URI_Type" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Deep linking into another site to complete the transaction. E.g. to bring the customer directly to a page to continue with a purchase of a specific offer.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="HistoryRequestChangeGroupType">
-		<xs:sequence>
-			<xs:element name="ChangeGroupSeqNumber" type="NumberType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="ChangeOperationGroup" type="HistoryRequestChangeOperationGroupType" minOccurs="1" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Logical grouping of one or more operations that leads to a new Order Version.
- 
- Should not have multiple change operations to the same element.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="HistoryRequestChangeOperationGroupType">
-		<xs:annotation>
-			<xs:documentation>Logical grouping of one or more operations that leads to a new Order Version.
- 
- Should not have multiple change operations to the same element.</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="ChangeOperation" type="HistoryRequestChangeOperationType" minOccurs="1" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Instruction on addition, replacement or deletion of elements within an Order.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderVersion" type="NumberType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Version of the Order</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="HistoryRequestChangeOperationType">
-		<xs:annotation>
-			<xs:documentation>Instruction on addition, replacement or deletion of elements within an Order.</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="ChangeDateTime" type="DateTimeType" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="ChangeTypeCode" type="CodeType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>ATSB Codeset: CHT Indicates to the Seller the type of change.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="New" type="HistoryRequestNewType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="Old" type="HistoryRequestExistingType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="ReasonCode" type="CodeType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>ATSB Codeset: CHR Indicating the reason for change.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="HistoryRequestExistingType">
-		<xs:sequence>
-			<xs:element name="DataLists" type="DataListsType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Data List definition for this message.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Order" type="HistoricOrderType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>History Order is a uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
- Comment:
- A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
- An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PaymentFunctions" type="PaymentFunctionsOrderType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TicketDocInfo" type="TicketDocInfoType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information corresponding to a group of 1 to 4 Tickets for a single Origin Destination and a single Passenger.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Warning" type="WarningType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Contains information related to potential business errors detected during processing of the preceding request.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="HistoryRequestNewType">
-		<xs:sequence>
-			<xs:element name="DataLists" type="DataListsType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Data List definition for this message.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Order" type="HistoricOrderType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>History Order is a uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
- Comment:
- A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
- An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PaymentFunctions" type="PaymentFunctionsOrderType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TicketDocInfo" type="TicketDocInfoType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information corresponding to a group of 1 to 4 Tickets for a single Origin Destination and a single Passenger.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Warning" type="WarningType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Contains information related to potential business errors detected during processing of the preceding request.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -7301,7 +7551,7 @@
 					<xs:documentation>Reference to another service instance.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SettlementInfo" type="InterlineSettlementInfoType" minOccurs="0" maxOccurs="1">
+			<xs:element name="SettlementInfo" type="SettlementInfoType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Information related to the value of a product or service as it pertains to interline transactions.</xs:documentation>
 				</xs:annotation>
@@ -7323,52 +7573,6 @@
  - Airline Designator Code
  - Duplicate Designator Indicator
  - Name</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="InterlineSettlementInfoType">
-		<xs:annotation>
-			<xs:documentation>Information related to the value of a product or service as it pertains to interline transactions.</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="Commission" type="CommissionType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>An amount of money, typically a set percentage of the value involved, paid to an agent in a commercial transaction.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Fee" type="FeeType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Amount added on to a charge for a specific product, purpose, or service.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="MethodCode" type="SettlementMethodCodeType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Settlement method. Examples:
- - AD (Internal Airline Document).
- - DS (Direct Settlement).
- - EA (EMD Associated or Internal Airline Document).</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="SettlementAmount" type="AmountType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Settlement (Price) Value. Example: 300 (USD)
- Note: This represents a Settlement value that is only used between the POA and ORA.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Surcharge" type="SurchargeType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Amount added on to a usual charge for a specific product, purpose, or service.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Tax" type="TaxType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>A compulsory contribution to state revenue, levied by the government on workers' income and business profits or added to the cost of some goods, services, and transactions.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TaxableInd" type="IndType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>In some markets, commission is VAT-able (i.e. Taxable)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -7408,11 +7612,6 @@
 			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether or not the owner is the ORA or POA.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Service" type="ServiceKeyType" minOccurs="0" maxOccurs="1">
@@ -7465,11 +7664,6 @@
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ShoppingResponseRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Reference to unique shopping session response ID, as provided in the airline's previous shopping response.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="InventoryGuaranteeType">
@@ -7504,11 +7698,6 @@
  Comment:
  A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
  An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ShoppingResponseAssociation" type="ShoppingResponseType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Facilitates the tracking of what was Offered and contains an identifier unique to the source Airline for a set of product Offers returned in response to a shopping request.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="WaitListInd" type="IndType" minOccurs="0" maxOccurs="1">
@@ -8247,11 +8436,6 @@
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether or not the owner is the ORA or POA.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="PaymentTimeLimit" type="PaymentTimeLimitType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Payment Time Limit</xs:documentation>
@@ -8409,38 +8593,6 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="NewType">
-		<xs:sequence>
-			<xs:element name="DataLists" type="DataListsType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Data List definition for this message.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Order" type="OrderedOrderType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
- Comment:
- A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
- An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PaymentFunctions" type="PaymentFunctionsOrderType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TicketDocInfo" type="TicketDocInfoType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information corresponding to a group of 1 to 4 Tickets for a single Origin Destination and a single Passenger.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Warning" type="WarningType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Contains information related to potential business errors detected during processing of the preceding request.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="NoPriceChangeIndType">
 		<xs:sequence>
 			<xs:element name="NoPriceChangeInd" type="IndType" minOccurs="1" maxOccurs="1"/>
@@ -8503,11 +8655,6 @@
 			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ShoppingResponseRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Reference to unique shopping session response ID, as provided in the airline's previous shopping response.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -8723,11 +8870,6 @@
 					<xs:documentation>Data List definition for this message.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="DisclosureList" type="DisclosureListType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Disclosure data list definition.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="InExchForTicket" type="PenaltyRefType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Penalty reference information.</xs:documentation>
@@ -8746,11 +8888,6 @@
 			<xs:element name="OriginDestRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Uniquely identifies an Origin Destination within the context of one message.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PaxJourneyList" type="PaxJourneyListType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Journey data list definition.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PaymentFunctions" type="PaymentAssociatedOfferFunctionsCriteriaType" minOccurs="0" maxOccurs="unbounded">
@@ -8776,11 +8913,6 @@
 			<xs:element name="SeatProfileList" type="SeatProfileListType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Seat Profile data list definition.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ShoppingResponse" type="ShoppingResponseType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Facilitates the tracking of what was Offered and contains an identifier unique to the source Airline for a set of product Offers returned in response to a shopping request.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -8834,11 +8966,6 @@
 			<xs:element name="Promotion" type="PromotionType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Information related to publicizing a product, organization, or venture so as to increase sales or public awareness.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ShoppingResponse" type="ShoppingResponseType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Facilitates the tracking of what was Offered and contains an identifier unique to the source Airline for a set of product Offers returned in response to a shopping request.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Warning" type="WarningType" minOccurs="0" maxOccurs="unbounded">
@@ -8922,38 +9049,6 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="MatchedOfferQty" type="QtyType" minOccurs="0" maxOccurs="1"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="OldType">
-		<xs:sequence>
-			<xs:element name="DataLists" type="DataListsType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Data List definition for this message.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Order" type="OrderedOrderType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
- Comment:
- A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
- An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PaymentFunctions" type="PaymentFunctionsOrderType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TicketDocInfo" type="TicketDocInfoType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information corresponding to a group of 1 to 4 Tickets for a single Origin Destination and a single Passenger.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Warning" type="WarningType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Contains information related to potential business errors detected during processing of the preceding request.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="OperatingCarrierDatedOperatingSegmentType">
@@ -9061,45 +9156,6 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="OrderBaselineType">
-		<xs:annotation>
-			<xs:documentation>Version of the Order to which the change operations above need to be applied. Once fully updated, the version of the Order would correspond to the version of the last ChangeGroup in this batch of changes (OrderChangeNotifRQ).
- 
- Required by Sellers who are unable to store the Orders sent to them by Airlines.
- 
- Also used by Airlines unable to persist IDs or reproduce IDs consistently between Order responses.</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="DataLists" type="DataListsType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Data List definition for this message.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Order" type="OrderedOrderType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
- Comment:
- A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
- An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PaymentFunctions" type="PaymentFunctionsOrderType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TicketDocInfo" type="TicketDocInfoType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information corresponding to a group of 1 to 4 Tickets for a single Origin Destination and a single Passenger.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Warning" type="WarningType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Contains information related to potential business errors detected during processing of the preceding request.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="OrderCancelRequestType">
 		<xs:annotation>
 			<xs:documentation> Request for Order Cancel</xs:documentation>
@@ -9203,8 +9259,16 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="ChangeGroup" type="ChangeGroupType" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="CurrentOrder" type="CurrentOrderType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="OrderBaseline" type="OrderBaselineType" minOccurs="0" maxOccurs="1">
+			<xs:element name="CurrentOrder" type="OrderSnapshotType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Version of the Order to which the change operations above need to be applied. Once fully updated, the version of the Order would correspond to the version of the last ChangeGroup in this batch of changes (OrderChangeNotifRQ).
+ 
+ Required by Sellers who are unable to store the Orders sent to them by Airlines.
+ 
+ Also used by Airlines unable to persist IDs or reproduce IDs consistently between Order responses.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderBaseline" type="OrderSnapshotType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Version of the Order to which the change operations above need to be applied. Once fully updated, the version of the Order would correspond to the version of the last ChangeGroup in this batch of changes (OrderChangeNotifRQ).
  
@@ -9230,6 +9294,11 @@
 			<xs:documentation>Request for Order Change</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="AcceptOffer" type="AcceptOfferType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Function to accept a new OfferItem and adding it to the existing Order</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="BookingRef" type="BookingRefType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Information related to a booking or reservation.</xs:documentation>
@@ -9376,6 +9445,11 @@
 			<xs:documentation>Further qualifies the flight request by influencing which results are returned in the shopping response, including preferred or required criteria.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="FareWaiver" type="FareWaiverType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Validating carrier-assigned fare rule modification or override information.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="ProgramCriteria" type="ProgramCriteriaType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Filtering criteria based on discount programs.</xs:documentation>
@@ -9463,14 +9537,15 @@
  Examples: 2015-01-13T13:59:38Z</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="DiffPrice" type="PriceDifferentialType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>For each OfferItem, this function allows the airline to inform the seller about amount differential type if this OfferItem is chosen.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="DisclosureRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>References a Disclosure ID.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExistingOrderItemID" type="ID_Type" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reference to the previous order item id that was exchanged. 
+ Carrier assigned ID which exists uniquely within an Order.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="FareDetail" type="FareDetailType" minOccurs="0" maxOccurs="unbounded">
@@ -9504,11 +9579,6 @@
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether or not the owner is the ORA or POA.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="PaymentTimeLimitDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The time limit by which a commitment to pay must be made for the given Order Item. Upon expiry it is expected that the Order item is removed from the Order. If no value is returned, then no advice has been given.
@@ -9524,6 +9594,11 @@
 			<xs:element name="Price" type="PriceType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The amount of money expected, required, or given in payment for something.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PriceDifferential" type="PriceDifferentialType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>For each OfferItem, this function allows the airline to inform the seller about amount differential type if this OfferItem is chosen.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PriceGuaranteeTimeLimitDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
@@ -9616,14 +9691,6 @@
 			<xs:element name="OrderItem" type="OrderedOrderItemType" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>An individually priced item within an Ordered Order, made up of one or more Services. May or may not be a selected Offer Item (e.g. non-chargeable Services available on request such as a wheelchair).</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderKeys" type="OrderStructureKeyType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>A uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
- Comment:
- A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
- An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="OrderVersionNumber" type="OrderVersionNumberType" minOccurs="0" maxOccurs="1">
@@ -9757,11 +9824,6 @@
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether the owner is the ORA or POA.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="OrderFlightAssociationsType">
@@ -9801,7 +9863,7 @@
 			<xs:documentation>Information related to the response for Order History</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ChangeGroup" type="HistoryRequestChangeGroupType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ChangeGroup" type="ChangeGroupType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="OrderID" type="ID_Type" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Carrier assigned ID which uniquely identifies a specific Order across several messages.</xs:documentation>
@@ -9953,11 +10015,6 @@
 			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether the owner is the ORA or POA.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="StatusCode" type="OrderStatusCodeType" minOccurs="0" maxOccurs="1">
@@ -10120,11 +10177,6 @@
 					<xs:documentation>Disclosure data list definition.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="OrderActionContextText" type="TextType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Reference to PADIS codeset REA. When used, provides context for the change being requested.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="OrderRefID" type="ID_Type" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Reference to existing Order to which the Seller wants to add, udpate, delete an OrderItem.</xs:documentation>
@@ -10143,6 +10195,11 @@
 			<xs:element name="PaymentFunctions" type="PaymentAssociatedFunctionsCriteriaType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ReasonCode" type="CodeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>ATSB Codeset: CHR Indicating the reason for change.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ResponseParameters" type="ResponseParametersRequestType" minOccurs="0" maxOccurs="1">
@@ -10202,11 +10259,6 @@
 			<xs:element name="ReshopResults" type="ReshopResultsType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>ReshopResults</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ShoppingResponse" type="ShoppingResponseType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Facilitates the tracking of what was Offered and contains an identifier unique to the source Airline for a set of product Offers returned in response to a shopping request.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Warning" type="WarningType" minOccurs="0" maxOccurs="unbounded">
@@ -10497,6 +10549,45 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="OrderSnapshotType">
+		<xs:annotation>
+			<xs:documentation>Version of the Order to which the change operations above need to be applied. Once fully updated, the version of the Order would correspond to the version of the last ChangeGroup in this batch of changes (OrderChangeNotifRQ).
+ 
+ Required by Sellers who are unable to store the Orders sent to them by Airlines.
+ 
+ Also used by Airlines unable to persist IDs or reproduce IDs consistently between Order responses.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DataListsOptional" type="DataListsOptionalType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Data List definition for this message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Order" type="OrderedOrderType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
+ Comment:
+ A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
+ An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaymentFunctions" type="PaymentFunctionsOrderType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TicketDocInfo" type="TicketDocInfoType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information corresponding to a group of 1 to 4 Tickets for a single Origin Destination and a single Passenger.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Warning" type="WarningType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Contains information related to potential business errors detected during processing of the preceding request.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:simpleType name="OrderStatusCodeContentType">
 		<xs:annotation>
 			<xs:documentation>shows the possible statuses of an Order </xs:documentation>
@@ -10551,11 +10642,6 @@
 			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether the owner is the ORA or POA.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -10714,7 +10800,7 @@
 					<xs:documentation>IATA 3-letter code defining the city or airport code.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Time" type="TimeOfDayType" minOccurs="0" maxOccurs="1">
+			<xs:element name="Time" type="TimeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The customer's requested departure time.</xs:documentation>
 				</xs:annotation>
@@ -10808,6 +10894,51 @@
  Business Identifier Fields:
  - [Station] (Origin Station) IATA Location Code
  - [Station] (Destination Station) IATA Location Code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OriginDestOptListType">
+		<xs:annotation>
+			<xs:documentation>Origin Destination data list definition.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="OriginDestOpt" type="OriginDestOptType" minOccurs="1" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The Origin and Destination airport/city pair which confines a passenger journey or an aircraft flight.
+ Business Identifier Fields:
+ - [Station] (Origin Station) IATA Location Code
+ - [Station] (Destination Station) IATA Location Code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OriginDestOptType">
+		<xs:annotation>
+			<xs:documentation>The Origin and Destination airport/city pair which confines a passenger journey or an aircraft flight.
+ Business Identifier Fields:
+ - [Station] (Origin Station) IATA Location Code
+ - [Station] (Destination Station) IATA Location Code</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DestCode" type="IATA_LocationCodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>IATA defined code identifying a city or station.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OriginCode" type="IATA_LocationCodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>IATA defined code identifying a city or station.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OriginDestID" type="ID_Type" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Uniquely identifies an Origin Destination within the context of one message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaxJourneyRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Uniquely identifies a Passenger Journey within the context of one message.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -11180,11 +11311,6 @@
 					<xs:documentation>Total journey time including the combined air time and connection times. In case of stopover, this may or may not include stopover durations.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="InterlineSettlementInfo" type="InterlineSettlementInfoType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Information related to the value of a product or service as it pertains to interline transactions.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="PaxJourneyID" type="ID_Type" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Uniquely identifies a Passenger Journey within the context of one message.</xs:documentation>
@@ -11193,6 +11319,11 @@
 			<xs:element name="PaxSegmentRefID" type="ID_Type" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Reference to a Passenger Segment ID within this message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SettlementInfo" type="SettlementInfoType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Information related to the value of a product or service as it pertains to interline transactions.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -11361,11 +11492,6 @@
 					<xs:documentation>Total segment time including the combined air time and connection times of any legs.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="InterlineSettlementInfo" type="InterlineSettlementInfoType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Information related to the value of a product or service as it pertains to interline transactions.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="MarketingCarrierInfo" type="DatedMarketingSegmentType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
@@ -11405,6 +11531,11 @@
 					<xs:documentation>Defines the operational flight segment type (e.g. Open, Passive, Service).
  
  Encoding Scheme: IATA PADIS 1.4 Codeset FST - Flight Segment Type</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SettlementInfo" type="SettlementInfoType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Information related to the value of a product or service as it pertains to interline transactions.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TicketlessInd" type="IndType" minOccurs="0" maxOccurs="1">
@@ -14265,6 +14396,11 @@
 			<xs:documentation>Passenger Type summary information for an offer.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="PaxRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Reference to the passengers who are elibigle for this Offer Item</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="PricedPaxNumber" type="NumberType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Number of Passenger(s) for associated passenger type. Example: 2</xs:documentation>
@@ -14704,11 +14840,6 @@
 			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Indicates whether or not the owner of this Offer is the ORA or POA.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PenaltyRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
@@ -15857,11 +15988,6 @@
 					<xs:documentation>Reference to a Passenger Segment ID from a previously returned Offer.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ShoppingResponseRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Reference to unique shopping session response ID, as provided in the airline's previous shopping response.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="SeatAvailOrderRequestType">
@@ -15924,11 +16050,6 @@
 					<xs:documentation>Seat Availibility Core Request</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ShoppingResponse" type="ShoppingResponseType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Facilitates the tracking of what was Offered and contains an identifier unique to the source Airline for a set of product Offers returned in response to a shopping request.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="SeatAvailResponseType">
@@ -15985,11 +16106,6 @@
 			<xs:element name="SeatMap" type="SeatMapType" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Returns a list of cabins and the seats within in. This information can be used by the Seller to render a graphical Seat Map.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ShoppingResponse" type="ShoppingResponseType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Facilitates the tracking of what was Offered and contains an identifier unique to the source Airline for a set of product Offers returned in response to a shopping request.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Warning" type="WarningType" minOccurs="0" maxOccurs="unbounded">
@@ -16625,9 +16741,16 @@
  OfferItems from the originating Offers may take on two different forms, which in turn drives how the ALaCarteSelection element is to be used - If the OfferItem referenced comes originally from an a-la-carte Offer, then the use of the ALaCarteSelection element should be used to defined the Quantity of said OfferItem. On the other hand, if the OfferItem comes from a standard type of Offer in the previous shopping response, the ALaCarteSelection element should not be used, as the quantity is explicitly driven by what is defined in that OfferItem's associations (to passengers and/or flight segments).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ShoppingResponseRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SelectedOrderItemType">
+		<xs:annotation>
+			<xs:documentation>Acceptance of Schedule Change. The Seller can accept a change to an Order so that the customer is in a 'ready to fly' state. The reference to the related Order Item IDs is shown in the attributes.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="OrderItemRefID" type="ID_Type" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Reference to unique shopping session response ID, as provided in the airline's previous shopping response.</xs:documentation>
+					<xs:documentation>Reference to an Order Item ID within this message.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -16670,11 +16793,6 @@
  As a minimum, all mandatory OfferItems from a desired Offer should be explicitly defined within these selections and should repeat the same Passenger and Flight Segment associations defined in the originating OfferItems. Optional OfferItems may then be appended as further items selected by the Passenger.
  
  OfferItems from the originating Offers may take on two different forms, which in turn drives how the ALaCarteSelection element is to be used - If the OfferItem referenced comes originally from an a-la-carte Offer, then the use of the ALaCarteSelection element should be used to defined the Quantity of said OfferItem. On the other hand, if the OfferItem comes from a standard type of Offer in the previous shopping response, the ALaCarteSelection element should not be used, as the quantity is explicitly driven by what is defined in that OfferItem's associations (to passengers and/or flight segments).</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ShoppingResponseRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Reference to unique shopping session response ID, as provided in the airline's previous shopping response.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TotalOfferPriceAmount" type="AmountType" minOccurs="0" maxOccurs="1">
@@ -17088,11 +17206,6 @@
  https://guides.developer.iata.org/docs/industry-taxonomy</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SpecialService" type="SpecialServiceType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Special service information</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ServiceDeliveryDataListsType">
@@ -17120,17 +17233,17 @@
 					<xs:documentation>Disclosure data list definition.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="FareList" type="FareListType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Fare List definition</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="MediaList" type="MediaListType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Media data list definition.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="OriginDestList" type="OriginDestListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Origin Destination data list definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OriginDestOptList" type="OriginDestOptListType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Origin Destination data list definition.</xs:documentation>
 				</xs:annotation>
@@ -17370,11 +17483,6 @@
 					<xs:documentation>Total segment time including the combined air time and connection times of any legs.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="InterlineSettlementInfo" type="InterlineSettlementInfoType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Information related to the value of a product or service as it pertains to interline transactions.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="MarketingCarrierFlightNumberText" type="FlightNumberTextType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The numerical designation of a flight as it is marketed by a carrier.</xs:documentation>
@@ -17419,6 +17527,11 @@
 					<xs:documentation>Defines the operational flight segment type (e.g. Open, Passive, Service).
  
  Encoding Scheme: IATA PADIS 1.4 Codeset FST - Flight Segment Type</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SettlementInfo" type="SettlementInfoType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Information related to the value of a product or service as it pertains to interline transactions.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TicketlessInd" type="IndType" minOccurs="0" maxOccurs="1">
@@ -17827,11 +17940,6 @@
 					<xs:documentation>Reference to a Passenger Segment ID from a previously returned Offer.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ShoppingResponseRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Reference to unique shopping session response ID, as provided in the airline's previous shopping response.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ServiceListOrderRequestType">
@@ -17905,11 +18013,6 @@
  Service List Core Request</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ShoppingResponse" type="ShoppingResponseType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Facilitates the tracking of what was Offered and contains an identifier unique to the source Airline for a set of product Offers returned in response to a shopping request.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ServiceListResponseType">
@@ -17956,11 +18059,6 @@
 			<xs:element name="ServiceListProcessing" type="ServiceListProcessingType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Marketing messages for Service List</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ShoppingResponse" type="ShoppingResponseType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Facilitates the tracking of what was Offered and contains an identifier unique to the source Airline for a set of product Offers returned in response to a shopping request.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Warning" type="WarningType" minOccurs="0" maxOccurs="unbounded">
@@ -18139,6 +18237,52 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="SettlementInfoType">
+		<xs:annotation>
+			<xs:documentation>Information related to the value of a product or service as it pertains to interline transactions.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Commission" type="CommissionType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>An amount of money, typically a set percentage of the value involved, paid to an agent in a commercial transaction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Fee" type="FeeType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Amount added on to a charge for a specific product, purpose, or service.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MethodCode" type="SettlementMethodCodeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Settlement method. Examples:
+ - AD (Internal Airline Document).
+ - DS (Direct Settlement).
+ - EA (EMD Associated or Internal Airline Document).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SettlementAmount" type="AmountType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Settlement (Price) Value. Example: 300 (USD)
+ Note: This represents a Settlement value that is only used between the POA and ORA.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Surcharge" type="SurchargeType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Amount added on to a usual charge for a specific product, purpose, or service.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Tax" type="TaxType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A compulsory contribution to state revenue, levied by the government on workers' income and business profits or added to the cost of some goods, services, and transactions.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TaxableInd" type="IndType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>In some markets, commission is VAT-able (i.e. Taxable)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:simpleType name="SettlementMethodCodeType">
 		<xs:annotation>
 			<xs:documentation>Settlement method information code.</xs:documentation>
@@ -18208,17 +18352,17 @@
 					<xs:documentation>Disclosure data list definition.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="FareList" type="FareListType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Fare List definition</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="MediaList" type="MediaListType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Media data list definition.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="OriginDestList" type="OriginDestListType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Origin Destination data list definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OriginDestOptList" type="OriginDestOptListType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Origin Destination data list definition.</xs:documentation>
 				</xs:annotation>
@@ -18430,37 +18574,6 @@
 			<xs:element name="PaxSegmentID" type="ID_Type" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Uniquely identifies a Passenger Segment within the context of one message.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="ShoppingResponseType">
-		<xs:annotation>
-			<xs:documentation>Facilitates the tracking of what was Offered and contains an identifier unique to the source Airline for a set of product Offers returned in response to a shopping request.</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="Carrier" type="CarrierType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
- Business Identifier Fields :
- - Airline Designator Code
- - Duplicate Designator Indicator
- - Name</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OfferRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Reference to an Offer ID for which this Payment applies.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ShoppingResponseRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Reference to unique shopping session response ID, as provided in the airline's previous shopping response.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -19038,14 +19151,6 @@
 					<xs:documentation>The amount charged by the carrier for the carriage of a passenger and his allowable free baggage.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="OrderRef" type="OrderStructureKeyType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
- Comment:
- A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
- An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="OriginalIssueInfo" type="TicketIssuanceInfoType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The issuing carrier and issuing location of a ticket.</xs:documentation>
@@ -19090,7 +19195,7 @@
 					<xs:documentation>IATA defined code identifying a city or station.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PricingTime" type="TimeOfDayType" minOccurs="0" maxOccurs="1">
+			<xs:element name="PricingTime" type="TimeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Booked Itinerary Pricing Time. Example: 09:15</xs:documentation>
 				</xs:annotation>
@@ -19159,7 +19264,7 @@
 					<xs:documentation>The date that the document was originally issued.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="IssueTime" type="TimeOfDayType" minOccurs="0" maxOccurs="1">
+			<xs:element name="IssueTime" type="TimeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The time that the document was originally issued.</xs:documentation>
 				</xs:annotation>
@@ -19269,7 +19374,7 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:simpleType name="TimeOfDayType">
+	<xs:simpleType name="TimeType">
 		<xs:annotation>
 			<xs:documentation>Time is a point in the 24 hour clock expressed in hours, minutes and seconds. It has no implicit reference to a time zone.</xs:documentation>
 		</xs:annotation>
@@ -19427,23 +19532,6 @@
 		</xs:annotation>
 		<xs:restriction base="TripPurposeCodeContentType"/>
 	</xs:simpleType>
-	<xs:complexType name="UpdateOrderItemType">
-		<xs:annotation>
-			<xs:documentation>Collection of functions used by the seller to request the airline to commit changes to an existing Order. These may be adding, removing or replacing Order Items (with potential refund conditions, in case of cancellations). The actions possible are determined by the airline and communicated to the seller at the time of an OrderReshopRS (which precedes OrderChangeRQ). It is up to the seller to then accept the proposed actions from the OrderReshopRS by echoing these functions in this OrderServicing structure</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="AcceptOffer" type="AcceptOfferType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Function to accept a new OfferItem and adding it to the existing Order</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="DeleteOrderItem" type="DeleteOrderItemOfferItemType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Function to accept the deletion of an OrderItem from the existing Order.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="UpdateOrderType">
 		<xs:annotation>
 			<xs:documentation>Update Order</xs:documentation>
