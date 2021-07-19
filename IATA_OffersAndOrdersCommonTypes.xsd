@@ -1,229 +1,12 @@
 <?xml version="1.0"?>
+<!-- edited with XMLSpy v2019 rel. 3 (x64) (http://www.altova.com) by Andrew Blake (IATA LOCATION GENEVA) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersCommonTypes" targetNamespace="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersCommonTypes" elementFormDefault="qualified" version="1.0">
-	<xs:complexType name="AAaRootType">
-		<xs:annotation>
-			<xs:documentation>Temp node for navigation</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="Ack" type="AckType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>The Acknowledgement document is a simple notification from party to party acknowledging the receipt of another transaction such as an inventory release or an updated order
- 
- It may also provide information indicating the status of the document.
- 
- This document is used consistently as an optional response to a notification transaction.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="AirlineProfileNotif" type="AirlineProfileNotifType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Notification payload information.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="AirlineProfileRequest" type="AirlineProfileRequestType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="AirlineProfileResponse" type="AirlineProfileResponseType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="AirShoppingRequest" type="AirShoppingRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="AirShoppingResponse" type="AirShoppingResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information related to the response.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ClearanceAcceptedMethods" type="ClearanceAcceptedMethodsType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ClearanceCriteria" type="ClearanceCriteriaType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ClearanceRequestData" type="ClearanceRequestDataType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ClearanceResponseData" type="ClearanceResponseDataType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="DocNotif" type="DocNotifType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Document information for AirDocNotifRQ.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="InterlineDEVRoot" type="InterlineDEVRootType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Development only. will be removed after development.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="InventoryReleaseNotif" type="InventoryReleaseNotifType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Notification payload information.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OfferPriceRequest" type="OfferPriceRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Offer Price Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OfferPriceResponse" type="OfferPriceResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Offer Price information related to the response.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderCancelRequest" type="OrderCancelRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation> Request for Order Cancel</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderCancelResponse" type="OrderCancelResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information related to the response for Order Cancel</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderChangeNotif" type="OrderChangeNotifType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Payload information for OrderChangeNotifRQ.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderChangeRequest" type="OrderChangeRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request for Order Change</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderClosingNotifRequest" type="OrderClosingNotifRequestType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="OrderCreateRequest" type="OrderCreateRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for Order Create message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderHistoryRequest" type="OrderHistoryRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request for Order History</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderHistoryResponse" type="OrderHistoryResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information related to the response for Order History</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderListRequest" type="OrderListRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request for Order List</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderListResponse" type="OrderListResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Response for Order list</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderQuotePayload" type="OrderQuotePayloadType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Physical container for message data elements</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderReshopRequest" type="OrderReshopRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for Order Reshop message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderReshopResponse" type="OrderReshopResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for Order Reshop message
- </xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderRetrieveRequest" type="OrderRetrieveRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for Order Retrieve message
- </xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderRulesRequest" type="OrderRulesRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for Order Rules message
- </xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderRulesResponse" type="OrderRulesResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for Order Rules message
- </xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderSalesInfoAccountingDocNotifRequest" type="OrderSalesInfoAccountingDocNotifRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderSalesInfoNotifRequest" type="OrderSalesInfoNotifRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderViewResponse" type="OrderViewResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information related to the response.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="SeatAvailRequest" type="SeatAvailRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="SeatAvailResponse" type="SeatAvailResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information related to the response.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ServiceDeliveryNotifRequest" type="ServiceDeliveryNotifRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Service Delivery Notification Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ServiceDeliveryRequest" type="ServiceDeliveryRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Service Delivery Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ServiceDeliveryResponse" type="ServiceDeliveryResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information related to the response.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ServiceListRequest" type="ServiceListRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ServiceListResponse" type="ServiceListResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information related to the response.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ServiceStatusChangeNotifRequest" type="ServiceStatusChangeNotifRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="UpdateServiceNotifRequest" type="UpdateServiceNotifRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="AcceptCancelledOfferType">
 		<xs:annotation>
 			<xs:documentation>Function to accept the deletion of an OrderItem from the existing Order.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="OfferID" type="ID_Type" minOccurs="0" maxOccurs="1">
+			<xs:element name="OfferID" type="ID_Type" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>An Offer ID</xs:documentation>
 				</xs:annotation>
@@ -346,7 +129,7 @@
 			</xs:element>
 			<xs:element name="AccountedPrice" type="AccountedPriceType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>The amount of money expected, required, or given in payment for something.</xs:documentation>
+					<xs:documentation>An amount of money expected, required, or given in payment for something.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="BilateralTimeLimit" type="BilateralTimeLimitType" minOccurs="0" maxOccurs="unbounded">
@@ -573,7 +356,7 @@
 			</xs:element>
 			<xs:element name="TotalPrice" type="AccountedPriceType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>The amount of money expected, required, or given in payment for something.</xs:documentation>
+					<xs:documentation>An amount of money expected, required, or given in payment for something.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="WebAddressURI" type="URI_Type" minOccurs="0" maxOccurs="1">
@@ -585,7 +368,7 @@
 	</xs:complexType>
 	<xs:complexType name="AccountedPriceType">
 		<xs:annotation>
-			<xs:documentation>The amount of money expected, required, or given in payment for something.</xs:documentation>
+			<xs:documentation>An amount of money expected, required, or given in payment for something.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="BaseAmount" type="AmountType" minOccurs="0" maxOccurs="1">
@@ -658,9 +441,9 @@
 					<xs:documentation>Total monetary price amount, including all tax, surcharge, and fee amounts.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="VATInfo" type="VATInfoType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="VAT_BreakdownElement" type="VAT_BreakdownElementType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Optional Information relating to VAT if an amount is reported gross. The information provided allows the VAT to be determined from the gross value amount.</xs:documentation>
+					<xs:documentation>A derivation of all or part of the Value Added Tax applicable to a Price Total Amount, or any other identified amount, that is inclusive of VAT.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -4249,7 +4032,7 @@
 			<xs:documentation>An amount of money, typically a set percentage of the value involved, paid to an agent in a commercial transaction.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Amount" type="AmountType" minOccurs="1" maxOccurs="1">
+			<xs:element name="Amount" type="AmountType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Commission amount and currency code. Example: 20 USD</xs:documentation>
 				</xs:annotation>
@@ -6339,14 +6122,14 @@
 					<xs:documentation>Indicates the current status of a Service delivery</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="FutureStatusCode" type="CodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Status of the Service instance. See PADIS Codelist 4405 for possible values.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="ServiceRefID" type="ID_Type" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Reference to another service instance.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="StatusCode" type="CodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Status of the Service instance. See PADIS Codelist 4405 for possible values.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="UnchangedInd" type="IndType" minOccurs="0" maxOccurs="1">
@@ -7642,26 +7425,6 @@
 	<xs:simpleType name="IATA_StationCodeType">
 		<xs:restriction base="IATA_StationCodeContentType"/>
 	</xs:simpleType>
-	<xs:complexType name="IATAInterlineCatalogueRQType">
-		<xs:sequence>
-			<xs:element name="AugmentationPoint" type="AugmentationPointType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="Carrier" type="CarrierType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
- Business Identifier Fields :
- - Airline Designator Code
- - Duplicate Designator Indicator
- - Name</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="IATA_PayloadStandardAttributes" type="IATA_PayloadStandardAttributesType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>The IATA_PayloadStdAttributes defines the standard attributes that appear on the root element for all IATA payloads.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Payload" type="InterlineCatalogueRequestType" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="IATAInterlineCatalogueRSType">
 		<xs:sequence>
 			<xs:element name="AugmentationPoint" type="AugmentationPointType" minOccurs="0" maxOccurs="unbounded"/>
@@ -7709,6 +7472,11 @@
 			<xs:element name="InterlineOfferResponse" type="InterlineOfferResponseType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>InterlineOfferResponse</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MarketingMessage" type="MarketingMessageType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Marketing message : Additional, supplementary information about the document or service.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PayloadAttributes" type="IATA_PayloadStandardAttributesType" minOccurs="0" maxOccurs="1">
@@ -7762,12 +7530,12 @@
 					<xs:documentation>Marketing message : Additional, supplementary information about the document or service.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PayloadAttributes" type="IATA_PayloadStandardAttributesType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="PayloadAttributes" type="IATA_PayloadStandardAttributesType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The IATA_PayloadStdAttributes defines the standard attributes that appear on the root element for all IATA payloads.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Supplier" type="SWOCarrierType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="Supplier" type="SWOCarrierType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Settlement with orders variant of the carrier abie.
  The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
@@ -8109,23 +7877,14 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="InterlineCatalogueRequestType">
-		<xs:sequence>
-			<xs:element name="CatalogueRequestCriteria" type="CatalogueRequestCriteriaType" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="InterlineCatalogueResponseType">
-		<xs:sequence>
-			<xs:element name="ProductCatalogueDEV" type="ProductCatalogueDEVType" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
+		<xs:sequence/>
 	</xs:complexType>
 	<xs:complexType name="InterlineDEVRootType">
 		<xs:annotation>
 			<xs:documentation>Development only. will be removed after development.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="IATAInterlineCatalogueRQ" type="IATAInterlineCatalogueRQType" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="IATAInterlineCatalogueRS" type="IATAInterlineCatalogueRSType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="IATAInterlineOfferRQ" type="IATAInterlineOfferRQType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="IATAInterlineOfferRS" type="IATAInterlineOfferRSType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="IATAInterlineOrderRQ" type="IATAInterlineOrderRQType" minOccurs="0" maxOccurs="unbounded"/>
@@ -8751,11 +8510,6 @@
  Comment:
  A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
  An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="WaitListInd" type="IndType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>When TRUE, the inventory was waitlisted.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -9800,6 +9554,11 @@
 					<xs:documentation>Reference to another service instance.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="StatusCode" type="CodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Status of the Service instance. See PADIS Codelist 4405 for possible values.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="ValidatingCarrier" type="CarrierType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
@@ -10535,11 +10294,6 @@
 			<xs:documentation>Further qualifies the flight request by influencing which results are returned in the shopping response, including preferred or required criteria.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="FareWaiver" type="FareWaiverType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Validating carrier-assigned fare rule modification or override information.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="ProgramCriteria" type="ProgramCriteriaType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Filtering criteria based on discount programs.</xs:documentation>
@@ -11214,6 +10968,11 @@
  An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="FareWaiver" type="FareWaiverType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Validating carrier-assigned fare rule modification or override information.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="OrderCriteria" type="OrderCriteriaType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Further qualifies the flight request by influencing which results are returned in the shopping response, including preferred or required criteria.</xs:documentation>
@@ -11280,6 +11039,11 @@
 					<xs:documentation>Disclosure data list definition.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="FareWaiver" type="FareWaiverType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Validating carrier-assigned fare rule modification or override information.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="OrderRefID" type="ID_Type" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Reference to existing Order to which the Seller wants to add, udpate, delete an OrderItem.</xs:documentation>
@@ -11300,7 +11064,7 @@
 					<xs:documentation>Criteria Specialization of Payment Functions: Is the container of all payment relevant functions.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ReasonCode" type="CodeType" minOccurs="1" maxOccurs="1">
+			<xs:element name="ReasonCode" type="CodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>ATSB Codeset: CHR Indicating the reason for change.</xs:documentation>
 				</xs:annotation>
@@ -11661,7 +11425,7 @@
  Also used by Airlines unable to persist IDs or reproduce IDs consistently between Order responses.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="DataListsOptional" type="DataListsOptionalType" minOccurs="0" maxOccurs="1">
+			<xs:element name="DataLists" type="DataListsType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Data List definition for this message.</xs:documentation>
 				</xs:annotation>
@@ -15542,40 +15306,6 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="ProductCatalogueDEVType">
-		<xs:sequence>
-			<xs:element name="AcceptenceRule" type="AcceptenceRuleType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>An account or representation of the certain or major aspects, characteristics, or features of a person, object, or event.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="AccountingCodeDEV" type="TextType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Dev only</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="MinimumConnectionTimesDEV" type="MinimumConnectionTimesDEVType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="ProductsDEV" type="ProductsDEVType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="ScheduleDEV" type="ScheduleDEVType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="SettlementOptionsDEV" type="SettlementOptionsDEVType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="TransportCarriercodeDEV" type="TextType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Dev only</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TransportDesighnatorcodeDEV" type="TextType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Dev only</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TransportVeichlesDEV" type="TransportVeichlesDEVType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="TypeDEV" type="TextType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Dev only</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="ProductsDEVType">
 		<xs:sequence/>
 	</xs:complexType>
@@ -16713,6 +16443,249 @@
 		</xs:annotation>
 		<xs:restriction base="RFISC_CodeContentType"/>
 	</xs:simpleType>
+	<xs:complexType name="RootElementsType">
+		<xs:sequence>
+			<xs:element name="ErrorinResponseMessages" type="ErrorType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Contains information related to errors detected during processing of the preceding request.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IATA_PayloadStandardAttributes" type="IATA_PayloadStandardAttributesType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The IATA_PayloadStdAttributes defines the standard attributes that appear on the root element for all IATA payloads.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderViewRSPaymentFunctions" type="PaymentFunctionsOrderType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PartyinRequestMessages" type="PartyType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Message/ Transaction Party(s) information. Note that information about parties is intended for business use, it is not intended for transaction authentication and routing of the message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RootType">
+		<xs:annotation>
+			<xs:documentation>Temp node for navigation</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Ack" type="AckType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The Acknowledgement document is a simple notification from party to party acknowledging the receipt of another transaction such as an inventory release or an updated order
+ 
+ It may also provide information indicating the status of the document.
+ 
+ This document is used consistently as an optional response to a notification transaction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AirlineProfileNotif" type="AirlineProfileNotifType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Notification payload information.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AirlineProfileRequest" type="AirlineProfileRequestType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="AirlineProfileResponse" type="AirlineProfileResponseType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="AirShoppingRequest" type="AirShoppingRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AirShoppingResponse" type="AirShoppingResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information related to the response.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClearanceAcceptedMethods" type="ClearanceAcceptedMethodsType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClearanceCriteria" type="ClearanceCriteriaType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClearanceRequestData" type="ClearanceRequestDataType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClearanceResponseData" type="ClearanceResponseDataType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DocNotif" type="DocNotifType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Document information for AirDocNotifRQ.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InterlineDEVRoot" type="InterlineDEVRootType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Development only. will be removed after development.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InventoryReleaseNotif" type="InventoryReleaseNotifType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Notification payload information.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OfferPriceRequest" type="OfferPriceRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Offer Price Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OfferPriceResponse" type="OfferPriceResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Offer Price information related to the response.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderCancelRequest" type="OrderCancelRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation> Request for Order Cancel</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderCancelResponse" type="OrderCancelResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information related to the response for Order Cancel</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderChangeNotif" type="OrderChangeNotifType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Payload information for OrderChangeNotifRQ.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderChangeRequest" type="OrderChangeRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request for Order Change</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderClosingNotifRequest" type="OrderClosingNotifRequestType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="OrderCreateRequest" type="OrderCreateRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for Order Create message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderHistoryRequest" type="OrderHistoryRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request for Order History</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderHistoryResponse" type="OrderHistoryResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information related to the response for Order History</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderListRequest" type="OrderListRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request for Order List</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderListResponse" type="OrderListResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Response for Order list</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderQuotePayload" type="OrderQuotePayloadType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Physical container for message data elements</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderReshopRequest" type="OrderReshopRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for Order Reshop message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderReshopResponse" type="OrderReshopResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for Order Reshop message
+ </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderRetrieveRequest" type="OrderRetrieveRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for Order Retrieve message
+ </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderRulesRequest" type="OrderRulesRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for Order Rules message
+ </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderRulesResponse" type="OrderRulesResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for Order Rules message
+ </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderSalesInfoAccountingDocNotifRequest" type="OrderSalesInfoAccountingDocNotifRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderSalesInfoNotifRequest" type="OrderSalesInfoNotifRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrderViewResponse" type="OrderViewResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information related to the response.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RootElements" type="RootElementsType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SeatAvailRequest" type="SeatAvailRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SeatAvailResponse" type="SeatAvailResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information related to the response.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceDeliveryNotifRequest" type="ServiceDeliveryNotifRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Service Delivery Notification Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceDeliveryRequest" type="ServiceDeliveryRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Service Delivery Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceDeliveryResponse" type="ServiceDeliveryResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information related to the response.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceListRequest" type="ServiceListRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceListResponse" type="ServiceListResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information related to the response.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceStatusChangeNotifRequest" type="ServiceStatusChangeNotifRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UpdateServiceNotifRequest" type="UpdateServiceNotifRequestType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Request content for message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:simpleType name="RoundingPrecisionCodeContentType">
 		<xs:annotation>
 			<xs:documentation>  </xs:documentation>
@@ -17423,6 +17396,11 @@
 			<xs:element name="DisclosureList" type="DisclosureListType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Disclosure data list definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FareWaiver" type="FareWaiverType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Validating carrier-assigned fare rule modification or override information.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Metadata" type="MetadataType" minOccurs="0" maxOccurs="1">
@@ -18278,6 +18256,7 @@
 					<xs:documentation>Contact Airline with the ability to include an option URL for the contact details.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
+			<xs:enumeration value="Reprice and Accept"/>
 			<xs:enumeration value="Reshop">
 				<xs:annotation>
 					<xs:documentation>Reshop, with ability to add optional FareWaiver</xs:documentation>
@@ -19375,6 +19354,11 @@
 			<xs:documentation>Request content for message</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="FareWaiver" type="FareWaiverType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Validating carrier-assigned fare rule modification or override information.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="Metadata" type="MetadataType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Message wide metadata information.</xs:documentation>
@@ -20382,6 +20366,11 @@
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Indicates whether or not the owner is the ORA or POA.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="PenaltyRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Reference to a Penalty ID.</xs:documentation>
@@ -20704,6 +20693,11 @@
 			<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Indicates whether or not the owner is the ORA or POA.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="RetailerOrderID" type="ID_Type" minOccurs="0" maxOccurs="1">
@@ -21444,9 +21438,6 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="TransportVeichlesDEVType">
-		<xs:sequence/>
-	</xs:complexType>
 	<xs:complexType name="TravelAgencyType">
 		<xs:annotation>
 			<xs:documentation>A private retailer or public service that provides travel and tourism related services to the public on behalf of suppliers such as activities, airlines, car rentals, cruise lines, hotels, railways, travel insurance, and package tours.</xs:documentation>
@@ -21655,9 +21646,9 @@
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI"/>
 	</xs:simpleType>
-	<xs:complexType name="VATInfoType">
+	<xs:complexType name="VAT_BreakdownElementType">
 		<xs:annotation>
-			<xs:documentation>Optional Information relating to VAT if an amount is reported gross. The information provided allows the VAT to be determined from the gross value amount.</xs:documentation>
+			<xs:documentation>A derivation of all or part of the Value Added Tax applicable to a Price Total Amount, or any other identified amount, that is inclusive of VAT.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="GrossAmount" type="AmountType" minOccurs="1" maxOccurs="1">
@@ -21670,22 +21661,22 @@
 					<xs:documentation>The amount excluding VAT.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="VATAmount" type="AmountType" minOccurs="1" maxOccurs="1">
+			<xs:element name="VAT_Amount" type="AmountType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The amount of VAT.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="VATPercent" type="PercentType" minOccurs="0" maxOccurs="1">
+			<xs:element name="VAT_Percent" type="PercentType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The VAT percentage.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="VATScopeText" type="TextType" minOccurs="0" maxOccurs="99">
+			<xs:element name="VAT_ScopeText" type="TextType" minOccurs="0" maxOccurs="99">
 				<xs:annotation>
 					<xs:documentation>Defines the Amount Component that this VAT applies to e.g. BaseAmount, U0 (Tax)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="VATThresholdAmount" type="AmountType" minOccurs="1" maxOccurs="1">
+			<xs:element name="VAT_ThresholdAmount" type="AmountType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The portion for which VAT does not apply.</xs:documentation>
 				</xs:annotation>
