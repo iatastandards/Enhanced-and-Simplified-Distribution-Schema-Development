@@ -1903,12 +1903,12 @@
 			</xs:element>
 			<xs:element name="ClearanceRequestData" type="ClearanceRequestDataType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+					<xs:documentation>A TBU delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ClearanceResponseData" type="ClearanceResponseDataType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+					<xs:documentation>A TBUb delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="DocNotif" type="DocNotifType" minOccurs="0" maxOccurs="unbounded">
@@ -4244,7 +4244,7 @@
 	</xs:simpleType>
 	<xs:complexType name="ClearanceRequestDataType">
 		<xs:annotation>
-			<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+			<xs:documentation>A TBU delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="ClearancePayeeOrPayer" type="ClearancePayeeOrPayerType" minOccurs="1" maxOccurs="1">
@@ -4275,7 +4275,7 @@
 					<xs:documentation>This is the date when the Payer will have to transfer the amount in the clearance request into the settlement manager's bank account.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Signature" type="SignatureDEVType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="Signature" type="SignatureDEVEType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>This is going to refer to an external complex type 
  signature - using signature complex type from w3c external digs xsd - opt</xs:documentation>
@@ -4285,7 +4285,7 @@
 	</xs:complexType>
 	<xs:complexType name="ClearanceResponseDataType">
 		<xs:annotation>
-			<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+			<xs:documentation>A TBUb delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="ClearanceID" type="ClearanceID_Type" minOccurs="1" maxOccurs="1">
@@ -4311,7 +4311,7 @@
 					<xs:documentation>This is the date when the Payer will have to transfer the amount in the clearance request into the settlement manager's bank account.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Signature" type="SignatureDEVType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="Signature" type="SignatureDEVEType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>This is going to refer to an external complex type 
  signature - using signature complex type from w3c external digs xsd - opt</xs:documentation>
@@ -7574,6 +7574,11 @@
 					<xs:documentation>container for the encrypted Easy Pay data</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="IATA_Number" type="NumberType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>IATA-assigned agency number. Example: 98417900</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="IATA_EasyPayEncryptedDataType">
@@ -7632,11 +7637,6 @@
 					<xs:documentation>The 16 digit EasyPay account number.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ApprovalCode" type="CodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Authorization result Approval code</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="ExpirationDate" type="PayCardDateTextType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The last month of validity Example 0119.</xs:documentation>
@@ -7645,6 +7645,11 @@
 			<xs:element name="IATA_EasyPayEncryptedData" type="IATA_EasyPayEncryptedDataType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>container for the encrypted Easy Pay data</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IATA_Number" type="NumberType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>IATA-assigned agency number. Example: 98417900</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -10074,14 +10079,19 @@
 			<xs:documentation>contains all the instructions for the Seller on how to redirect the Payer to their hosted payment page.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="PaymentBrandCode" type="CreditCardVendorCodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A two-letter code assigned according to IATA Resolution 728. Example: VI for Visa</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="PaymentGatewayURI" type="URI_Type" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Contains instructions for the seller so that a payer can go to the airline payment gateway.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="RedirectionAcceptanceInd" type="IndType" minOccurs="1" maxOccurs="1">
+			<xs:element name="PaymentTypeCode" type="PaymentMethodCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Set to 'true' if Customer intends to accept paying on a PSP's Hosted Payment Page.</xs:documentation>
+					<xs:documentation>The payment method type. Examples: Credit Card, Cash.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -10096,7 +10106,7 @@
 					<xs:documentation>Contains Seller instructions for the Airline so that a payer can be returned to the sellers domain after payment.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PaymentBrandCode" type="CreditCardVendorCodeType" minOccurs="1" maxOccurs="1">
+			<xs:element name="PaymentBrandCode" type="CreditCardVendorCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A two-letter code assigned according to IATA Resolution 728. Example: VI for Visa</xs:documentation>
 				</xs:annotation>
@@ -10106,7 +10116,7 @@
 					<xs:documentation>The payment method type. Examples: Credit Card, Cash.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="RedirectionAcceptanceInd" type="IndType" minOccurs="1" maxOccurs="1">
+			<xs:element name="RedirectionAcceptanceInd" type="IndType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Set to 'true' if Customer intends to accept paying on a PSP's Hosted Payment Page.</xs:documentation>
 				</xs:annotation>
@@ -13157,6 +13167,11 @@
 			<xs:documentation>Offer Specialization of Payment Functions: Is the container of all payment relevant functions.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="ClearanceCriteria" type="ClearanceCriteriaType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="OfferAssociation" type="OfferAssociationType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A set of associations to Offers and Offer Items.</xs:documentation>
@@ -13243,7 +13258,7 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="PaymentCardAddlInfoType">
+	<xs:complexType name="PaymentCardCriteriaAddlInfoType">
 		<xs:sequence>
 			<xs:element name="CardProductTypeCode" type="CodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
@@ -13258,11 +13273,6 @@
 			<xs:element name="SecurePaymentAuthenticationVersion" type="SecurePaymentAuthenticationVersionType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Used by Seller if 3D-Secure is supported. Seller can specify which version of 3D-Secure is supported. Note: 3D-Secure context should be used when the Customer-Seller interaction type is web and/or mobile.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="VerificationInd" type="IndType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>When 'true', this payment requires additional authentication.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -13527,12 +13537,6 @@
 					<xs:documentation>Additional description for the magnetic stripe card type (debit card, credit card, prepaid card, etc.)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="CreditCardVendorCode" type="CreditCardVendorCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Credit card issuer code. Example: MC
- Note: This is the 2 character code of the credit card issuer.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="CryptographyKey" type="CryptographyKeyType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Cryptography Key.</xs:documentation>
@@ -13553,11 +13557,6 @@
 					<xs:documentation>The last month of validity Example: 0119</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="MaskedCardID" type="MaskedCardID_Type" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Concealed credit card number, Example: xxxxxxxxxxxx9922</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="PaymentInstrumentOwnershipCode" type="OwnershipTypeCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Owner of the Payment Instrument. For example, Seller would mean the Seller is using their own card, BSP/ARC etc</xs:documentation>
@@ -13571,18 +13570,6 @@
 			<xs:element name="ReconciliationID" type="ID_Type" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Identifies the individual for this specific transaction when the card is shared (for example, corporate card). This ID is typically used for payment reconciliation. It could be a client reference, cost center or a project number (PO Number)</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="SecurePaymentAuthenticationInstructionsVersion1" type="SecurePaymentAuthenticationInstructionsVersion1Type" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Data returned from the Directory Server/ACS containing the PAReq and the ACS URL that enable to cardholder to authenticate.
- Applicable for 3D Secure Version V 1.0.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="SecurePaymentAuthenticationInstructionsVersion2" type="SecurePaymentAuthenticationInstructionsVersion2Type" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Data returned from the Directory Server/ACS containing the PAReq and the ACS URL that enable the cardholder to authenticate. Applicable for 3D-Secure.
- Applicable for 3D Secure Version V 2.0.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="SecurePaymentVersion1" type="SecurePaymentVersion1Type" minOccurs="0" maxOccurs="1">
@@ -13608,16 +13595,11 @@
 					<xs:documentation>An identifier corresponding to a set of payment card details, used between merchant and payment card service provider.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="VerificationInd" type="IndType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>When 'true', this payment requires additional authentication.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="PaymentCriteriaAddlInfoType">
 		<xs:sequence>
-			<xs:element name="PaymentCardAddlInfo" type="PaymentCardAddlInfoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PaymentCardCriteriaAddlInfo" type="PaymentCardCriteriaAddlInfoType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="PaymentInstrumentOwnershipCode" type="OwnershipTypeCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Owner of the Payment Instrument. For example, Seller would mean the Seller is using their own card, BSP/ARC etc</xs:documentation>
@@ -13704,7 +13686,7 @@
 			<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ClearanceData" type="ClearanceRequestDataType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="ClearanceCriteria" type="ClearanceCriteriaType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
 				</xs:annotation>
@@ -13734,7 +13716,7 @@
 			<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ClearanceData" type="ClearanceRequestDataType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="ClearanceCriteria" type="ClearanceCriteriaType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
 				</xs:annotation>
@@ -13792,11 +13774,6 @@
 			<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ClearanceData" type="ClearanceResponseDataType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="OrderAssociation" type="OrderAssociationType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Reference to an Order for which this payment method applies.
@@ -13859,11 +13836,6 @@
 					<xs:documentation>Information relating to non-standard forms of payment which may be used in exchange for goods or services.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PaymentCardTrxPaymentCard" type="PaymentCardTrxPaymentCardType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A device that enables its owner (the cardholder) to make a payment by electronic funds transfer.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="SettlementPlan" type="SettlementPlanType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>When related to a Carrier Fee or a Payment Method or a Payment Processing Summary.</xs:documentation>
@@ -13900,11 +13872,6 @@
 				<xs:annotation>
 					<xs:documentation>A person or company that sells goods or services.
  A merchant works with an Acquiring Bank to apply for and receive a Merchant Account (an account that allows the Merchant to accept Credit and debit cards). Whenever a customer purchases an item with a Credit or debit card, the Merchant submits the purchase Transaction information to its Acquiring Bank, which will then submit it through the card association network to the card holder's Issuing Bank. The Issuing Bank will approve or decline the charge, and bill the cardholder the amount due to the Merchant.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OfflinePayment" type="OfflinePaymentType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>contains all the instructions for the Seller on how to redirect the Payer to their hosted payment page.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="OrderItemRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
@@ -13987,7 +13954,6 @@
 	</xs:complexType>
 	<xs:complexType name="PaymentMethodAddlInfoType">
 		<xs:sequence>
-			<xs:element name="PaymentCardAddlInfo" type="PaymentCardAddlInfoType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="PaymentInstrumentOwnershipCode" type="OwnershipTypeCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Owner of the Payment Instrument. For example, Seller would mean the Seller is using their own card, BSP/ARC etc</xs:documentation>
@@ -14024,9 +13990,9 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PaymentCriteriaAddlInfo" type="PaymentCriteriaAddlInfoType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="PaymentInstrumentOwnershipCode" type="OwnershipTypeCodeType" minOccurs="0" maxOccurs="1">
+			<xs:element name="PaymentMethodCountryCode" type="CountryCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Owner of the Payment Instrument. For example, 'Seller' implies the Seller is using their own card, BSP/ARC etc.</xs:documentation>
+					<xs:documentation>Payment Card issuing country code.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PaymentTypeCode" type="PaymentMethodCodeType" minOccurs="1" maxOccurs="1">
@@ -14164,11 +14130,6 @@
 					<xs:documentation>Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="DirectBill" type="DirectBillType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>System in which a corporation's travel agency bills employees for their business travel. The employee must then submit an expense accounting and be reimbursed by the corporation.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="IATA_EasyPayPaymentProcessing" type="IATA_EasyPayPaymentProcessingType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>IATA EasyPay is a payment instrument with a specific remittance mechanism.
@@ -14183,11 +14144,6 @@
 			<xs:element name="OfflinePayment" type="OfflinePaymentType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>contains all the instructions for the Seller on how to redirect the Payer to their hosted payment page.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OtherPaymentMethod" type="OtherPaymentMethodType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Information relating to non-standard forms of payment which may be used in exchange for goods or services.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PaymentCardTrxPaymentCard" type="PaymentCardTrxPaymentCardType" minOccurs="1" maxOccurs="1">
@@ -14212,6 +14168,11 @@
 			<xs:element name="Amount" type="AmountType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The amount applied to the associated payment method. Example: 300 USD</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClearanceRequestData" type="ClearanceRequestDataType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A TBU delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Payer" type="PayerType" minOccurs="0" maxOccurs="1">
@@ -14251,11 +14212,6 @@
 					<xs:documentation>Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="DirectBill" type="DirectBillType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>System in which a corporation's travel agency bills employees for their business travel. The employee must then submit an expense accounting and be reimbursed by the corporation.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="IATA_EasyPayReceipt" type="IATA_EasyPayReceiptType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>IATA EasyPay is a payment instrument with a specific remittance mechanism.
@@ -14270,16 +14226,6 @@
 			<xs:element name="OfflinePaymentInstructionReceipt" type="OfflinePaymentInstructionReceiptType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>contains all the instructions for the Seller on how to redirect the Payer to their hosted payment page.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OtherPaymentMethod" type="OtherPaymentMethodType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Information relating to non-standard forms of payment which may be used in exchange for goods or services.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PaymentCardTrxPaymentCard" type="PaymentCardTrxPaymentCardType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A device that enables its owner (the cardholder) to make a payment by electronic funds transfer.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="SettlementPlan" type="SettlementPlanType" minOccurs="1" maxOccurs="1">
@@ -14302,6 +14248,11 @@
 			<xs:element name="Amount" type="AmountType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The amount applied to the associated payment method. Example: 300 USD</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClearanceResponseData" type="ClearanceResponseDataType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A TBUb delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ContactInfoRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
@@ -14454,14 +14405,18 @@
 					<xs:documentation>Cryptography Key.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PaymentBrandCode" type="CreditCardVendorCodeType" minOccurs="1" maxOccurs="1">
+			<xs:element name="PaymentBrandCode" type="CreditCardVendorCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A two-letter code assigned according to IATA Resolution 728. Example: VI for Visa</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PaymentCriteriaAddlInfo" type="PaymentCriteriaAddlInfoType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="PaymentMethodAddlInfo" type="PaymentMethodAddlInfoType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="PaymentRedirectionInd" type="IndType" minOccurs="1" maxOccurs="1">
+			<xs:element name="PaymentMethodCountryCode" type="CountryCodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Payment Card issuing country code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaymentRedirectionInd" type="IndType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Used in case the Airline plans to capture payment details via a separate hosted payment page.</xs:documentation>
 				</xs:annotation>
@@ -15945,19 +15900,24 @@
 	<xs:complexType name="RefundMethodCriteriaType">
 		<xs:sequence>
 			<xs:element name="OriginalPaymentMethodInd" type="IndType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PaymentBrandCode" type="CreditCardVendorCodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A two-letter code assigned according to IATA Resolution 728. Example: VI for Visa</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="PaymentCard" type="PaymentCardRefundType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A device that enables its owner (the cardholder) to make a payment by electronic funds transfer.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="PaymentTypeCode" type="PaymentMethodCodeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The payment method type. Examples: Credit Card, Cash.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="PrefLevel" type="PrefLevelType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Information supporting a preference including preference level code (Examples: Preferred, Required or Exclude.).</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TypeCode" type="PaymentMethodCodeType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>The payment method type. Examples: Credit Card, Cash.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -17920,11 +17880,6 @@
 					<xs:documentation>Program Protocol</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TrxStatusReasonText" type="TextType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>outcome of authentication coming from the DS - see EMVCO documentation for list of possible values.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="TrxStatusText" type="TextType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>outcome of authentication � see EMVCO documentation</xs:documentation>
@@ -19882,7 +19837,7 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="SignatureDEVType">
+	<xs:complexType name="SignatureDEVEType">
 		<xs:annotation>
 			<xs:documentation>This is going to refer to an external complex type 
  signature - using signature complex type from w3c external digs xsd - opt</xs:documentation>
