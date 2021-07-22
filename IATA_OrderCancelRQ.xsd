@@ -6,7 +6,11 @@
 </xs:annotation>
 <xs:complexType>
 <xs:sequence>
-<xs:element name="AugmentationPoint" type="AugmentationPoint" minOccurs="0" maxOccurs="1"></xs:element>
+<xs:element name="AugmentationPoint" type="cns:AugmentationPointType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Implementer-Augmented Structure.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="Party" type="cns:PartyType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>NDC Message/ Transaction Party(s) information. Note that information about parties is intended for business use, it is not intended for transaction authentication and routing of the message.</xs:documentation>
@@ -26,12 +30,4 @@
 </xs:sequence>
 </xs:complexType>
 </xs:element>
-<xs:complexType name="AugmentationPoint">
-<xs:annotation>
-<xs:documentation>Implementer-Augmented Structure.</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:any namespace="##other" processContents="lax" minOccurs="1" maxOccurs="unbounded"></xs:any>
-</xs:sequence>
-</xs:complexType>
 </xs:schema>

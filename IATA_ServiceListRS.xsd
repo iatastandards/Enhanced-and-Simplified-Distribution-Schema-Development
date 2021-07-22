@@ -22,7 +22,11 @@ The message also returns multi-media content at the message level and media refe
 </xs:annotation>
 </xs:element>
 </xs:choice>
-<xs:element name="AugmentationPoint" type="AugmentationPoint" minOccurs="0" maxOccurs="1"></xs:element>
+<xs:element name="AugmentationPoint" type="cns:AugmentationPointType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Implementer-Augmented Structure.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="PayloadAttributes" type="cns:IATA_PayloadStandardAttributesType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>IATA standard payload attributes</xs:documentation>
@@ -31,12 +35,4 @@ The message also returns multi-media content at the message level and media refe
 </xs:sequence>
 </xs:complexType>
 </xs:element>
-<xs:complexType name="AugmentationPoint">
-<xs:annotation>
-<xs:documentation>Implementer-Augmented Structure.</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:any namespace="##other" processContents="lax" minOccurs="1" maxOccurs="unbounded"></xs:any>
-</xs:sequence>
-</xs:complexType>
 </xs:schema>

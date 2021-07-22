@@ -2224,6 +2224,11 @@
 					<xs:documentation>Unique identifier of this Baggage Allowance.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="BaggageCharacteristicText" type="TextType" minOccurs="0" maxOccurs="99">
+				<xs:annotation>
+					<xs:documentation>The characteristics of the type of baggage. Example: Golf Equipment, Fishing Bag, Car Seat, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="BDC" type="BDC_Type" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>For use in NDC Interline: The carrier whose baggage allowances and charges apply.</xs:documentation>
@@ -2244,7 +2249,7 @@
 					<xs:documentation>Baggage dimension allowance with application information.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PieceAllowance" type="PieceAllowanceType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="PieceAllowance" type="PieceAllowanceType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Defines the maximum number of each allowable baggage type.</xs:documentation>
 				</xs:annotation>
@@ -2256,11 +2261,6 @@
  0CC (First Checked Bag)
  0B1 (In-flight Entertainment)
  0BX (Lounge)</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="SubTypeText" type="TextType" minOccurs="0" maxOccurs="99">
-				<xs:annotation>
-					<xs:documentation>Type of bag. Example: Golf Equipment, Fishing Bag, Car Seat, etc.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TypeCode" type="BaggageTypeCodeType" minOccurs="1" maxOccurs="1">
@@ -6261,7 +6261,7 @@
 					<xs:documentation>The length of the bag defined in either imperial or metric.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="LengthUnit" type="LengthUnitCodeType" minOccurs="0" maxOccurs="1">
+			<xs:element name="LengthUnitOfMeasurement" type="LengthUnitCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The unit of measurement of the bag defined as imperial or metric.</xs:documentation>
 				</xs:annotation>
@@ -10160,9 +10160,16 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="NoPriceChangeIndType">
+	<xs:complexType name="NoChangeIndType">
+		<xs:annotation>
+			<xs:documentation>This indicates that there have been no changes to an order.</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="NoPriceChangeInd" type="IndType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="NoChangeInd" type="IndType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This indicates that there have been no changes to an order.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:simpleType name="NumberType">
@@ -17009,7 +17016,11 @@
 			<xs:documentation>ReshopResults</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
-			<xs:element name="NoPriceChangeInd" type="NoPriceChangeIndType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="NoChangeInd" type="NoChangeIndType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This indicates that there have been no changes to an order.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="RepricedOffer" type="RepricedOfferType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Function used to request the repricing of an existing Order, possibly as a consequence of expired TimeLimits. Airline returns Offers/OfferItems that describe the changes incurred from the reprice request.</xs:documentation>
@@ -22473,12 +22484,7 @@
 			<xs:documentation>Baggage weight allowance with application information.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="DescText" type="TextType" minOccurs="0" maxOccurs="99">
-				<xs:annotation>
-					<xs:documentation>Baggage Allowance description and additional information.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="MaximumWeightMeasure" type="WeightMeasureType" minOccurs="1" maxOccurs="1">
+			<xs:element name="MaximumWeightMeasure" type="WeightMeasureType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Maximum weight value and unit of measure. Example: 50</xs:documentation>
 				</xs:annotation>
@@ -22488,6 +22494,16 @@
 					<xs:documentation>Minimum weight value and unit of measure. Example: 50</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="TotalMaximumWeightMeasure" type="WeightMeasureType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Stores the maximum weight for all the combined pieces within this baggage allowance.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="WeightUnitOfMeasurement" type="WeightUnitCodeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The unit of measurement of weight defined as imperial or metric.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:simpleType name="WeightMeasureType">
@@ -22495,5 +22511,28 @@
 			<xs:documentation>A numeric value determining a weight along with the specified unit of measure.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:decimal"/>
+	</xs:simpleType>
+	<xs:simpleType name="WeightUnitCodeContentType">
+		<xs:annotation>
+			<xs:documentation>List of Weight Unit Codes. Subset of UN/CEFACT Recommendation 20. {codeListAgencyName}AIDM (extract from UN/CEFACT){/codeListAgencyName} </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="KGM">
+				<xs:annotation>
+					<xs:documentation>Kilogram</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LBR">
+				<xs:annotation>
+					<xs:documentation>US Pound</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WeightUnitCodeType">
+		<xs:annotation>
+			<xs:documentation>Specifies Weight Unit code list.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="WeightUnitCodeContentType"/>
 	</xs:simpleType>
 </xs:schema>

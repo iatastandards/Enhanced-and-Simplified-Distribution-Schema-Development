@@ -8,7 +8,11 @@ The Acknowledgement message may be returned to acknowledge receipt of the notifi
 </xs:annotation>
 <xs:complexType>
 <xs:sequence>
-<xs:element name="AugmentationPoint" type="AugmentationPoint" minOccurs="0" maxOccurs="1"></xs:element>
+<xs:element name="AugmentationPoint" type="cns:AugmentationPointType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Implementer-Augmented Structure.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="Notification" type="cns:InventoryReleaseNotifType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Inventory release notification information.</xs:documentation>
@@ -27,12 +31,4 @@ The Acknowledgement message may be returned to acknowledge receipt of the notifi
 </xs:sequence>
 </xs:complexType>
 </xs:element>
-<xs:complexType name="AugmentationPoint">
-<xs:annotation>
-<xs:documentation>Implementer-Augmented Structure.</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:any namespace="##other" processContents="lax" minOccurs="1" maxOccurs="unbounded"></xs:any>
-</xs:sequence>
-</xs:complexType>
 </xs:schema>
