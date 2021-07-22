@@ -3279,16 +3279,6 @@
  - [Station] (Destination Station) IATA Location Code</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PaymentCardReceipt" type="PaymentCardReceiptType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A device that enables its owner (the cardholder) to make a payment by electronic funds transfer.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PaymentCardTrxAccounting" type="PaymentCardTrxAccountingType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A device that enables its owner (the cardholder) to make a payment by electronic funds transfer.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="ReportingCodeText" type="TextType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="TaxSummary" type="TaxSummaryType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
@@ -8372,11 +8362,6 @@
 					<xs:documentation>The amount of money expected, required, or given in payment for something.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ValidatingCarrierCode" type="AirlineDesigCodeType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="InterlineFlightRequestOriginDestinationsCriteriaType">
@@ -8389,7 +8374,7 @@
 					<xs:documentation>Total journey travel time per bound preferences. This includes the sum of all flight durations as well as connection times.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="OriginDestCriteria" type="OriginDestCriteriaType" minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="OriginDestCriteria" type="InterlineOriginDestCriteriaType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>The Origin and Destination airport/city pair which confines a passenger journey or an aircraft flight.
  Business Identifier Fields:
@@ -8711,6 +8696,130 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="InterlineOriginDestCriteriaType">
+		<xs:annotation>
+			<xs:documentation>The Origin and Destination airport/city pair which confines a passenger journey or an aircraft flight.
+ Business Identifier Fields:
+ - [Station] (Origin Station) IATA Location Code
+ - [Station] (Destination Station) IATA Location Code</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ArrivalCriteria" type="DestArrivalCriteriaType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A Customer's requested Destination arrival time and location.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CabinCriteria" type="ShoppingRequestCabinTypeType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Shopping Request specialisation of Cabin Type
+ base type definition:
+ Type of compartment of an aircraft, offering specific services (e.g. business class, economy).
+ Business Identifier Fields:
+ - Cabin Type Code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ConnectionPrefRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reference to a transfer preference ID.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DepCriteria" type="OriginDepCriteriaType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A Customer's requested Origin departure time and location.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="JourneyDurationCriteria" type="JourneyDurationCriteriaType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Total journey travel time per bound preferences. This includes the sum of all flight durations as well as connection times.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OriginDestID" type="ID_Type" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Uniquely identifies an Origin Destination within the context of one message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaxSegmentCriteria" type="InterlinePaxSegmentCriteriaType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Transportation of a passenger on a Dated Operating Segment.
+ - [Dated Marketing Segment] (All identifying fields)
+ - [Order] Order ID
+ - [Individual] (no identifier available)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InterlinePaxSegmentCriteriaType">
+		<xs:annotation>
+			<xs:documentation>Transportation of a passenger on a Dated Operating Segment.
+ - [Dated Marketing Segment] (All identifying fields)
+ - [Order] Order ID
+ - [Individual] (no identifier available)</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="AirlineTaxonomy" type="AirlineTaxonomyType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Used in the context of the Airline Taxonomy to define a product or service to the seller or to request a collection of products and services from an airline. For more information on what values should be placed within these fields, see the implementation guide at:
+ https://guides.developer.iata.org/docs/airline-taxonomy</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ARNK_Ind" type="IndType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>When TRUE, indicates an ARNK (ARrival uNKown) condition, i.e. a gap between current segment departure and previous segment arrival location, implying an unknown passenger movement.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Arrival" type="TransportPointType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is a transport point location.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CabinType" type="CabinTypeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Type of compartment of an aircraft, offering specific services (e.g. business class, economy).
+ Business Identifier Fields:
+ - Cabin Type Code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Dep" type="TransportPointType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is a transport point location.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Duration" type="DurationType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Total segment time including the combined air time and connection times of any legs.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MarketingSegmentCriteria" type="DatedMarketingSegmentType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
+ Business Identifier Fields:
+ - (Marketing) [Carrier] Airline Designator
+ - Marketing Carrier Flight Number
+ - Operational Suffix
+ - [Transport Departure] Scheduled Date Time
+ - (Transport Departure) [Station] IATA Location Code
+ - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OperatingSegmentCriteria" type="DatedOperatingSegmentType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
+ Business Identifier Fields:
+ - (Operating) [Carrier] Airline Designator
+ - Operating Carrier Flight Number
+ - Operational Suffix
+ - [Transport Departure] Scheduled Date Time
+ - (Transport Departure) [Station] IATA Location Code
+ - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SecureFlightInd" type="IndType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>When TRUE, this segment is subject to US TSA 'Secure Flight' passenger prescreening program.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="InterlineResponseParametersRequestType">
 		<xs:annotation>
@@ -11287,6 +11396,11 @@
 			<xs:element name="BookingStatusCode" type="ServiceBookingStatusCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Indicates the current status of a Service booking.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DeliveryStatusCode" type="ServiceDeliveryStatusCodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Indicates the current status of a Service delivery</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="DescText" type="TextType" minOccurs="0" maxOccurs="1">
@@ -22359,26 +22473,27 @@
 			<xs:documentation>Baggage weight allowance with application information.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ApplicableBagText" type="TextType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Applicable bag type. Examples: Carry-On, 1st Checked Bag, 2nd Checked Bag</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ApplicablePartyText" type="TextType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Baggage weight restriction application. Examples: Party, Traveler. Party applies to all Travelers.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="DescText" type="TextType" minOccurs="0" maxOccurs="99">
 				<xs:annotation>
 					<xs:documentation>Baggage Allowance description and additional information.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="MaximumWeightMeasure" type="MeasureType" minOccurs="1" maxOccurs="1">
+			<xs:element name="MaximumWeightMeasure" type="WeightMeasureType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Maximum weight value and unit of measure. Example: 50</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="MinimumWeightMeasure" type="WeightMeasureType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Minimum weight value and unit of measure. Example: 50</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:simpleType name="WeightMeasureType">
+		<xs:annotation>
+			<xs:documentation>A numeric value determining a weight along with the specified unit of measure.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal"/>
+	</xs:simpleType>
 </xs:schema>
