@@ -790,7 +790,7 @@
 			</xs:element>
 			<xs:element name="FlightRequest" type="FlightRequestType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Flight Request Choice of Affinity Origin Destination or Journey flight information for this shopping request.</xs:documentation>
+					<xs:documentation>Flight Request</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="OrderCriteria" type="OrderCriteriaType" minOccurs="0" maxOccurs="1">
@@ -1686,393 +1686,6 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="ATempIATAInterlineOfferRQType">
-		<xs:annotation>
-			<xs:documentation>Temporary object for XSD navigation purposes during development</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="Payload" type="InterlineOfferRequestType" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="PayloadAttributes" type="IATA_PayloadStandardAttributesType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>The IATA_PayloadStdAttributes defines the standard attributes that appear on the root element for all IATA payloads.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Retailer" type="SettlementWithOrdersCarrierType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Settlement with orders variant of the carrier abie.
- The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
- Business Identifier Fields :
- - Airline Designator Code
- - Duplicate Designator Indicator
- - Name</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="ATempIATAInterlineOfferRSType">
-		<xs:annotation>
-			<xs:documentation>Temporary object for XSD navigation purposes during development</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="InterlineOfferResponse" type="InterlineOfferResponseType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>InterlineOfferResponse</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="MarketingMessage" type="MarketingMessageType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Marketing message : Additional, supplementary information about the document or service.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PayloadAttributes" type="IATA_PayloadStandardAttributesType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>The IATA_PayloadStdAttributes defines the standard attributes that appear on the root element for all IATA payloads.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Supplier" type="SettlementWithOrdersCarrierType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Settlement with orders variant of the carrier abie.
- The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
- Business Identifier Fields :
- - Airline Designator Code
- - Duplicate Designator Indicator
- - Name</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="ATempIATAInterlineOrderRQType">
-		<xs:annotation>
-			<xs:documentation>Temporary object for XSD naviagtion purposes during development</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="Payload" type="InterlineOrderRequestType" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="PayloadAttributes" type="IATA_PayloadStandardAttributesType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>The IATA_PayloadStdAttributes defines the standard attributes that appear on the root element for all IATA payloads.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Retailer" type="SettlementWithOrdersCarrierType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Settlement with orders variant of the carrier abie.
- The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
- Business Identifier Fields :
- - Airline Designator Code
- - Duplicate Designator Indicator
- - Name</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="ATempIATAInterlineOrderRSType">
-		<xs:annotation>
-			<xs:documentation>Temporary object for XSD naviagtion purposes during development</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="InterlineOrderResponse" type="InterlineOrderResponseType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>InterlineOrderResponse</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="MarketingMessage" type="MarketingMessageType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Marketing message : Additional, supplementary information about the document or service.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PayloadAttributes" type="IATA_PayloadStandardAttributesType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>The IATA_PayloadStdAttributes defines the standard attributes that appear on the root element for all IATA payloads.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Supplier" type="SettlementWithOrdersCarrierType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Settlement with orders variant of the carrier abie.
- The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
- Business Identifier Fields :
- - Airline Designator Code
- - Duplicate Designator Indicator
- - Name</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="ATempInterlineRootType">
-		<xs:annotation>
-			<xs:documentation>Development only. will be removed after development.</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="ATempIATAInterlineOfferRQ" type="ATempIATAInterlineOfferRQType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Temporary object for XSD navigation purposes during development</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ATempIATAInterlineOfferRS" type="ATempIATAInterlineOfferRSType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Temporary object for XSD navigation purposes during development</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ATempIATAInterlineOrderRQ" type="ATempIATAInterlineOrderRQType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Temporary object for XSD naviagtion purposes during development</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ATempIATAInterlineOrderRS" type="ATempIATAInterlineOrderRSType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Temporary object for XSD naviagtion purposes during development</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="ATempRootElementsType">
-		<xs:annotation>
-			<xs:documentation>Temporary object for XSD naviagtion purposes during developlement</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="ErrorinResponseMessages" type="ErrorType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Contains information related to errors detected during processing of the preceding request.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="IATA_PayloadStandardAttributes" type="IATA_PayloadStandardAttributesType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>The IATA_PayloadStdAttributes defines the standard attributes that appear on the root element for all IATA payloads.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderViewRSPaymentFunctions" type="PaymentFunctionsOrderType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PartyinRequestMessages" type="PartyType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Message/ Transaction Party(s) information. Note that information about parties is intended for business use, it is not intended for transaction authentication and routing of the message.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="ATempRootType">
-		<xs:annotation>
-			<xs:documentation>Temp node for navigation</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="Ack" type="AckType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>The Acknowledgement document is a simple notification from party to party acknowledging the receipt of another transaction such as an inventory release or an updated order
- 
- It may also provide information indicating the status of the document.
- 
- This document is used consistently as an optional response to a notification transaction.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="AirlineProfileNotif" type="AirlineProfileNotifType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Notification payload information.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="AirlineProfileRequest" type="AirlineProfileRequestType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="AirlineProfileResponse" type="AirlineProfileResponseType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="AirShoppingRequest" type="AirShoppingRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="AirShoppingResponse" type="AirShoppingResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information related to the response.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ATempInterlineRoot" type="ATempInterlineRootType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Development only. will be removed after development.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ATempRootElements" type="ATempRootElementsType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Temporary object for XSD naviagtion purposes during developlement</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ClearanceAcceptedMethods" type="ClearanceAcceptedMethodsType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ClearanceCriteria" type="ClearanceCriteriaType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ClearanceRequestData" type="ClearanceRequestDataType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A TBU delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ClearanceResponseData" type="ClearanceResponseDataType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A TBUb delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="DocNotif" type="DocNotifType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Document information for AirDocNotifRQ.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="InventoryReleaseNotif" type="InventoryReleaseNotifType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Notification payload information.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OfferPriceRequest" type="OfferPriceRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Offer Price Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OfferPriceResponse" type="OfferPriceResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Offer Price information related to the response.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderCancelRequest" type="OrderCancelRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation> Request for Order Cancel</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderCancelResponse" type="OrderCancelResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information related to the response for Order Cancel</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderChangeNotif" type="OrderChangeNotifType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Payload information for OrderChangeNotifRQ.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderChangeRequest" type="OrderChangeRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request for Order Change</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderClosingNotifRequest" type="OrderClosingNotifRequestType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="OrderCreateRequest" type="OrderCreateRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for Order Create message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderHistoryRequest" type="OrderHistoryRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request for Order History</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderHistoryResponse" type="OrderHistoryResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information related to the response for Order History</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderListRequest" type="OrderListRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request for Order List</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderListResponse" type="OrderListResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Response for Order list</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderQuotePayload" type="OrderQuotePayloadType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Physical container for message data elements</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderReshopRequest" type="OrderReshopRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for Order Reshop message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderReshopResponse" type="OrderReshopResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for Order Reshop message
- </xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderRetrieveRequest" type="OrderRetrieveRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for Order Retrieve message
- </xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderRulesRequest" type="OrderRulesRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for Order Rules message
- </xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderRulesResponse" type="OrderRulesResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for Order Rules message
- </xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderSalesInfoAccountingDocNotifRequest" type="OrderSalesInfoAccountingDocNotifRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderSalesInfoNotifRequest" type="OrderSalesInfoNotifRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrderViewResponse" type="OrderViewResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information related to the response.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="SeatAvailRequest" type="SeatAvailRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="SeatAvailResponse" type="SeatAvailResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information related to the response.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ServiceDeliveryNotifRequest" type="ServiceDeliveryNotifRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Service Delivery Notification Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ServiceDeliveryRequest" type="ServiceDeliveryRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Service Delivery Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ServiceDeliveryResponse" type="ServiceDeliveryResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information related to the response.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ServiceListRequest" type="ServiceListRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ServiceListResponse" type="ServiceListResponseType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Information related to the response.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ServiceStatusChangeNotifRequest" type="ServiceStatusChangeNotifRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="UpdateServiceNotifRequest" type="UpdateServiceNotifRequestType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Request content for message</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="AugmentationPointType">
 		<xs:annotation>
 			<xs:documentation>Implementer-Augmented Structure.</xs:documentation>
@@ -2284,7 +1897,7 @@
 			</xs:element>
 			<xs:element name="OfferFlightAssociations" type="OfferFlightAssociationsType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Baggage Flight Associations</xs:documentation>
+					<xs:documentation>Offer Flight Associations</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PaxRefID" type="ID_Type" minOccurs="1" maxOccurs="unbounded">
@@ -4154,25 +3767,29 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="ClearanceAcceptedMethodsType">
+	<xs:complexType name="ClearanceCarrierType">
 		<xs:annotation>
-			<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+			<xs:documentation>Settlement with orders variant of the carrier abie.
+ The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
+ Business Identifier Fields :
+ - Airline Designator Code
+ - Duplicate Designator Indicator
+ - Name</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="NetClearanceAmount" type="AmountType" minOccurs="0" maxOccurs="1">
+			<xs:element name="AirlineAccountingCode" type="CodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>The amount agreed to be cleared in the Agreement between the two parties to the Agreement. It is obtained from the Commitment in the Agreement. The value of the Net Clearance Amount in the Payment Commitment of the Agreement can be either positive [+] or negative [-]. If it is positive [+] then the party initiating the clearance request will be the Payee in the clearance, i.e. the initiator of the clearance is to receive funds. If it is negative [-] then the party initiating the clearance request will be the Payer in the clearance, i.e. the initiator of the clearance has to pay-out funds. It is the absolute value of the Net Clearance Amount that is used in the Clearance.</xs:documentation>
+					<xs:documentation>IATA assigned numerical code of three digits only. Used to identify airlines for the purpose of financial reporting and settlement.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ProcessRuleCode" type="ClearanceProcessRuleCodeType" minOccurs="1" maxOccurs="1">
+			<xs:element name="AirlineDesigCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>defines under what governing rules the Settlement Manager processes the clearance.
- example: IATAC00 or BLTRL00</xs:documentation>
+					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="RemittanceDate" type="DateType" minOccurs="0" maxOccurs="1">
+			<xs:element name="Name" type="NameType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>This is the date when the Payer will have to transfer the amount in the clearance request into the settlement manager's bank account.</xs:documentation>
+					<xs:documentation>Commercial name of the carrier.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -4195,6 +3812,55 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="ClearanceDataType">
+		<xs:annotation>
+			<xs:documentation>A TBUb delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ClearanceID" type="ClearanceID_Type" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>this is an identifier generated by the party requesting the clearance that uniquely identifies the clearance transaction. It provides the necessary link for financial audit connecting the sale to the financial records. This field is required because no other existing data elements could be used by the financial systems or could provide unique identification. The identifier is globally unique for the settlement by design.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClearancePayeeData" type="ClearancePayeeDataType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Clearance Payee Data</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClearancePayerData" type="ClearancePayerDataType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Clearance Payer Data</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NetClearanceAmount" type="AmountType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The amount agreed to be cleared in the Agreement between the two parties to the Agreement. It is obtained from the Commitment in the Agreement. The value of the Net Clearance Amount in the Payment Commitment of the Agreement can be either positive [+] or negative [-]. If it is positive [+] then the party initiating the clearance request will be the Payee in the clearance, i.e. the initiator of the clearance is to receive funds. If it is negative [-] then the party initiating the clearance request will be the Payer in the clearance, i.e. the initiator of the clearance has to pay-out funds. It is the absolute value of the Net Clearance Amount that is used in the Clearance.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaymentCommitmentDateTime" type="DateTimeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The date when the Payment including information about amount and payment method is accepted by ORA to be enough to lead to successful payment.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProcessRuleCode" type="ClearanceProcessRuleCodeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>defines under what governing rules the Settlement Manager processes the clearance.
+ example: IATAC00 or BLTRL00</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RemittanceDate" type="DateType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the date when the Payer will have to transfer the amount in the clearance request into the settlement manager's bank account.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Signature" type="SignatureDEVEType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>This is going to refer to an external complex type 
+ signature - using signature complex type from w3c external digs xsd - opt</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:simpleType name="ClearanceID_Type">
 		<xs:annotation>
 			<xs:documentation>Clearance identifier is a character string managed by a carrier.</xs:documentation>
@@ -4204,17 +3870,62 @@
 			<xs:pattern value="([0-9]{7}[A-Za-z0-9]{8})"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="ClearancePayeeNodeType">
+	<xs:complexType name="ClearanceMethodsType">
 		<xs:annotation>
-			<xs:documentation>a Clearance Payee Node</xs:documentation>
+			<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Commission" type="CommissionType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>An amount of money, typically a set percentage of the value involved, paid to an agent in a commercial transaction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NetClearanceAmount" type="AmountType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The amount agreed to be cleared in the Agreement between the two parties to the Agreement. It is obtained from the Commitment in the Agreement. The value of the Net Clearance Amount in the Payment Commitment of the Agreement can be either positive [+] or negative [-]. If it is positive [+] then the party initiating the clearance request will be the Payee in the clearance, i.e. the initiator of the clearance is to receive funds. If it is negative [-] then the party initiating the clearance request will be the Payer in the clearance, i.e. the initiator of the clearance has to pay-out funds. It is the absolute value of the Net Clearance Amount that is used in the Clearance.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProcessRuleCode" type="ClearanceProcessRuleCodeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>defines under what governing rules the Settlement Manager processes the clearance.
+ example: IATAC00 or BLTRL00</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RemittanceDate" type="DateType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the date when the Payer will have to transfer the amount in the clearance request into the settlement manager's bank account.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ClearanceOrgType">
+		<xs:annotation>
+			<xs:documentation>An organized structure set up for a particular purpose, such as a business, government body, department, charity, or financial institution.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Name" type="NameType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Name of the organization</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrgID" type="ID_Type" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Organization code or identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ClearancePayeeDataType">
+		<xs:annotation>
+			<xs:documentation>Clearance Payee Data</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="ClearancePayee" type="ClearancePayeeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Payee - the party receiving funds as a result of a clearance for a claim it has made.</xs:documentation>
+					<xs:documentation>Clearance Payee - the party receiving funds as a result of a clearance for a claim it has made.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PayeeReconciliationID" type="AirlineRefID_Type" minOccurs="0" maxOccurs="1">
+			<xs:element name="ClearancePayeeReconciliationID" type="AirlineRefID_Type" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>identifier provided by the carrier to support internal financial processes, for example reconciliation.
  If this identifier is included in the clearance request from the carrier then it must be included in all messages thereafter where it is provided as an option.</xs:documentation>
@@ -4222,29 +3933,12 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="ClearancePayeeOrPayerType">
-		<xs:annotation>
-			<xs:documentation>payee or payer</xs:documentation>
-		</xs:annotation>
-		<xs:choice>
-			<xs:element name="payee" type="ClearancePayeeNodeType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>a Clearance Payee Node</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="payer" type="ClearancePayerNodeType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>a Clearance Payer Node</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:choice>
-	</xs:complexType>
 	<xs:complexType name="ClearancePayeeType">
 		<xs:annotation>
-			<xs:documentation>Payee - the party receiving funds as a result of a clearance for a claim it has made.</xs:documentation>
+			<xs:documentation>Clearance Payee - the party receiving funds as a result of a clearance for a claim it has made.</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
-			<xs:element name="Carrier" type="SettlementWithOrdersCarrierType" minOccurs="1" maxOccurs="1">
+			<xs:element name="Carrier" type="ClearanceCarrierType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Settlement with orders variant of the carrier abie.
  The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
@@ -4254,37 +3948,37 @@
  - Name</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Org" type="SettlementWithOrdersOrgType" minOccurs="1" maxOccurs="1">
+			<xs:element name="Org" type="ClearanceOrgType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>An organized structure set up for a particular purpose, such as a business, government body, department, charity, or financial institution.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TravelAgency" type="SettlementWithOrdersTravelAgencyType" minOccurs="1" maxOccurs="1">
+			<xs:element name="TravelAgency" type="ClearanceTravelAgencyType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A private retailer or public service that provides travel and tourism related services to the public on behalf of suppliers such as activities, airlines, car rentals, cruise lines, hotels, railways, travel insurance, and package tours.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>
 	</xs:complexType>
-	<xs:complexType name="ClearancePayerNodeType">
+	<xs:complexType name="ClearancePayerDataType">
 		<xs:annotation>
-			<xs:documentation>a Clearance Payer Node</xs:documentation>
+			<xs:documentation>Clearance Payer Data</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="ClearancePayer" type="ClearancePayerType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Payer - the party paying funds to clear claims against itself.</xs:documentation>
+					<xs:documentation>Clearance Payer - the party paying funds to clear claims against itself.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PayerReconciliationID" type="AirlineRefID_Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ClearancePayerReconciliationID" type="AirlineRefID_Type" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ClearancePayerType">
 		<xs:annotation>
-			<xs:documentation>Payer - the party paying funds to clear claims against itself.</xs:documentation>
+			<xs:documentation>Clearance Payer - the party paying funds to clear claims against itself.</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
-			<xs:element name="Carrier" type="SettlementWithOrdersCarrierType" minOccurs="1" maxOccurs="1">
+			<xs:element name="Carrier" type="ClearanceCarrierType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Settlement with orders variant of the carrier abie.
  The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
@@ -4294,17 +3988,51 @@
  - Name</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Org" type="SettlementWithOrdersOrgType" minOccurs="1" maxOccurs="1">
+			<xs:element name="Org" type="ClearanceOrgType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>An organized structure set up for a particular purpose, such as a business, government body, department, charity, or financial institution.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TravelAgency" type="SettlementWithOrdersTravelAgencyType" minOccurs="1" maxOccurs="1">
+			<xs:element name="TravelAgency" type="ClearanceTravelAgencyType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A private retailer or public service that provides travel and tourism related services to the public on behalf of suppliers such as activities, airlines, car rentals, cruise lines, hotels, railways, travel insurance, and package tours.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="ClearancePaymentProcessingDataType">
+		<xs:annotation>
+			<xs:documentation>A TBU delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ClearanceRoleChoice" type="ClearanceRoleChoiceType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Clearance Role Choice between clearance payee and clearance payer for the party initiating the payment commintment.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NetClearanceAmount" type="AmountType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The amount agreed to be cleared in the Agreement between the two parties to the Agreement. It is obtained from the Commitment in the Agreement. The value of the Net Clearance Amount in the Payment Commitment of the Agreement can be either positive [+] or negative [-]. If it is positive [+] then the party initiating the clearance request will be the Payee in the clearance, i.e. the initiator of the clearance is to receive funds. If it is negative [-] then the party initiating the clearance request will be the Payer in the clearance, i.e. the initiator of the clearance has to pay-out funds. It is the absolute value of the Net Clearance Amount that is used in the Clearance.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProcessRuleCode" type="ClearanceProcessRuleCodeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>defines under what governing rules the Settlement Manager processes the clearance.
+ example: IATAC00 or BLTRL00</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RemittanceDate" type="DateType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the date when the Payer will have to transfer the amount in the clearance request into the settlement manager's bank account.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Signature" type="SignatureDEVEType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>This is going to refer to an external complex type 
+ signature - using signature complex type from w3c external digs xsd - opt</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:simpleType name="ClearanceProcessRuleCodeType">
 		<xs:annotation>
@@ -4315,87 +4043,36 @@
 			<xs:pattern value="(IATAC|BLTRL)[A-Za-z0-9]{2}"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="ClearanceRequestDataType">
+	<xs:complexType name="ClearanceRoleChoiceType">
 		<xs:annotation>
-			<xs:documentation>A TBU delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+			<xs:documentation>Clearance Role Choice between clearance payee and clearance payer for the party initiating the payment commintment.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="ClearancePayeeOrPayer" type="ClearancePayeeOrPayerType" minOccurs="1" maxOccurs="1">
+		<xs:choice>
+			<xs:element name="ClearancePayeeData" type="ClearancePayeeDataType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>payee or payer</xs:documentation>
+					<xs:documentation>Clearance Payee Data</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="NetClearanceAmount" type="AmountType" minOccurs="1" maxOccurs="1">
+			<xs:element name="ClearancePayerData" type="ClearancePayerDataType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>The amount agreed to be cleared in the Agreement between the two parties to the Agreement. It is obtained from the Commitment in the Agreement. The value of the Net Clearance Amount in the Payment Commitment of the Agreement can be either positive [+] or negative [-]. If it is positive [+] then the party initiating the clearance request will be the Payee in the clearance, i.e. the initiator of the clearance is to receive funds. If it is negative [-] then the party initiating the clearance request will be the Payer in the clearance, i.e. the initiator of the clearance has to pay-out funds. It is the absolute value of the Net Clearance Amount that is used in the Clearance.</xs:documentation>
+					<xs:documentation>Clearance Payer Data</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="NonSettledAmount" type="AmountType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>amount of the Net Clearance Amount in the individual clearance that remains to be cleared. 
- The amount in the NonSettledAmount is defined by the value in the data element StatusCode. When the value of the StatusCode is Write off (WRTOF) then the value in the data element NonSettledAmount is the value that is being written off. For all other values of the data element StatusCode the value of the data element NonSettledAmount represents what is the remaining amount to be cleared.
- NonSettledAmount must be included in all messages where it is provided as an option when its value is neither 0 (zero) nor equal to NetClearanceAmount</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ProcessRuleCode" type="ClearanceProcessRuleCodeType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>defines under what governing rules the Settlement Manager processes the clearance.
- example: IATAC00 or BLTRL00</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="RemittanceDate" type="DateType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>This is the date when the Payer will have to transfer the amount in the clearance request into the settlement manager's bank account.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Signature" type="SignatureDEVEType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>This is going to refer to an external complex type 
- signature - using signature complex type from w3c external digs xsd - opt</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
+		</xs:choice>
 	</xs:complexType>
-	<xs:complexType name="ClearanceResponseDataType">
+	<xs:complexType name="ClearanceTravelAgencyType">
 		<xs:annotation>
-			<xs:documentation>A TBUb delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+			<xs:documentation>A private retailer or public service that provides travel and tourism related services to the public on behalf of suppliers such as activities, airlines, car rentals, cruise lines, hotels, railways, travel insurance, and package tours.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ClearanceID" type="ClearanceID_Type" minOccurs="1" maxOccurs="1">
+			<xs:element name="IATA_Number" type="NumberType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>this is an identifier generated by the party requesting the clearance that uniquely identifies the clearance transaction. It provides the necessary link for financial audit connecting the sale to the financial records. This field is required because no other existing data elements could be used by the financial systems or could provide unique identification. The identifier is globally unique for the settlement by design.</xs:documentation>
+					<xs:documentation>IATA-assigned agency number. Example: 98417900</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="NetClearanceAmount" type="AmountType" minOccurs="1" maxOccurs="1">
+			<xs:element name="Name" type="ProperNameType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>The amount agreed to be cleared in the Agreement between the two parties to the Agreement. It is obtained from the Commitment in the Agreement. The value of the Net Clearance Amount in the Payment Commitment of the Agreement can be either positive [+] or negative [-]. If it is positive [+] then the party initiating the clearance request will be the Payee in the clearance, i.e. the initiator of the clearance is to receive funds. If it is negative [-] then the party initiating the clearance request will be the Payer in the clearance, i.e. the initiator of the clearance has to pay-out funds. It is the absolute value of the Net Clearance Amount that is used in the Clearance.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Payee" type="ClearancePayeeNodeType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>a Clearance Payee Node</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="payer" type="ClearancePayerNodeType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>a Clearance Payer Node</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ProcessRuleCode" type="ClearanceProcessRuleCodeType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>defines under what governing rules the Settlement Manager processes the clearance.
- example: IATAC00 or BLTRL00</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="RemittanceDate" type="DateType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>This is the date when the Payer will have to transfer the amount in the clearance request into the settlement manager's bank account.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Signature" type="SignatureDEVEType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>This is going to refer to an external complex type 
- signature - using signature complex type from w3c external digs xsd - opt</xs:documentation>
+					<xs:documentation>Agency name. Example: Carson Travel</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -6498,7 +6175,7 @@
 		<xs:sequence>
 			<xs:element name="OfferFlightAssociations" type="OfferFlightAssociationsType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Eligibility Offer Flight Associations</xs:documentation>
+					<xs:documentation>Offer Flight Associations</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PaxRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
@@ -7595,7 +7272,7 @@
 	</xs:complexType>
 	<xs:complexType name="FlightRequestType">
 		<xs:annotation>
-			<xs:documentation>Flight Request Choice of Affinity Origin Destination or Journey flight information for this shopping request.</xs:documentation>
+			<xs:documentation>Flight Request</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
 			<xs:element name="AffinityShoppingCriteria" type="AffinityShoppingCriteriaType" minOccurs="1" maxOccurs="1">
@@ -8400,7 +8077,7 @@
 	</xs:complexType>
 	<xs:complexType name="InterlineOfferRequestType">
 		<xs:sequence>
-			<xs:element name="BDC" type="SettlementWithOrdersCarrierType" minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="BDC" type="ClearanceCarrierType" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Settlement with orders variant of the carrier abie.
  The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
@@ -8500,15 +8177,6 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="InterlineOfferResponseType">
-		<xs:annotation>
-			<xs:documentation>InterlineOfferResponse</xs:documentation>
-		</xs:annotation>
-		<xs:choice>
-			<xs:element name="ErrorList" type="ErrorListType" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="Payload" type="InterlineOfferResponsePayloadType" minOccurs="1" maxOccurs="1"/>
-		</xs:choice>
-	</xs:complexType>
 	<xs:complexType name="InterlineOrderItemType">
 		<xs:annotation>
 			<xs:documentation>An individually priced item within an Interline Order, made up of one or more Services. May or may not be a selected Offer Item (e.g. non-chargeable Services available on request such as a wheelchair).</xs:documentation>
@@ -8570,7 +8238,7 @@
 	</xs:complexType>
 	<xs:complexType name="InterlineOrderRequestType">
 		<xs:sequence>
-			<xs:element name="BDC" type="SettlementWithOrdersCarrierType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="BDC" type="ClearanceCarrierType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Settlement with orders variant of the carrier abie.
  The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
@@ -8662,15 +8330,6 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="InterlineOrderResponseType">
-		<xs:annotation>
-			<xs:documentation>InterlineOrderResponse</xs:documentation>
-		</xs:annotation>
-		<xs:choice>
-			<xs:element name="ErrorList" type="ErrorListType" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="Payload" type="InterlineOrderResponsePayloadType" minOccurs="1" maxOccurs="1"/>
-		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="InterlineOrderServiceAssociationType">
 		<xs:annotation>
@@ -10280,6 +9939,18 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:simpleType name="OfferedServiceStatusCodeContentType">
+		<xs:annotation>
+			<xs:documentation> {codeListAgencyName}IATA Code List{/codeListAgencyName} {codeListName}Offer Service Status, coded{/codeListName} {codeListIdentifier}Offer Service{/codeListIdentifier} </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token"/>
+	</xs:simpleType>
+	<xs:simpleType name="OfferedServiceStatusCodeType">
+		<xs:annotation>
+			<xs:documentation>Core statuses for Offer Service to be used across Enhanced and Simplified Distribution Standards, refer to IATA code set Offer Service</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="OfferedServiceStatusCodeContentType"/>
+	</xs:simpleType>
 	<xs:complexType name="OfferedServiceType">
 		<xs:annotation>
 			<xs:documentation>Offered Service is the instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
@@ -10333,7 +10004,7 @@
 					<xs:documentation>Reference to another service instance.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="StatusCode" type="CodeType" minOccurs="0" maxOccurs="1">
+			<xs:element name="StatusCode" type="OfferedServiceStatusCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A status for the Offered Service, as defined in ATSB Codeset Offered Service Status Code.
  
@@ -10380,7 +10051,7 @@
 	</xs:complexType>
 	<xs:complexType name="OfferFlightAssociationsType">
 		<xs:annotation>
-			<xs:documentation>A La Carte Offer Item Flight Associations</xs:documentation>
+			<xs:documentation>Offer Flight Associations</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
 			<xs:element name="DatedOperatingLegRef" type="DatedOperatingLegRefType" minOccurs="1" maxOccurs="1">
@@ -10597,7 +10268,7 @@
 		<xs:sequence>
 			<xs:element name="OfferFlightAssociations" type="OfferFlightAssociationsType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Service Definition Ref Flight Associations</xs:documentation>
+					<xs:documentation>Offer Flight Associations</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ServiceDefinitionRefID" type="ID_Type" minOccurs="1" maxOccurs="1">
@@ -11286,6 +10957,31 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="OrderedOrderServiceAssociationType">
+		<xs:annotation>
+			<xs:documentation>Ordered Order Service Association</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="PaxSegmentRef" type="PaxSegmentRefType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reference to a PaxSegmentID . This will be a reference to a single passenger segment that will be defined in a data list or pax segment list in the contained message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SeatOnLeg" type="SeatOnLegType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A sitting place for a passenger or crew in a cabin compartment on a Dated Operating Leg.
+ Business Identifier Fields :
+ - [Dated Operating Leg] (all identifier fields)
+ - [Seat] (all identifier fields)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceDefinitionRef" type="OrderServiceDefinitionRefType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Airline specific definition of a product or service (excluding flights) that can be separately sold and delivered. e.g. bag, seat, meal on a flight</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
 	<xs:complexType name="OrderedOrderType">
 		<xs:annotation>
 			<xs:documentation>A uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
@@ -11415,32 +11111,19 @@
 					<xs:documentation>Free text for textual description.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="OrderedOrderServiceAssociation" type="OrderedOrderServiceAssociationType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Ordered Order Service Association</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="PaxRefID" type="ID_Type" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Reference to a Passenger ID within this message</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PaxSegmentRef" type="PaxSegmentRefType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Reference to a PaxSegmentID . This will be a reference to a single passenger segment that will be defined in a data list or pax segment list in the contained message.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="RichMedia" type="MediaResourceRefType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>An external resource such as an Image, Video, PDF or other which is available for display</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="SeatOnLeg" type="SeatOnLegType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A sitting place for a passenger or crew in a cabin compartment on a Dated Operating Leg.
- Business Identifier Fields :
- - [Dated Operating Leg] (all identifier fields)
- - [Seat] (all identifier fields)</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="ServiceDefinitionRef" type="OrderServiceDefinitionRefType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Airline specific definition of a product or service (excluding flights) that can be separately sold and delivered. e.g. bag, seat, meal on a flight</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ServiceID" type="ID_Type" minOccurs="1" maxOccurs="1">
@@ -13759,11 +13442,6 @@
 			<xs:documentation>Criteria Specialization of Payment Functions: Is the container of all payment relevant functions.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ClearanceCriteria" type="ClearanceCriteriaType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="OfferAssociation" type="OfferAssociationType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A set of associations to Offers and Offer Items.</xs:documentation>
@@ -13788,11 +13466,6 @@
 			<xs:documentation>Offer Specialization of Payment Functions: Is the container of all payment relevant functions.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ClearanceCriteria" type="ClearanceCriteriaType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="OfferAssociation" type="OfferAssociationType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A set of associations to Offers and Offer Items.</xs:documentation>
@@ -13837,6 +13510,18 @@
 			<xs:element name="RefundMethodCriteria" type="RefundMethodCriteriaType" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:simpleType name="PaymentBrandCodeContentType">
+		<xs:annotation>
+			<xs:documentation> {codeListAgencyName}IATA Code List{/codeListAgencyName} {codeListName}Payment Brand, Coded{/codeListName} {codeListIdentifier}PAYB{/codeListIdentifier} </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token"/>
+	</xs:simpleType>
+	<xs:simpleType name="PaymentBrandCodeType">
+		<xs:annotation>
+			<xs:documentation>Additional Payment Brand codes for use in Enhanced and Simplified Distribution Standards, refer to IATA code set PAYB</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="PaymentBrandCodeContentType"/>
+	</xs:simpleType>
 	<xs:complexType name="PaymentCardAcceptedType">
 		<xs:annotation>
 			<xs:documentation>A device that enables its owner (the cardholder) to make a payment by electronic funds transfer.</xs:documentation>
@@ -14481,11 +14166,6 @@
 			<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ClearanceCriteria" type="ClearanceCriteriaType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="OfferAssociation" type="OfferAssociationType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A set of associations to Offers and Offer Items.</xs:documentation>
@@ -14511,11 +14191,6 @@
 			<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ClearanceCriteria" type="ClearanceCriteriaType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="OfferAssociation" type="OfferAssociationType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A set of associations to Offers and Offer Items.</xs:documentation>
@@ -14534,11 +14209,6 @@
 			<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ClearanceCriteria" type="ClearanceCriteriaType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="PaymentMethodCriteria" type="PaymentMethodCriteriaType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A form of procedure for the payment of goods or services, plus any transactional information specific to the payment method other than the amount.</xs:documentation>
@@ -14551,11 +14221,6 @@
 			<xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ClearanceAcceptedMethods" type="ClearanceAcceptedMethodsType" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="OfferAssociation" type="OfferAssociationType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A set of associations to Offers and Offer Items.</xs:documentation>
@@ -14719,6 +14384,11 @@
 					<xs:documentation>Additional identification and URLs used to further describe a secure payment transaction.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="PaymentTypeCode" type="PaymentTypeCodeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The payment method type. Examples: Credit Card, Cash.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="PriceVarianceAmount" type="AmountType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Price variance amount applied during Payment processing.</xs:documentation>
@@ -14738,11 +14408,6 @@
 			<xs:element name="SurchargeAmount" type="AmountType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Amount added to the final Offer/Order price, depending on which payment method is used by the client.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TypeCode" type="PaymentMethodCodeType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>The payment method type. Examples: Credit Card, Cash.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="VerificationInd" type="IndType" minOccurs="0" maxOccurs="1">
@@ -14792,7 +14457,12 @@
 			<xs:documentation>A form of procedure for the payment of goods or services, plus any transactional information specific to the payment method other than the amount.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="PaymentBrandCode" type="CreditCardVendorCodeType" minOccurs="0" maxOccurs="1">
+			<xs:element name="ClearanceCriteria" type="ClearanceCriteriaType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaymentBrandCode" type="PaymentBrandCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A two-letter code assigned according to IATA Resolution 728. Example: VI for Visa</xs:documentation>
 				</xs:annotation>
@@ -14803,7 +14473,7 @@
 					<xs:documentation>Payment Card issuing country code.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PaymentTypeCode" type="PaymentMethodCodeType" minOccurs="1" maxOccurs="1">
+			<xs:element name="PaymentTypeCode" type="PaymentTypeCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Payment Method in accordance with ATS Codeset 9888</xs:documentation>
 				</xs:annotation>
@@ -14882,6 +14552,11 @@
 					<xs:documentation>Indicates the current status of this payment information.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="PaymentTypeCode" type="PaymentTypeCodeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The payment method type. Examples: Credit Card, Cash.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="PriceVarianceAmount" type="AmountType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Price variance amount applied during Payment processing.</xs:documentation>
@@ -14890,11 +14565,6 @@
 			<xs:element name="SurchargeAmount" type="AmountType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Amount added to the final Offer/Order price, depending on which payment method is used by the client.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TypeCode" type="PaymentMethodCodeType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>The payment method type. Examples: Credit Card, Cash.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="VerificationInd" type="IndType" minOccurs="0" maxOccurs="1">
@@ -14981,7 +14651,7 @@
 					<xs:documentation>The amount applied to the associated payment method. Example: 300 USD</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ClearanceRequestData" type="ClearanceRequestDataType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="ClearancePaymentProcessingData" type="ClearancePaymentProcessingDataType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A TBU delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
 				</xs:annotation>
@@ -15066,7 +14736,7 @@
 					<xs:documentation>The amount applied to the associated payment method. Example: 300 USD</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ClearanceResponseData" type="ClearanceResponseDataType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="ClearanceData" type="ClearanceDataType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A TBUb delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
 				</xs:annotation>
@@ -15122,6 +14792,11 @@
 					<xs:documentation>Additional identification and URLs used to further describe a secure payment transaction.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="PaymentTypeCode" type="PaymentTypeCodeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The payment method type. Examples: Credit Card, Cash.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="PriceVarianceAmount" type="AmountType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Price variance amount applied during Payment processing.</xs:documentation>
@@ -15135,11 +14810,6 @@
 			<xs:element name="SurchargeAmount" type="AmountType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Amount added to the final Offer/Order price, depending on which payment method is used by the client.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TypeCode" type="PaymentMethodCodeType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>The payment method type. Examples: Credit Card, Cash.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="VerificationInd" type="IndType" minOccurs="0" maxOccurs="1">
@@ -15168,60 +14838,29 @@
 	</xs:complexType>
 	<xs:simpleType name="PaymentStatusCodeContentType">
 		<xs:annotation>
-			<xs:documentation>Enumeration values for payment status codes. {codeListAgencyName}IATA AIDM{/codeListAgencyName} </xs:documentation>
+			<xs:documentation>Enumeration values for payment status codes. {codeListAgencyName}IATA Code List{/codeListAgencyName} {codeListName}Payment Status, coded{/codeListName} {codeListIdentifier}PAYS{/codeListIdentifier} </xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:token">
-			<xs:enumeration value="ACCEPTED">
-				<xs:annotation>
-					<xs:documentation>The commitments to pay was accepted./At the Payment Level to indicate that a payment has been authorized, etc. or the status in not needed</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="ALLOCATED">
-				<xs:annotation>
-					<xs:documentation>The value of compensation was allocated to the corresponding Order Item.</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="CLOSED">
-				<xs:annotation>
-					<xs:documentation>The payment process was done.</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="COMMITTED">
-				<xs:annotation>
-					<xs:documentation>The payer has committed to pay the compensation./When NDC indicates that part of a payment is to be applied to an order item</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="RECEIVED">
-				<xs:annotation>
-					<xs:documentation>The compensation was received./ The actual receipt of funds is a function of the accounting system, or it it expected that the revenue accounting system will update the order when the bank transmits funds to the airline? Don't think we need this.</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="REFUNDED">
-				<xs:annotation>
-					<xs:documentation>The compensation was transfered back to the payer./When an order item is cancelled or changed, we expect that any payments applied to the item will be un-applied. this leaves a credit balance on the order that can be applied to a new item of refunded.</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="SENT">
-				<xs:annotation>
-					<xs:documentation>The compensation was transfered.</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-		</xs:restriction>
+		<xs:restriction base="xs:token"/>
 	</xs:simpleType>
 	<xs:simpleType name="PaymentStatusCodeType">
 		<xs:annotation>
-			<xs:documentation>Payment status code</xs:documentation>
+			<xs:documentation>Core statuses to be used across E&amp;amp;SD to express payment information required, refer to IATA code set PAYS</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="PaymentStatusCodeContentType"/>
 	</xs:simpleType>
 	<xs:complexType name="PaymentSupportedMethodType">
 		<xs:sequence>
+			<xs:element name="ClearanceMethods" type="ClearanceMethodsType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="CryptographyKey" type="CryptographyKeyType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Cryptography Key.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PaymentBrandCode" type="CreditCardVendorCodeType" minOccurs="0" maxOccurs="1">
+			<xs:element name="PaymentBrandCode" type="PaymentBrandCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A two-letter code assigned according to IATA Resolution 728. Example: VI for Visa</xs:documentation>
 				</xs:annotation>
@@ -15246,7 +14885,7 @@
 					<xs:documentation>Information about surcharges for payment methods.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PaymentTypeCode" type="PaymentMethodCodeType" minOccurs="1" maxOccurs="1">
+			<xs:element name="PaymentTypeCode" type="PaymentTypeCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The payment method type. Examples: Credit Card, Cash.</xs:documentation>
 				</xs:annotation>
@@ -15443,6 +15082,18 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:simpleType name="PaymentTypeCodeContentType">
+		<xs:annotation>
+			<xs:documentation> {codeListAgencyName}IATA Code List{/codeListAgencyName} {codeListName}Payment Type, coded{/codeListName} {codeListIdentifier}PAYT{/codeListIdentifier} </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token"/>
+	</xs:simpleType>
+	<xs:simpleType name="PaymentTypeCodeType">
+		<xs:annotation>
+			<xs:documentation>Additional payment type codes for use in Enhanced and Simplified, refer to IATA code set PAYT</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="PaymentTypeCodeContentType"/>
+	</xs:simpleType>
 	<xs:simpleType name="PenaltyAppCodeContentType">
 		<xs:annotation>
 			<xs:documentation>Enumeration set for Penalty Application. {codeListAgencyName}IATA{/codeListAgencyName} {codeListName}PADIS - FAT{/codeListName} {codeListIdentifier}FAT{/codeListIdentifier} </xs:documentation>
@@ -18741,7 +18392,7 @@
 		<xs:sequence>
 			<xs:element name="OfferFlightAssociations" type="OfferFlightAssociationsType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>A La Carte Offer Item Flight Associations</xs:documentation>
+					<xs:documentation>Offer Flight Associations</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Qty" type="QtyType" minOccurs="1" maxOccurs="1">
@@ -19083,12 +18734,15 @@
 	</xs:complexType>
 	<xs:complexType name="ServiceAssociationType">
 		<xs:annotation>
-			<xs:documentation>Change To Service Association</xs:documentation>
+			<xs:documentation>Supplier Ordered Service Association</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
-			<xs:element name="PaxSegmentRef" type="PaxSegmentRefType" minOccurs="1" maxOccurs="1">
+			<xs:element name="PaxSegment" type="PaxSegmentType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Reference to a PaxSegmentID . This will be a reference to a single passenger segment that will be defined in a data list or pax segment list in the contained message.</xs:documentation>
+					<xs:documentation>Transportation of a passenger on a Dated Operating Segment.
+ - [Dated Marketing Segment] (All identifying fields)
+ - [Order] Order ID
+ - [Individual] (no identifier available)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="SeatOnLeg" type="SeatOnLegType" minOccurs="1" maxOccurs="1">
@@ -19099,9 +18753,13 @@
  - [Seat] (all identifier fields)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ServiceDefinitionRef" type="OrderServiceDefinitionRefType" minOccurs="1" maxOccurs="1">
+			<xs:element name="ServiceDefinition" type="ServiceDefinitionType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Airline specific definition of a product or service (excluding flights) that can be separately sold and delivered. e.g. bag, seat, meal on a flight</xs:documentation>
+					<xs:documentation>Description and characteristics of a non-flight product or service that can be separately sold and delivered. E.g. bag, seat, meal on a flight.
+ Business Identifier Fields :
+ - [Shopping Response] Shopping Response ID 
+ - [Carrier] Airline Designator Code
+ - Service Definition ID</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>
@@ -20345,67 +20003,6 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="SettlementWithOrdersCarrierType">
-		<xs:annotation>
-			<xs:documentation>Settlement with orders variant of the carrier abie.
- The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
- Business Identifier Fields :
- - Airline Designator Code
- - Duplicate Designator Indicator
- - Name</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="AirlineAccountingCode" type="CodeType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>IATA assigned numerical code of three digits only. Used to identify airlines for the purpose of financial reporting and settlement.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="AirlineDesigCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Name" type="NameType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Commercial name of the carrier.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="SettlementWithOrdersOrgType">
-		<xs:annotation>
-			<xs:documentation>An organized structure set up for a particular purpose, such as a business, government body, department, charity, or financial institution.</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="Name" type="NameType" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Name of the organization</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="OrgID" type="ID_Type" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Organization code or identifier.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="SettlementWithOrdersTravelAgencyType">
-		<xs:annotation>
-			<xs:documentation>A private retailer or public service that provides travel and tourism related services to the public on behalf of suppliers such as activities, airlines, car rentals, cruise lines, hotels, railways, travel insurance, and package tours.</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="IATA_Number" type="NumberType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>IATA-assigned agency number. Example: 98417900</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Name" type="ProperNameType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Agency name. Example: Carson Travel</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="ShoppingRequestCabinTypeType">
 		<xs:annotation>
 			<xs:documentation>Shopping Request specialisation of Cabin Type
@@ -20982,7 +20579,7 @@
 					<xs:documentation>These are a set of qualifying conditions/rules/restriction that are related to a constrained priced grouping of services for a Change/modification action.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="CombinableCarrier" type="SettlementWithOrdersCarrierType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="CombinableCarrier" type="ClearanceCarrierType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Settlement with orders variant of the carrier abie.
  The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
@@ -21025,7 +20622,7 @@
 			</xs:element>
 			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Indicates whether or not the owner is the ORA or POA.</xs:documentation>
+					<xs:documentation>Indicates whether or not the owner is the Supplier or Retailer.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PriceGuaranteeTimeLimitDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
@@ -21126,7 +20723,7 @@
 			</xs:element>
 			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Indicates whether or not the owner is the ORA or POA.</xs:documentation>
+					<xs:documentation>Indicates whether or not the owner is the Supplier or Retailer.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PenaltyRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
@@ -21289,7 +20886,7 @@
 					<xs:documentation>These are a set of qualifying conditions/rules/restriction that are related to a constrained priced grouping of services for a Change/modification action.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="CombinableCarrier" type="SettlementWithOrdersCarrierType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="CombinableCarrier" type="ClearanceCarrierType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Settlement with orders variant of the carrier abie.
  The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
@@ -21353,7 +20950,7 @@
 			</xs:element>
 			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Indicates whether or not the owner is the ORA or POA.</xs:documentation>
+					<xs:documentation>Indicates whether or not the owner is the Supplier or Retailer.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PaymentTimeLimitDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
@@ -21450,7 +21047,7 @@
 			</xs:element>
 			<xs:element name="OwnerTypeCode" type="OwnerTypeCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Indicates whether or not the owner is the ORA or POA.</xs:documentation>
+					<xs:documentation>Indicates whether or not the owner is the Supplier or Retailer.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="RetailerOrderID" type="ID_Type" minOccurs="0" maxOccurs="1">
