@@ -1,6 +1,6 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2019 rel. 3 (x64) (http://www.altova.com) by Andrew Blake (IATA LOCATION GENEVA) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersCommonTypes" targetNamespace="http://www.iata.org/IATA/2015/00/2021.1/IATA_OffersAndOrdersCommonTypes" elementFormDefault="qualified" version="1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.iata.org/IATA/2015/EASD/00/IATA_OffersAndOrdersCommonTypes" targetNamespace="http://www.iata.org/IATA/2015/EASD/00/IATA_OffersAndOrdersCommonTypes" elementFormDefault="qualified" version="1.0">
 	<xs:complexType name="AcceptCancelledOfferType">
 		<xs:annotation>
 			<xs:documentation>Function to accept the deletion of an OrderItem from the existing Order.</xs:documentation>
@@ -3526,7 +3526,7 @@
 			</xs:element>
 			<xs:element name="Service" type="ChangeToServiceType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>The instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+					<xs:documentation>A change to Service specialization of the instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
  At the time of shopping, a service can be sold to multiple passengers on a given journey. 
  At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
 				</xs:annotation>
@@ -3647,7 +3647,7 @@
 	</xs:complexType>
 	<xs:complexType name="ChangeToServiceType">
 		<xs:annotation>
-			<xs:documentation>The instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+			<xs:documentation>A change to Service specialization of the instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
  At the time of shopping, a service can be sold to multiple passengers on a given journey. 
  At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
 		</xs:annotation>
@@ -3796,25 +3796,24 @@
 	</xs:complexType>
 	<xs:complexType name="ClearanceCriteriaType">
 		<xs:annotation>
-			<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+			<xs:documentation>communication of preference for using stated clearance process and reporting standard such as the 'SwO Standard and Process' with or without a specific Remittance Date. It supplies information about preference for given clearance process and reporting standard at the time of requesting an offer or additional information about an offer, an item, or an order. It is part of the 'Payment Method Criteria', and it is relevant whenever the method of payment will require clearance of funds between the partners of the sale.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="ProcessRuleCode" type="ClearanceProcessRuleCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>defines under what governing rules the Settlement Manager processes the clearance.
- example: IATAC00 or BLTRL00</xs:documentation>
+					<xs:documentation>defines under what governing rules, process and reporting standard the Settlement Manager processes the clearance. Example: IATAC00 or BLTRL00 or NDCLNK0</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="RemittanceDate" type="DateType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>This is the date when the Payer will have to transfer the amount in the clearance request into the settlement manager's bank account.</xs:documentation>
+					<xs:documentation>This is the date when the amount in the clearance request that is paid by the Clearance Payer will have to reach the settlement manager's bank account.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ClearanceDataType">
 		<xs:annotation>
-			<xs:documentation>A TBUb delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+			<xs:documentation>Set of data, either signed or not, that delivers all that is necessary for a clearance of funds to take place when using the SwO Standard and Process. It supplies the data needed, as optionally agreed by the Clearance Payer and the Clearance Payee of the clearance, to execute the clearance using the SwO Standard and Process. It is the core data required by the Clearance Manager to process a Clearance.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="ClearanceID" type="ClearanceID_Type" minOccurs="1" maxOccurs="1">
@@ -3822,19 +3821,19 @@
 					<xs:documentation>this is an identifier generated by the party requesting the clearance that uniquely identifies the clearance transaction. It provides the necessary link for financial audit connecting the sale to the financial records. This field is required because no other existing data elements could be used by the financial systems or could provide unique identification. The identifier is globally unique for the settlement by design.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ClearancePayeeData" type="ClearancePayeeDataType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="ClearancePayeeData" type="ClearancePayeeDataType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Clearance Payee Data</xs:documentation>
+					<xs:documentation>Data defining the Clearance Payee and relevant to its operations.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ClearancePayerData" type="ClearancePayerDataType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="ClearancePayerData" type="ClearancePayerDataType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Clearance Payer Data</xs:documentation>
+					<xs:documentation>Data defining the Clearance Payer and relevant to its operations.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="NetClearanceAmount" type="AmountType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>The amount agreed to be cleared in the Agreement between the two parties to the Agreement. It is obtained from the Commitment in the Agreement. The value of the Net Clearance Amount in the Payment Commitment of the Agreement can be either positive [+] or negative [-]. If it is positive [+] then the party initiating the clearance request will be the Payee in the clearance, i.e. the initiator of the clearance is to receive funds. If it is negative [-] then the party initiating the clearance request will be the Payer in the clearance, i.e. the initiator of the clearance has to pay-out funds. It is the absolute value of the Net Clearance Amount that is used in the Clearance.</xs:documentation>
+					<xs:documentation>The funds to be cleared as a result of the payment commitment, the selected payment method, and the date when the funds must be remitted. It is the amount the Clearance Payer must pay to the Clearance Payee on a given Remittance Date taking into consideration any funds due to the Clearance Payer by the Clearance Payee as a result of the same payment commitment.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PaymentCommitmentDateTime" type="DateTimeType" minOccurs="1" maxOccurs="1">
@@ -3844,19 +3843,17 @@
 			</xs:element>
 			<xs:element name="ProcessRuleCode" type="ClearanceProcessRuleCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>defines under what governing rules the Settlement Manager processes the clearance.
- example: IATAC00 or BLTRL00</xs:documentation>
+					<xs:documentation>defines under what governing rules, process and reporting standard the Settlement Manager processes the clearance. Example: IATAC00 or BLTRL00 or NDCLNK0</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="RemittanceDate" type="DateType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>This is the date when the Payer will have to transfer the amount in the clearance request into the settlement manager's bank account.</xs:documentation>
+					<xs:documentation>This is the date when the amount in the clearance request that is paid by the Clearance Payer will have to reach the settlement manager's bank account.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Signature" type="SignatureDEVEType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>This is going to refer to an external complex type 
- signature - using signature complex type from w3c external digs xsd - opt</xs:documentation>
+					<xs:documentation>Distinctive way to acknowledge and confirm agreement.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -3872,7 +3869,7 @@
 	</xs:simpleType>
 	<xs:complexType name="ClearanceMethodsType">
 		<xs:annotation>
-			<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+			<xs:documentation>These are the clearance options with their supporting information proposed by the carrier for a given offer. It supplies the methods available to clear a payment. It is part of the 'Payment Supported Method', and it is relevant whenever the method of payment will require clearance of funds between the partners of the sale. Includes the Commission data to allow the carrier to support choices that are in line with its payment policy.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="Commission" type="CommissionType" minOccurs="0" maxOccurs="1">
@@ -3882,18 +3879,17 @@
 			</xs:element>
 			<xs:element name="NetClearanceAmount" type="AmountType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>The amount agreed to be cleared in the Agreement between the two parties to the Agreement. It is obtained from the Commitment in the Agreement. The value of the Net Clearance Amount in the Payment Commitment of the Agreement can be either positive [+] or negative [-]. If it is positive [+] then the party initiating the clearance request will be the Payee in the clearance, i.e. the initiator of the clearance is to receive funds. If it is negative [-] then the party initiating the clearance request will be the Payer in the clearance, i.e. the initiator of the clearance has to pay-out funds. It is the absolute value of the Net Clearance Amount that is used in the Clearance.</xs:documentation>
+					<xs:documentation>The funds to be cleared as a result of the payment commitment, the selected payment method, and the date when the funds must be remitted. It is the amount the Clearance Payer must pay to the Clearance Payee on a given Remittance Date taking into consideration any funds due to the Clearance Payer by the Clearance Payee as a result of the same payment commitment.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ProcessRuleCode" type="ClearanceProcessRuleCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>defines under what governing rules the Settlement Manager processes the clearance.
- example: IATAC00 or BLTRL00</xs:documentation>
+					<xs:documentation>defines under what governing rules, process and reporting standard the Settlement Manager processes the clearance. Example: IATAC00 or BLTRL00 or NDCLNK0.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="RemittanceDate" type="DateType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>This is the date when the Payer will have to transfer the amount in the clearance request into the settlement manager's bank account.</xs:documentation>
+					<xs:documentation>This is the date when the amount in the clearance request that is paid by the Clearance Payer will have to reach the settlement manager's bank account.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -3917,7 +3913,7 @@
 	</xs:complexType>
 	<xs:complexType name="ClearancePayeeDataType">
 		<xs:annotation>
-			<xs:documentation>Clearance Payee Data</xs:documentation>
+			<xs:documentation>Data defining the Clearance Payee and relevant to its operations.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="ClearancePayee" type="ClearancePayeeType" minOccurs="1" maxOccurs="1">
@@ -3927,8 +3923,7 @@
 			</xs:element>
 			<xs:element name="ClearancePayeeReconciliationID" type="AirlineRefID_Type" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>identifier provided by the carrier to support internal financial processes, for example reconciliation.
- If this identifier is included in the clearance request from the carrier then it must be included in all messages thereafter where it is provided as an option.</xs:documentation>
+					<xs:documentation>identifier provided by the Clearance Payee to support internal financial processes, for example reconciliation. If this identifier is included in the clearance request then it must be included in all messages thereafter where it is provided as an option.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -3962,7 +3957,7 @@
 	</xs:complexType>
 	<xs:complexType name="ClearancePayerDataType">
 		<xs:annotation>
-			<xs:documentation>Clearance Payer Data</xs:documentation>
+			<xs:documentation>Data defining the Clearance Payer and relevant to its operations.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="ClearancePayer" type="ClearancePayerType" minOccurs="1" maxOccurs="1">
@@ -3970,7 +3965,11 @@
 					<xs:documentation>Clearance Payer - the party paying funds to clear claims against itself.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ClearancePayerReconciliationID" type="AirlineRefID_Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ClearancePayerReconciliationID" type="AirlineRefID_Type" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifier provided by the Clearance Payer to support internal financial processes, for example reconciliation. If this identifier is included in the clearance request then it must be included in all messages thereafter where it is provided as an option.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ClearancePayerType">
@@ -4002,34 +4001,32 @@
 	</xs:complexType>
 	<xs:complexType name="ClearancePaymentProcessingDataType">
 		<xs:annotation>
-			<xs:documentation>A TBU delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+			<xs:documentation>Clearance related data provided by the party committing the payment.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="ClearanceRoleChoice" type="ClearanceRoleChoiceType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Clearance Role Choice between clearance payee and clearance payer for the party initiating the payment commintment.</xs:documentation>
+					<xs:documentation>Choice by the party providing the payment processing details or committing the payment of its role in the clearance process � either a Clearance Payer or Clearance Payee.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="NetClearanceAmount" type="AmountType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>The amount agreed to be cleared in the Agreement between the two parties to the Agreement. It is obtained from the Commitment in the Agreement. The value of the Net Clearance Amount in the Payment Commitment of the Agreement can be either positive [+] or negative [-]. If it is positive [+] then the party initiating the clearance request will be the Payee in the clearance, i.e. the initiator of the clearance is to receive funds. If it is negative [-] then the party initiating the clearance request will be the Payer in the clearance, i.e. the initiator of the clearance has to pay-out funds. It is the absolute value of the Net Clearance Amount that is used in the Clearance.</xs:documentation>
+					<xs:documentation>The funds to be cleared as a result of the payment commitment, the selected payment method, and the date when the funds must be remitted. It is the amount the Clearance Payer must pay to the Clearance Payee on a given Remittance Date taking into consideration any funds due to the Clearance Payer by the Clearance Payee as a result of the same payment commitment.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ProcessRuleCode" type="ClearanceProcessRuleCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>defines under what governing rules the Settlement Manager processes the clearance.
- example: IATAC00 or BLTRL00</xs:documentation>
+					<xs:documentation>defines under what governing rules, process and reporting standard the Settlement Manager processes the clearance. Example: IATAC00 or BLTRL00 or NDCLNK0.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="RemittanceDate" type="DateType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>This is the date when the Payer will have to transfer the amount in the clearance request into the settlement manager's bank account.</xs:documentation>
+					<xs:documentation>This is the date when the amount in the clearance request that is paid by the Clearance Payer will have to reach the settlement manager's bank account.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Signature" type="SignatureDEVEType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>This is going to refer to an external complex type 
- signature - using signature complex type from w3c external digs xsd - opt</xs:documentation>
+					<xs:documentation>Distinctive way to acknowledge and confirm agreement.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -4045,17 +4042,17 @@
 	</xs:simpleType>
 	<xs:complexType name="ClearanceRoleChoiceType">
 		<xs:annotation>
-			<xs:documentation>Clearance Role Choice between clearance payee and clearance payer for the party initiating the payment commintment.</xs:documentation>
+			<xs:documentation>Choice by the party providing the payment processing details or committing the payment of its role in the clearance process � either a Clearance Payer or Clearance Payee.</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
 			<xs:element name="ClearancePayeeData" type="ClearancePayeeDataType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Clearance Payee Data</xs:documentation>
+					<xs:documentation>Data defining the Clearance Payee and relevant to its operations.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ClearancePayerData" type="ClearancePayerDataType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Clearance Payer Data</xs:documentation>
+					<xs:documentation>Data defining the Clearance Payer and relevant to its operations.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>
@@ -6052,6 +6049,11 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="DistributionChainLinkType">
+		<xs:sequence>
+			<xs:element name="INDEVChild1" type="INDEVChild1Type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="DocNotifCouponType">
 		<xs:annotation>
 			<xs:documentation>The portion of the Passenger Ticket and Baggage Check or Excess Baggage Ticket that indicates particular places between which the coupon is good for carriage.</xs:documentation>
@@ -7875,6 +7877,9 @@
 	<xs:complexType name="IncludeSchedulesType">
 		<xs:sequence/>
 	</xs:complexType>
+	<xs:complexType name="INDEVChild1Type">
+		<xs:sequence/>
+	</xs:complexType>
 	<xs:complexType name="IndividualType">
 		<xs:annotation>
 			<xs:documentation>A single human being as distinct from a group, class, or family.</xs:documentation>
@@ -8219,7 +8224,7 @@
 			</xs:element>
 			<xs:element name="Service" type="InterlineServiceType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>The instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+					<xs:documentation>Interline Service specialization of the instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
  At the time of shopping, a service can be sold to multiple passengers on a given journey. 
  At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
 				</xs:annotation>
@@ -8634,7 +8639,7 @@
 	</xs:complexType>
 	<xs:complexType name="InterlineServiceType">
 		<xs:annotation>
-			<xs:documentation>The instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+			<xs:documentation>Interline Service specialization of the instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
  At the time of shopping, a service can be sold to multiple passengers on a given journey. 
  At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
 		</xs:annotation>
@@ -10940,7 +10945,7 @@
 			</xs:element>
 			<xs:element name="Service" type="OrderedServiceType" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>The instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+					<xs:documentation>Ordered Service specialization of an instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
  At the time of shopping, a service can be sold to multiple passengers on a given journey. 
  At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
 				</xs:annotation>
@@ -11080,7 +11085,7 @@
 	</xs:complexType>
 	<xs:complexType name="OrderedServiceType">
 		<xs:annotation>
-			<xs:documentation>The instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+			<xs:documentation>Ordered Service specialization of an instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
  At the time of shopping, a service can be sold to multiple passengers on a given journey. 
  At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
 		</xs:annotation>
@@ -11136,7 +11141,7 @@
 					<xs:documentation>Reference to another service instance.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="StatusCode" type="CodeType" minOccurs="0" maxOccurs="1">
+			<xs:element name="StatusCode" type="OrderStatusCodeType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Status of the Service instance. See PADIS Codelist 4405 for possible values.</xs:documentation>
 				</xs:annotation>
@@ -11892,7 +11897,7 @@
 			</xs:element>
 			<xs:element name="ServiceFilterCriteria" type="ServiceFilterCriteriaType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>The instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+					<xs:documentation>Service filter criteria specialization of the instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
  At the time of shopping, a service can be sold to multiple passengers on a given journey. 
  At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
 				</xs:annotation>
@@ -14323,6 +14328,11 @@
 					<xs:documentation>The amount applied to the associated payment method. Example: 300 USD</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="ClearanceData" type="ClearanceDataType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Set of data, either signed or not, that delivers all that is necessary for a clearance of funds to take place when using the SwO Standard and Process. It supplies the data needed, as optionally agreed by the Clearance Payer and the Clearance Payee of the clearance, to execute the clearance using the SwO Standard and Process. It is the core data required by the Clearance Manager to process a Clearance.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="ContactInfoRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Reference to the Payer's Contact ID within this message.</xs:documentation>
@@ -14459,7 +14469,7 @@
 		<xs:sequence>
 			<xs:element name="ClearanceCriteria" type="ClearanceCriteriaType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+					<xs:documentation>communication of preference for using stated clearance process and reporting standard such as the 'SwO Standard and Process' with or without a specific Remittance Date. It supplies information about preference for given clearance process and reporting standard at the time of requesting an offer or additional information about an offer, an item, or an order. It is part of the 'Payment Method Criteria', and it is relevant whenever the method of payment will require clearance of funds between the partners of the sale.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PaymentBrandCode" type="PaymentBrandCodeType" minOccurs="0" maxOccurs="1">
@@ -14653,7 +14663,7 @@
 			</xs:element>
 			<xs:element name="ClearancePaymentProcessingData" type="ClearancePaymentProcessingDataType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>A TBU delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+					<xs:documentation>Clearance related data provided by the party committing the payment.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Payer" type="PayerType" minOccurs="0" maxOccurs="1">
@@ -14738,7 +14748,7 @@
 			</xs:element>
 			<xs:element name="ClearanceData" type="ClearanceDataType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>A TBUb delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+					<xs:documentation>Set of data, either signed or not, that delivers all that is necessary for a clearance of funds to take place when using the SwO Standard and Process. It supplies the data needed, as optionally agreed by the Clearance Payer and the Clearance Payee of the clearance, to execute the clearance using the SwO Standard and Process. It is the core data required by the Clearance Manager to process a Clearance.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ContactInfoRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
@@ -14852,7 +14862,7 @@
 		<xs:sequence>
 			<xs:element name="ClearanceMethods" type="ClearanceMethodsType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>A delivery of funds from one party - payer- to another party - the payee - to fulfill contractual obligations, i.e. commitment between the two parties.</xs:documentation>
+					<xs:documentation>These are the clearance options with their supporting information proposed by the carrier for a given offer. It supplies the methods available to clear a payment. It is part of the 'Payment Supported Method', and it is relevant whenever the method of payment will require clearance of funds between the partners of the sale. Includes the Commission data to allow the carrier to support choices that are in line with its payment policy.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="CryptographyKey" type="CryptographyKeyType" minOccurs="0" maxOccurs="1">
@@ -19448,7 +19458,7 @@
 	</xs:simpleType>
 	<xs:complexType name="ServiceFilterCriteriaType">
 		<xs:annotation>
-			<xs:documentation>The instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+			<xs:documentation>Service filter criteria specialization of the instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
  At the time of shopping, a service can be sold to multiple passengers on a given journey. 
  At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
 		</xs:annotation>
@@ -20277,8 +20287,7 @@
 	</xs:complexType>
 	<xs:complexType name="SignatureDEVEType">
 		<xs:annotation>
-			<xs:documentation>This is going to refer to an external complex type 
- signature - using signature complex type from w3c external digs xsd - opt</xs:documentation>
+			<xs:documentation>Distinctive way to acknowledge and confirm agreement.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence/>
 	</xs:complexType>
@@ -20767,7 +20776,7 @@
 	</xs:complexType>
 	<xs:complexType name="SupplierOrderedServiceType">
 		<xs:annotation>
-			<xs:documentation>The instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+			<xs:documentation>A Supplier Ordered Service specialization of the instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
  At the time of shopping, a service can be sold to multiple passengers on a given journey. 
  At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
 		</xs:annotation>
@@ -20987,7 +20996,7 @@
 			</xs:element>
 			<xs:element name="Service" type="SupplierOrderedServiceType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>The instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+					<xs:documentation>A Supplier Ordered Service specialization of the instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
  At the time of shopping, a service can be sold to multiple passengers on a given journey. 
  At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
 				</xs:annotation>
