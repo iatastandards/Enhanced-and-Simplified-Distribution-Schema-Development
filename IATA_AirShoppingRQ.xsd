@@ -19,7 +19,7 @@ The message also returns multi-media content at message level as well as media r
 </xs:element>
 <xs:element name="DistributionChain" type="cns:DistributionChainType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>A dummy element representing the Offer request, Offer, Order request, Order Change Request, or Order Cancellation Request</xs:documentation>
+<xs:documentation>An instance of a distribution channel. That is, the set of organizations involved in the development of the current transaction.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="PayloadAttributes" type="cns:IATA_PayloadStandardAttributesType" minOccurs="0" maxOccurs="1">

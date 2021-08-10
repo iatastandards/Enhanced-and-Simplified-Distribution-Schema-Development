@@ -16,7 +16,7 @@
 <xs:documentation>IATA payload standard attributes.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="Retailer" type="cns:SettlementWithOrdersCarrierType" minOccurs="1" maxOccurs="1">
+<xs:element name="Retailer" type="cns:ClearanceCarrierType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>This is the Retailer who is send this message</xs:documentation>
 </xs:annotation>

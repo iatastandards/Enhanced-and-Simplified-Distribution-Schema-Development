@@ -13,7 +13,7 @@ The Acknowledgement message may be returned to acknowledge receipt of the notifi
 <xs:documentation>Implementer-Augmented Structure.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="Distribution Chain" type="cns:DistributionChainType" minOccurs="1" maxOccurs="1">
+<xs:element name="DistributionChain" type="cns:DistributionChainType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>A dummy element representing the Offer request, Offer, Order request, Order Change Request, or Order Cancellation Request</xs:documentation>
 </xs:annotation>
