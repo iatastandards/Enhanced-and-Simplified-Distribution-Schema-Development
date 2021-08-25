@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema targetNamespace="http://www.iata.org/IATA/2015/EASD/00/IATA_OffersAndOrdersMessage" elementFormDefault="qualified" version="8.000" xmlns:cns="http://www.iata.org/IATA/2015/EASD/00/IATA_OffersAndOrdersCommonTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.iata.org/IATA/2015/EASD/00/IATA_OffersAndOrdersMessage" id="IATA2021.3"><xs:import namespace="http://www.iata.org/IATA/2015/EASD/00/IATA_OffersAndOrdersCommonTypes" schemaLocation="IATA_OffersAndOrdersCommonTypes.xsd"/>
 <xs:element name="IATA_OfferPriceRQ">
 <xs:annotation>
@@ -33,47 +33,5 @@
 </xs:element>
 </xs:sequence>
 </xs:complexType>
-<xs:key name = "BaggageAllowanceIDKey" ><xs:selector xpath = "./Request/DataLists/BaggageAllowanceList/BaggageAllowance" /><xs:field xpath="BaggageAllowanceID"/> </xs:key>
-<xs:key name = "BaggageDisclosureIDKey" ><xs:selector xpath = "./Request/DataLists/BaggageDisclosureList/BaggageDisclosure" /><xs:field xpath="BaggageDisclosureID"/> </xs:key>
-<xs:key name = "DisclosureIDKey" ><xs:selector xpath = "./Request/DataLists/DisclosureList/Disclosure" /><xs:field xpath="DisclosureID"/> </xs:key>
-<xs:key name = "PaxJourneyIDKey" ><xs:selector xpath = "./Request/DataLists/PaxJourneyList/PaxJourney" /><xs:field xpath="PaxJourneyID"/> </xs:key>
-<xs:key name = "PaxIDKey" ><xs:selector xpath = "./Request/DataLists/PaxList/Pax" /><xs:field xpath="PaxID"/> </xs:key>
-<xs:key name = "PenaltyIDKey" ><xs:selector xpath = "./Request/DataLists/PenaltyList/Penalty" /><xs:field xpath="PenaltyID"/> </xs:key>
-<xs:key name = "PriceClassIDKey" ><xs:selector xpath = "./Request/DataLists/PriceClassList/PriceClass" /><xs:field xpath="PriceClassID"/> </xs:key>
-<xs:key name = "SeatProfileIDKey" ><xs:selector xpath = "./Request/DataLists/SeatProfileList/SeatProfile" /><xs:field xpath="SeatProfileID"/> </xs:key>
-<xs:key name = "ServiceDefinitionIDKey" ><xs:selector xpath = "./Request/DataLists/ServiceDefinitionList/ServiceDefinition" /><xs:field xpath="ServiceDefinitionID"/> </xs:key>
-<xs:key name = "DatedOperatingLegIDKey" ><xs:selector xpath = "./Request/DataLists/ShoppingRequestPaxSegmentList/PaxSegment/DatedOperatingLeg" /><xs:field xpath="DatedOperatingLegID"/> </xs:key>
-<xs:key name = "PaxSegmentIDKey" ><xs:selector xpath = "./Request/DataLists/ShoppingRequestPaxSegmentList/PaxSegment" /><xs:field xpath="PaxSegmentID"/> </xs:key>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef1" refer="PaxSegmentIDKey"><xs:selector xpath="./DistributionChain/DistributionChainLink/ContactInfo/PaxSegmentRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef2" refer="PaxSegmentIDKey"><xs:selector xpath="./DistributionChain/DistributionChainLink/ParticipatingOrg/ContactInfo/PaxSegmentRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef3" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/DataLists/ContactInfoList/ContactInfo/PaxSegmentRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxJourneyIDKeyKeyRef1" refer="PaxJourneyIDKey"><xs:selector xpath="./Request/DataLists/OriginDestList/OriginDest/PaxJourneyRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxJourneyIDKeyKeyRef2" refer="PaxJourneyIDKey"><xs:selector xpath="./Request/DataLists/OriginDestOptList/OriginDestOpt/PaxJourneyRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef4" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/DataLists/PaxJourneyList/PaxJourney/PaxSegmentRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef5" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/DataLists/PaxList/Pax/ContactInfo/PaxSegmentRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxIDKeyKeyRef1" refer="PaxIDKey"><xs:selector xpath="./Request/DataLists/PaxList/Pax/PaxRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "BaggageAllowanceIDKeyKeyRef1" refer="BaggageAllowanceIDKey"><xs:selector xpath="./Request/DataLists/ServiceDefinitionList/ServiceDefinition/ServiceDefinitionAssociation/BaggageAllowanceRef/BaggageAllowanceRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "SeatProfileIDKeyKeyRef1" refer="SeatProfileIDKey"><xs:selector xpath="./Request/DataLists/ServiceDefinitionList/ServiceDefinition/ServiceDefinitionAssociation/SeatProfileRef/SeatProfileRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "ServiceDefinitionIDKeyKeyRef1" refer="ServiceDefinitionIDKey"><xs:selector xpath="./Request/DataLists/ServiceDefinitionList/ServiceDefinition/ServiceDefinitionAssociation/ServiceBundle/ServiceDefinitionRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "DisclosureIDKeyKeyRef1" refer="DisclosureIDKey"><xs:selector xpath="./Request/DataLists/ShoppingRequestPaxSegmentList/PaxSegment/OperatingCarrierInfo/DisclosureRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PenaltyIDKeyKeyRef1" refer="PenaltyIDKey"><xs:selector xpath="./Request/InExchForTicket/PenaltyRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef6" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/OfferCriteria/ProgramCriteria/ProgramOwner/Org/ContactInfo/PaxSegmentRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxIDKeyKeyRef2" refer="PaxIDKey"><xs:selector xpath="./Request/OfferCriteria/PromotionCriteria/PaxRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef7" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/OfferCriteria/PromotionCriteria/PromotionIssuer/Org/ContactInfo/PaxSegmentRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef8" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/OfferCriteria/PromotionCriteria/PromotionIssuer/TravelAgency/ContactInfo/PaxSegmentRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "BaggageAllowanceIDKeyKeyRef2" refer="BaggageAllowanceIDKey"><xs:selector xpath="./Request/PricedOffer/AcceptOrderItemList/CreateOrderItem/OfferItemType/BaggageItem/BagItemDetails/BaggageAllowanceRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "BaggageDisclosureIDKeyKeyRef1" refer="BaggageDisclosureIDKey"><xs:selector xpath="./Request/PricedOffer/AcceptOrderItemList/CreateOrderItem/OfferItemType/BaggageItem/BagItemDetails/BaggageDisclosureRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PenaltyIDKeyKeyRef2" refer="PenaltyIDKey"><xs:selector xpath="./Request/PricedOffer/AcceptOrderItemList/CreateOrderItem/OfferItemType/FlightItem/FareDetail/FareComponent/FareRule/PenaltyRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef9" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/PricedOffer/AcceptOrderItemList/CreateOrderItem/OfferItemType/FlightItem/FareDetail/FareComponent/PaxSegmentRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PriceClassIDKeyKeyRef1" refer="PriceClassIDKey"><xs:selector xpath="./Request/PricedOffer/AcceptOrderItemList/CreateOrderItem/OfferItemType/FlightItem/FareDetail/FareComponent/PriceClassRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxIDKeyKeyRef3" refer="PaxIDKey"><xs:selector xpath="./Request/PricedOffer/AcceptOrderItemList/CreateOrderItem/OfferItemType/FlightItem/FareDetail/PaxRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PenaltyIDKeyKeyRef3" refer="PenaltyIDKey"><xs:selector xpath="./Request/PricedOffer/AcceptOrderItemList/CreateOrderItem/OfferItemType/FlightItem/FareDetail/PenaltyRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "DatedOperatingLegIDKeyKeyRef1" refer="DatedOperatingLegIDKey"><xs:selector xpath="./Request/PricedOffer/AcceptOrderItemList/CreateOrderItem/OfferItemType/SeatItem/DatedOperatingLegRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef10" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/PricedOffer/AcceptOrderItemList/CreateOrderItem/OfferItemType/SeatItem/PaxSegmentRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "SeatProfileIDKeyKeyRef2" refer="SeatProfileIDKey"><xs:selector xpath="./Request/PricedOffer/AcceptOrderItemList/CreateOrderItem/OfferItemType/SeatItem/SeatProfileRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxIDKeyKeyRef4" refer="PaxIDKey"><xs:selector xpath="./Request/PricedOffer/SelectedOfferList/SelectedOffer/SelectedOfferItem/PaxRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "DatedOperatingLegIDKeyKeyRef2" refer="DatedOperatingLegIDKey"><xs:selector xpath="./Request/PricedOffer/SelectedOfferList/SelectedOffer/SelectedOfferItem/SelectedALaCarteOfferItem/OfferFlightAssociations/DatedOperatingLegRef/DatedOperatingLegRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxJourneyIDKeyKeyRef3" refer="PaxJourneyIDKey"><xs:selector xpath="./Request/PricedOffer/SelectedOfferList/SelectedOffer/SelectedOfferItem/SelectedALaCarteOfferItem/OfferFlightAssociations/PaxJourneyRef/PaxJourneyRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef11" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/PricedOffer/SelectedOfferList/SelectedOffer/SelectedOfferItem/SelectedALaCarteOfferItem/OfferFlightAssociations/PaxSegmentReferences/PaxSegmentRefID"/><xs:field xpath=" ."/></xs:keyref>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef12" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/ResponseParameters/PaxGroup/ContactInfo/PaxSegmentRefID"/><xs:field xpath=" ."/></xs:keyref></xs:element>
+</xs:element>
 </xs:schema>
