@@ -23,7 +23,7 @@
 <xs:documentation>Implementer-Augmented Structure.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DistributionChain" type="cns:DistributionChainType" minOccurs="1" maxOccurs="1">
+<xs:element name="DistributionChain" type="cns:DistributionChainType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>An instance of a distribution channel. That is, the set of organizations involved in the development of the current transaction.</xs:documentation>
 </xs:annotation>
