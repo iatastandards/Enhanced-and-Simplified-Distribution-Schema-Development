@@ -33,7 +33,7 @@
 </xs:complexType>
 <xs:complexType name="AcceptOrderItemListType">
 <xs:annotation>
-<xs:documentation>This is a collection of Create Order Item's.</xs:documentation>
+<xs:documentation>A collection of Create Order Item's.</xs:documentation>
 </xs:annotation>
 <xs:sequence>
 <xs:element name="CreateOrderItem" type="CreateOrderItemType" minOccurs="1" maxOccurs="unbounded">
@@ -45,10 +45,10 @@
 </xs:complexType>
 <xs:complexType name="AcceptRepricedOrderType">
 <xs:annotation>
-<xs:documentation>Function used by seller to inform the airline that it is accepting the proposed Order, as it has been repriced and returned in the preceding OrderReshopRS.</xs:documentation>
+<xs:documentation>A function used by seller to inform the airline that it is accepting the proposed Order, as it has been re-priced and returned in the preceding OrderReshopRS.</xs:documentation>
 </xs:annotation>
 <xs:sequence>
-<xs:element name="OfferRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
+<xs:element name="OfferRefID" type="ID_Type" minOccurs="1" maxOccurs="unbounded">
 <xs:annotation>
 <xs:documentation>Reference to an Offer ID for which this Payment applies.</xs:documentation>
 </xs:annotation>
@@ -57,7 +57,7 @@
 </xs:complexType>
 <xs:complexType name="AcceptSelectedPricedOfferListType">
 <xs:annotation>
-<xs:documentation>This is a collection of Selected Offer's</xs:documentation>
+<xs:documentation>A collection of Selected Offer's</xs:documentation>
 </xs:annotation>
 <xs:sequence>
 <xs:element name="SelectedPricedOffer" type="SelectedPricedOfferType" minOccurs="1" maxOccurs="unbounded">
@@ -71,7 +71,7 @@
 </xs:complexType>
 <xs:complexType name="AccountableDocType">
 <xs:annotation>
-<xs:documentation>Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
+<xs:documentation>A Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
 </xs:annotation>
 <xs:sequence>
 <xs:element name="DateOfIssue" type="DateType" minOccurs="0" maxOccurs="1">
@@ -232,7 +232,7 @@
 </xs:element>
 <xs:element name="Service" type="AccountedServiceType" minOccurs="1" maxOccurs="unbounded">
 <xs:annotation>
-<xs:documentation>Accounted Order is the instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+<xs:documentation>An Accounted Order is the instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
  At the time of shopping, a service can be sold to multiple passengers on a given journey. 
  At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
 </xs:annotation>
@@ -437,7 +437,7 @@
 </xs:complexType>
 <xs:complexType name="AccountedServiceType">
 <xs:annotation>
-<xs:documentation>Accounted Order is the instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+<xs:documentation>An Accounted Order is the instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
  At the time of shopping, a service can be sold to multiple passengers on a given journey. 
  At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
 </xs:annotation>
@@ -577,7 +577,7 @@
 <xs:choice>
 <xs:element name="AccountableDoc" type="AccountableDocType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
+<xs:documentation>A Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DirectBill" type="DirectBillType" minOccurs="1" maxOccurs="1">
@@ -920,7 +920,7 @@
 </xs:complexType>
 <xs:complexType name="AddlNameType">
 <xs:annotation>
-<xs:documentation>This is used for additional name types.
+<xs:documentation>An additional name type.
  The structure consists of a generic proper name with associated type.
  Examples:
  Name - 'Smith'.
@@ -975,7 +975,7 @@
 </xs:simpleType>
 <xs:complexType name="AddOfferItemsType">
 <xs:annotation>
-<xs:documentation>Action to request new Added Offer Items for the specified Order. If used in conjunction with a 'Delete' function, the intention is to replace the deleted item with whatever has been requested in this Add function's shopping query.</xs:documentation>
+<xs:documentation>An action to request new Added Offer Items for the specified Order. If used in conjunction with a 'Delete' function, the intention is to replace the deleted item with whatever has been requested in this Add function's shopping query.</xs:documentation>
 </xs:annotation>
 <xs:sequence>
 <xs:element name="FlightRelatedCriteria" type="FlightRelatedCriteriaType" minOccurs="0" maxOccurs="1">
@@ -3426,17 +3426,17 @@
 </xs:element>
 <xs:element name="AcceptOrderItemList" type="AcceptOrderItemListType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>This is a collection of Create Order Item's.</xs:documentation>
+<xs:documentation>A collection of Create Order Item's.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="AcceptRepricedOrder" type="AcceptRepricedOrderType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Function used by seller to inform the airline that it is accepting the proposed Order, as it has been repriced and returned in the preceding OrderReshopRS.</xs:documentation>
+<xs:documentation>A function used by seller to inform the airline that it is accepting the proposed Order, as it has been re-priced and returned in the preceding OrderReshopRS.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="AcceptSelectedPricedOfferList" type="AcceptSelectedPricedOfferListType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>This is a collection of Selected Offer's</xs:documentation>
+<xs:documentation>A collection of Selected Offer's</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="CancelUnpaidOrder" type="SelectedOrderType" minOccurs="1" maxOccurs="1">
@@ -4859,12 +4859,12 @@
 <xs:choice>
 <xs:element name="AcceptOrderItemList" type="AcceptOrderItemListType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>This is a collection of Create Order Item's.</xs:documentation>
+<xs:documentation>A collection of Create Order Item's.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="AcceptSelectedPricedOfferList" type="AcceptSelectedPricedOfferListType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>This is a collection of Selected Offer's</xs:documentation>
+<xs:documentation>A collection of Selected Offer's</xs:documentation>
 </xs:annotation>
 </xs:element>
 </xs:choice>
@@ -5059,11 +5059,6 @@
 <xs:element name="DisclosureList" type="DisclosureListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Disclosure data list definition.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="MediaList" type="MediaListType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Media data list definition.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="OriginDestList" type="OriginDestListType" minOccurs="0" maxOccurs="1">
@@ -5665,13 +5660,6 @@
 <xs:documentation>Mark-up Style of the Description Text. Example: HTML</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="MediaObject" type="MediaObjectType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Electronic documents, images, and other files which accompany and support some information.
- Business Identifier Fields:
- - Media ID</xs:documentation>
-</xs:annotation>
-</xs:element>
 <xs:element name="URL" type="URI_Type" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>URL to description information source.</xs:documentation>
@@ -5768,7 +5756,8 @@
 </xs:element>
 <xs:element name="DifferentialFarePriceType" type="DifferentialFarePriceTypeType" minOccurs="0" maxOccurs="3">
 <xs:annotation>
-<xs:documentation>Differential specialisation of a type of fair price applied to a Fare Detail (e.g. filed amount, net amount, or a sell amount).</xs:documentation>
+<xs:documentation>A differential specialization of an additional specified fare pricing such as 'Net' and 'Filed'. 
+ For 'Sell' or public amounts, use the Price in Fare Details.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="FareCalculationInfo" type="FareCalculationInfoType" minOccurs="0" maxOccurs="1">
@@ -5842,7 +5831,8 @@
 </xs:complexType>
 <xs:complexType name="DifferentialFarePriceTypeType">
 <xs:annotation>
-<xs:documentation>Differential specialisation of a type of fair price applied to a Fare Detail (e.g. filed amount, net amount, or a sell amount).</xs:documentation>
+<xs:documentation>A differential specialization of an additional specified fare pricing such as 'Net' and 'Filed'. 
+ For 'Sell' or public amounts, use the Price in Fare Details.</xs:documentation>
 </xs:annotation>
 <xs:sequence>
 <xs:element name="DifferentialPrice" type="DifferentialPriceType" minOccurs="1" maxOccurs="1">
@@ -6803,7 +6793,8 @@
 </xs:element>
 <xs:element name="FarePriceType" type="FarePriceTypeType" minOccurs="0" maxOccurs="3">
 <xs:annotation>
-<xs:documentation>The type of fair price applied to a Fare Detail (e.g. filed amount, net amount, or a sell amount).</xs:documentation>
+<xs:documentation>An additional specified fare pricing such as 'Net' and 'Filed'. 
+ For 'Sell' or public amounts, use the Price in Fare Details.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="FareRefText" type="TextType" minOccurs="0" maxOccurs="1">
@@ -6888,7 +6879,8 @@
 </xs:simpleType>
 <xs:complexType name="FarePriceTypeType">
 <xs:annotation>
-<xs:documentation>The type of fair price applied to a Fare Detail (e.g. filed amount, net amount, or a sell amount).</xs:documentation>
+<xs:documentation>An additional specified fare pricing such as 'Net' and 'Filed'. 
+ For 'Sell' or public amounts, use the Price in Fare Details.</xs:documentation>
 </xs:annotation>
 <xs:sequence>
 <xs:element name="FarePriceTypeCode" type="FarePriceTypeCodeType" minOccurs="1" maxOccurs="1">
@@ -7463,11 +7455,6 @@
 <xs:documentation>Customer's requested connection information.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="FareCriteria" type="FareCriteriaType" minOccurs="0" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>Fare criteria used to filter shopping results.</xs:documentation>
-</xs:annotation>
-</xs:element>
 <xs:element name="FlightCriteria" type="FlightCriteriaType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
 <xs:documentation>Flight filter criteria including aircraft features, Cabin Type, RBD, and Tail Number.</xs:documentation>
@@ -7886,7 +7873,7 @@
 <xs:sequence>
 <xs:element name="AddlName" type="AddlNameType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
-<xs:documentation>This is used for additional name types.
+<xs:documentation>An additional name type.
  The structure consists of a generic proper name with associated type.
  Examples:
  Name - 'Smith'.
@@ -7997,7 +7984,7 @@
 <xs:sequence>
 <xs:element name="AddlName" type="AddlNameType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
-<xs:documentation>This is used for additional name types.
+<xs:documentation>An additional name type.
  The structure consists of a generic proper name with associated type.
  Examples:
  Name - 'Smith'.
@@ -8250,7 +8237,11 @@
 <xs:documentation>Passenger data list definition.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="SearchCriteria" type="InterlineSearchCriteriaRequestType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="SearchCriteria" type="InterlineSearchCriteriaRequestType" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>A search criteria type for interline requests.</xs:documentation>
+</xs:annotation>
+</xs:element>
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="InterlineOfferResponsePayloadType">
@@ -8702,6 +8693,9 @@
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="InterlineSearchCriteriaRequestType">
+<xs:annotation>
+<xs:documentation>A search criteria type for interline requests.</xs:documentation>
+</xs:annotation>
 <xs:sequence>
 <xs:element name="AirlineTaxonmy" type="AirlineTaxonomyType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
@@ -9341,85 +9335,6 @@
 </xs:extension>
 </xs:simpleContent>
 </xs:complexType>
-<xs:complexType name="MediaListType">
-<xs:annotation>
-<xs:documentation>Media data list definition.</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="Media" type="MediaObjectType" minOccurs="1" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>Electronic documents, images, and other files which accompany and support some information.
- Business Identifier Fields:
- - Media ID</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-<xs:complexType name="MediaObjectType">
-<xs:annotation>
-<xs:documentation>Electronic documents, images, and other files which accompany and support some information.
- Business Identifier Fields:
- - Media ID</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="BinaryObject" type="BinaryObjectType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Binary Object Information. Supplementary attributes include character set code, MIME code, encoding information, file name, format, and URI</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="DescText" type="TextType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Description of the referenced media.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="FileSizeMeasure" type="MeasureType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>The size of the Attachment in kilobytes (KB). Example: 60</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="HeightMeasure" type="MeasureType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Media (typically Image) height in specified units.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="HintText" type="TextType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Media object tip which is typically used in a client GUI (a mouseover tip). Example: Envoy Class Seat</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="MediaID" type="ID_Type" minOccurs="1" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Uniquely Identifies a Media file within the context of one message.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="RenderingInstructionsText" type="TextType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Rendering Instruction Parameters.
- Notes: This is typically used for XSLT.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="RenderingMethodText" type="TextType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Rendering Method name. E.g. Narrative, XSLT, etc.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="RenderingOutputFormatText" type="TextType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>An identifier for a file format or content type of the rendered output.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="RenderingOverviewText" type="TextType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>An overview of the rendering method or style.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="WidthMeasure" type="MeasureType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Media (typically Image) width in specified units.</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
 <xs:complexType name="MediaResourceRefType">
 <xs:annotation>
 <xs:documentation>An external resource such as an Image, Video, PDF or other which is available for display</xs:documentation>
@@ -9946,6 +9861,11 @@
 <xs:element name="BaggagePricingCriteria" type="BaggagePricingCriteriaType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Baggage pricing specific filter criteria for shopping requests, including baggage type, charges, and settlement information.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="FareCriteria" type="FareCriteriaType" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>Fare criteria used to filter shopping results.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="PricingMethodCriteria" type="PricingMethodCriteriaType" minOccurs="0" maxOccurs="unbounded">
@@ -10531,11 +10451,6 @@
 <xs:documentation>Disclosure data list definition.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="MediaList" type="MediaListType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Media data list definition.</xs:documentation>
-</xs:annotation>
-</xs:element>
 <xs:element name="OriginDestList" type="OptionalOriginDestListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Origin Destination data list definition.</xs:documentation>
@@ -10911,6 +10826,11 @@
 <xs:documentation>Data List definition for this message.</xs:documentation>
 </xs:annotation>
 </xs:element>
+<xs:element name="Metadata" type="MetadataType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Message wide metadata information.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="PaxGroup" type="PaxGroupType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
 <xs:documentation>A number of individual passengers traveling under one commercial name that associates them. E.g. a Tour group or a group for sales allotment from airline to agency.
@@ -10942,6 +10862,11 @@
 <xs:element name="BaggagePricingCriteria" type="BaggagePricingCriteriaType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Baggage pricing specific filter criteria for shopping requests, including baggage type, charges, and settlement information.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="FareCriteria" type="FareCriteriaType" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>Fare criteria used to filter shopping results.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="PricingMethodCriteria" type="PricingMethodCriteriaType" minOccurs="0" maxOccurs="unbounded">
@@ -11729,9 +11654,9 @@
 <xs:documentation>Validating carrier-assigned fare rule modification or override information.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="Order" type="SelectedOrderType" minOccurs="1" maxOccurs="1">
+<xs:element name="OrderRefID" type="ID_Type" minOccurs="1" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Ability to cancel an entire Order</xs:documentation>
+<xs:documentation>Reference to an existing Order to which the Seller wants to add, update or delete an Order Item.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="PaxJourneyList" type="ShoppingRequestPaxJourneyListType" minOccurs="0" maxOccurs="1">
@@ -12014,7 +11939,7 @@
 </xs:element>
 <xs:element name="DocFilterCriteria" type="AccountableDocType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
+<xs:documentation>A Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="FlightFilterCriteria" type="FlightFilterCriteriaType" minOccurs="0" maxOccurs="1">
@@ -12216,7 +12141,7 @@
 </xs:element>
 <xs:element name="DocFilterCriteria" type="AccountableDocType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
+<xs:documentation>A Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="OrderFilterCriteria" type="OrderFilterCriteriaType" minOccurs="0" maxOccurs="1">
@@ -12677,6 +12602,9 @@
 </xs:sequence>
 </xs:complexType>
 <xs:simpleType name="PaxGroupNameType">
+<xs:annotation>
+<xs:documentation>The name of the group type.</xs:documentation>
+</xs:annotation>
 <xs:restriction base="xs:token"></xs:restriction>
 </xs:simpleType>
 <xs:complexType name="PaxGroupType">
@@ -13022,11 +12950,6 @@
 <xs:documentation>Any person except members of the crew carried or to be carried with the consent of the carrier, on board of any transport vehicle such as aircraft, train, bus, ship. Holds the attributes specific to a one booking, from shopping to fulfillment.</xs:documentation>
 </xs:annotation>
 <xs:sequence>
-<xs:element name="AgeMeasure" type="MeasureType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>The Age of the Passenger. To be used in NDC Anonymous Shopping requests or when the birthdate (in Individual) is not known.</xs:documentation>
-</xs:annotation>
-</xs:element>
 <xs:element name="Birthdate" type="DateType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>The Date of Birth of the Passenger. Intended to be used in NDC Anonymous Shopping requests. Example: 2017-01-13</xs:documentation>
@@ -13577,7 +13500,7 @@
 <xs:sequence>
 <xs:element name="AccountableDoc" type="AccountableDocType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
+<xs:documentation>A Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="Amount" type="AmountType" minOccurs="0" maxOccurs="1">
@@ -13931,7 +13854,7 @@
 <xs:choice>
 <xs:element name="AccountableDoc" type="AccountableDocType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
+<xs:documentation>A Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="IATA_EasyPay" type="PaymentProcessingIATA_EasyPayType" minOccurs="1" maxOccurs="1">
@@ -14302,7 +14225,7 @@
 <xs:choice>
 <xs:element name="AccountableDoc" type="AccountableDocType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
+<xs:documentation>A Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="IATA_EasyPay" type="ReceiptIATA_EasyPayType" minOccurs="1" maxOccurs="1">
@@ -15359,7 +15282,7 @@
 <xs:choice>
 <xs:element name="AcceptOrderItemList" type="AcceptOrderItemListType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>This is a collection of Create Order Item's.</xs:documentation>
+<xs:documentation>A collection of Create Order Item's.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="SelectedOfferList" type="SelectedOfferListType" minOccurs="1" maxOccurs="1">
@@ -16040,7 +15963,7 @@
 <xs:choice>
 <xs:element name="AccountableDoc" type="AccountableDocType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
+<xs:documentation>A Form of payment which utilizes a previously issued accountable travel document (ticket, EMD, coupon, etc.) which has an outstanding credit value.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DirectBill" type="DirectBillType" minOccurs="1" maxOccurs="1">
@@ -16900,7 +16823,7 @@
 </xs:simpleType>
 <xs:simpleType name="RoundingPrecisionCodeContentType">
 <xs:annotation>
-<xs:documentation>  </xs:documentation>
+<xs:documentation>An enum to specify if the rounding precision should be rounded up or down. </xs:documentation>
 </xs:annotation>
 <xs:restriction base="xs:token">
 <xs:enumeration value="Down">
@@ -17044,7 +16967,8 @@
 </xs:element>
 <xs:element name="FarePriceType" type="FarePriceTypeType" minOccurs="1" maxOccurs="3">
 <xs:annotation>
-<xs:documentation>The type of fair price applied to a Fare Detail (e.g. filed amount, net amount, or a sell amount).</xs:documentation>
+<xs:documentation>An additional specified fare pricing such as 'Net' and 'Filed'. 
+ For 'Sell' or public amounts, use the Price in Fare Details.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="FareRefText" type="TextType" minOccurs="0" maxOccurs="1">
@@ -18580,11 +18504,6 @@
 <xs:documentation>Disclosure data list definition.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="MediaList" type="MediaListType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Media data list definition.</xs:documentation>
-</xs:annotation>
-</xs:element>
 <xs:element name="OriginDestList" type="OriginDestListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Origin Destination data list definition.</xs:documentation>
@@ -19314,7 +19233,7 @@
 <xs:sequence>
 <xs:element name="AddOfferItems" type="AddOfferItemsType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Action to request new Added Offer Items for the specified Order. If used in conjunction with a 'Delete' function, the intention is to replace the deleted item with whatever has been requested in this Add function's shopping query.</xs:documentation>
+<xs:documentation>An action to request new Added Offer Items for the specified Order. If used in conjunction with a 'Delete' function, the intention is to replace the deleted item with whatever has been requested in this Add function's shopping query.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DeleteOrderItem" type="AffectedOrderItemRequestType" minOccurs="0" maxOccurs="unbounded">
@@ -19537,11 +19456,6 @@
 <xs:element name="DisclosureList" type="DisclosureListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Disclosure data list definition.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="MediaList" type="MediaListType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Media data list definition.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="OriginDestList" type="OriginDestListType" minOccurs="0" maxOccurs="1">
@@ -20571,7 +20485,7 @@
 <xs:documentation>Defines the codeset that is being used in each entry to define the codeset code and the associated value text.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="ValueText" type="TextType" minOccurs="1" maxOccurs="1">
+<xs:element name="ValueText" type="TextType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>The textural description associated to the codeset code for a given defined codeset.</xs:documentation>
 </xs:annotation>
@@ -20871,7 +20785,7 @@
 <xs:documentation>Reference to a Passenger ID.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="PaymentRefID" type="ID_Type" minOccurs="1" maxOccurs="unbounded">
+<xs:element name="PaymentRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
 <xs:documentation>References a payment transaction within this message.</xs:documentation>
 </xs:annotation>
