@@ -38,6 +38,7 @@
 <xs:key name = "BaggageAllowanceIDKey" ><xs:selector xpath = "./Response/DataLists/BaggageAllowanceList/BaggageAllowance" /><xs:field xpath="BaggageAllowanceID"/> </xs:key>
 <xs:key name = "ContactInfoIDKey" ><xs:selector xpath = "./Response/DataLists/ContactInfoList/ContactInfo" /><xs:field xpath="ContactInfoID"/> </xs:key>
 <xs:key name = "DatedOperatingLegIDKey" ><xs:selector xpath = "./Response/DataLists/DatedOperatingLegList/DatedOperatingLeg" /><xs:field xpath="DatedOperatingLegID"/> </xs:key>
+<xs:key name = "DisclosureIDKey" ><xs:selector xpath = "./Response/DataLists/DisclosureList/Disclosure" /><xs:field xpath="DisclosureID"/> </xs:key>
 <xs:key name = "PaxJourneyIDKey" ><xs:selector xpath = "./Response/DataLists/PaxJourneyList/PaxJourney" /><xs:field xpath="PaxJourneyID"/> </xs:key>
 <xs:key name = "PaxIDKey" ><xs:selector xpath = "./Response/DataLists/PaxList/Pax" /><xs:field xpath="PaxID"/> </xs:key>
 <xs:key name = "PaxSegmentIDKey" ><xs:selector xpath = "./Response/DataLists/PaxSegmentList/PaxSegment" /><xs:field xpath="PaxSegmentID"/> </xs:key>
@@ -46,6 +47,7 @@
 <xs:key name = "ServiceDefinitionIDKey" ><xs:selector xpath = "./Response/DataLists/ServiceDefinitionList/ServiceDefinition" /><xs:field xpath="ServiceDefinitionID"/> </xs:key>
 <xs:keyref name = "PaxSegmentIDKeyKeyRef1" refer="PaxSegmentIDKey"><xs:selector xpath="./Response/DataLists/ContactInfoList/ContactInfo/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "DatedOperatingLegIDKeyKeyRef1" refer="DatedOperatingLegIDKey"><xs:selector xpath="./Response/DataLists/DatedOperatingSegmentList/DatedOperatingSegment/DatedOperatingLegRefID"/><xs:field xpath="."/></xs:keyref>
+<xs:keyref name = "DisclosureIDKeyKeyRef1" refer="DisclosureIDKey"><xs:selector xpath="./Response/DataLists/DatedOperatingSegmentList/DatedOperatingSegment/DisclosureRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxJourneyIDKeyKeyRef1" refer="PaxJourneyIDKey"><xs:selector xpath="./Response/DataLists/OriginDestList/OriginDest/PaxJourneyRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxSegmentIDKeyKeyRef2" refer="PaxSegmentIDKey"><xs:selector xpath="./Response/DataLists/PaxJourneyList/PaxJourney/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "ContactInfoIDKeyKeyRef1" refer="ContactInfoIDKey"><xs:selector xpath="./Response/DataLists/PaxList/Pax/ContactInfoRefID"/><xs:field xpath="."/></xs:keyref>

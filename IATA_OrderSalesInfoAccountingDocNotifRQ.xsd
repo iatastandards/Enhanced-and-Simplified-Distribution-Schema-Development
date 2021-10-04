@@ -42,6 +42,7 @@
 <xs:keyref name = "PaxSegmentIDKeyKeyRef1" refer="PaxSegmentIDKey"><xs:selector xpath="./DistributionChain/DistributionChainLink/ContactInfo/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxSegmentIDKeyKeyRef2" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/DataLists/ContactInfoList/ContactInfo/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "DatedOperatingLegIDKeyKeyRef1" refer="DatedOperatingLegIDKey"><xs:selector xpath="./Request/DataLists/DatedOperatingSegmentList/DatedOperatingSegment/DatedOperatingLegRefID"/><xs:field xpath="."/></xs:keyref>
+<xs:keyref name = "DisclosureIDKeyKeyRef1" refer="DisclosureIDKey"><xs:selector xpath="./Request/DataLists/DatedOperatingSegmentList/DatedOperatingSegment/DisclosureRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxJourneyIDKeyKeyRef1" refer="PaxJourneyIDKey"><xs:selector xpath="./Request/DataLists/OriginDestList/OriginDest/PaxJourneyRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxSegmentIDKeyKeyRef3" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/DataLists/PaxJourneyList/PaxJourney/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "ContactInfoIDKeyKeyRef1" refer="ContactInfoIDKey"><xs:selector xpath="./Request/DataLists/PaxList/Pax/ContactInfoRefID"/><xs:field xpath="."/></xs:keyref>
@@ -51,7 +52,7 @@
 <xs:keyref name = "SeatProfileIDKeyKeyRef1" refer="SeatProfileIDKey"><xs:selector xpath="./Request/DataLists/ServiceDefinitionList/ServiceDefinition/ServiceDefinitionAssociation/SeatProfileRef/SeatProfileRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "ServiceDefinitionIDKeyKeyRef1" refer="ServiceDefinitionIDKey"><xs:selector xpath="./Request/DataLists/ServiceDefinitionList/ServiceDefinition/ServiceDefinitionAssociation/ServiceBundle/ServiceDefinitionRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxSegmentIDKeyKeyRef4" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/Order/BookingRef/BookingEntity/Org/ContactInfo/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "DisclosureIDKeyKeyRef1" refer="DisclosureIDKey"><xs:selector xpath="./Request/Order/OrderItem/DisclosureRefID"/><xs:field xpath="."/></xs:keyref>
+<xs:keyref name = "DisclosureIDKeyKeyRef2" refer="DisclosureIDKey"><xs:selector xpath="./Request/Order/OrderItem/DisclosureRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxIDKeyKeyRef2" refer="PaxIDKey"><xs:selector xpath="./Request/Order/OrderItem/FareDetail/FareComponent/CancelRestrictions/PaxRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxIDKeyKeyRef3" refer="PaxIDKey"><xs:selector xpath="./Request/Order/OrderItem/FareDetail/FareComponent/ChangeRestrictions/PaxRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PenaltyIDKeyKeyRef1" refer="PenaltyIDKey"><xs:selector xpath="./Request/Order/OrderItem/FareDetail/FareComponent/FareRule/PenaltyRefID"/><xs:field xpath="."/></xs:keyref>

@@ -462,11 +462,6 @@
 <xs:documentation>Information related to a booking or reservation.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="BookingStatusCode" type="ServiceBookingStatusCodeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Indicates the current status of a Service booking.</xs:documentation>
-</xs:annotation>
-</xs:element>
 <xs:element name="DeliveryStatusCode" type="ServiceDeliveryStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Indicates the current status of a Service delivery</xs:documentation>
@@ -1404,27 +1399,17 @@
 </xs:element>
 <xs:element name="DatedMarketingSegmentList" type="DatedMarketingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
- Business Identifier Fields:
- - (Marketing) [Carrier] Airline Designator
- - Marketing Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated marketing segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1"></xs:element>
+<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>A list of dated operating legs used in the contained message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="DatedOperatingSegmentList" type="DatedOperatingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated operating segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DisclosureList" type="DisclosureListType" minOccurs="0" maxOccurs="unbounded">
@@ -3925,11 +3910,6 @@
 <xs:documentation>Information related to a booking or reservation.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="BookingStatusCode" type="ServiceBookingStatusCodeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Indicates the current status of a Service booking.</xs:documentation>
-</xs:annotation>
-</xs:element>
 <xs:element name="DescText" type="TextType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Free text for textual description.</xs:documentation>
@@ -5136,27 +5116,17 @@
 </xs:element>
 <xs:element name="DatedMarketingSegmentList" type="DatedMarketingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
- Business Identifier Fields:
- - (Marketing) [Carrier] Airline Designator
- - Marketing Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated marketing segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1"></xs:element>
+<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>A list of dated operating legs used in the contained message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="DatedOperatingSegmentList" type="DatedOperatingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated operating segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DisclosureList" type="DisclosureListType" minOccurs="0" maxOccurs="1">
@@ -5213,14 +5183,7 @@
 </xs:complexType>
 <xs:complexType name="DatedMarketingSegmentListType">
 <xs:annotation>
-<xs:documentation>The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
- Business Identifier Fields:
- - (Marketing) [Carrier] Airline Designator
- - Marketing Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated marketing segments used in the contained message.</xs:documentation>
 </xs:annotation>
 <xs:sequence>
 <xs:element name="DatedMarketingSegment" type="DatedMarketingSegmentType" minOccurs="1" maxOccurs="unbounded">
@@ -5256,8 +5219,17 @@
 <xs:documentation>Commercial name of the carrier.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedMarketingSegmentId" type="ID_Type" minOccurs="1" maxOccurs="1"></xs:element>
-<xs:element name="DatedOperatingSegmentRefId" type="ID_Type" minOccurs="1" maxOccurs="1"></xs:element>
+<xs:element name="DatedMarketingSegmentId" type="ID_Type" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Unique identifier of a dated marketing segment used in a message.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="DatedOperatingSegmentRefId" type="ID_Type" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Reference to a unique identifier of a dated operating segment used in a message.
+ </xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="Dep" type="TransportPointType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>This is a transport point location.</xs:documentation>
@@ -5268,7 +5240,11 @@
 <xs:documentation>The numerical designation of a flight as it is marketed by a carrier.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="OperationalSuffixText" type="OperationalSuffixTextType" minOccurs="0" maxOccurs="1"></xs:element>
+<xs:element name="OperationalSuffixText" type="OperationalSuffixTextType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Used to distinguish two flights having the same flight number and departing from their respective Origin Stations on the same date.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="RichMedia" type="MediaResourceRefType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
 <xs:documentation>An external resource such as an Image, Video, PDF or other which is available for display</xs:documentation>
@@ -5282,17 +5258,13 @@
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="DatedOperatingLegListType">
+<xs:annotation>
+<xs:documentation>A list of dated operating legs used in the contained message.</xs:documentation>
+</xs:annotation>
 <xs:sequence>
 <xs:element name="DatedOperatingLeg" type="DatedOperatingLegType" minOccurs="1" maxOccurs="unbounded">
 <xs:annotation>
-<xs:documentation>The nonstop operation of a transport vehicle between the departure station and the arrival station. Can be used for aircrafts as well as other transport vehicles such as train or bus etc. 
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Dated Operating Flight] Flight Identifier Date
- - Scheduled Departure Station
- - Repeat Number.</xs:documentation>
+<xs:documentation>The nonstop operation of a transport vehicle between the departure station and the arrival station. Can be used for aircrafts as well as other transport vehicles such as train or bus etc.</xs:documentation>
 </xs:annotation>
 </xs:element>
 </xs:sequence>
@@ -5311,14 +5283,7 @@
 </xs:complexType>
 <xs:complexType name="DatedOperatingLegType">
 <xs:annotation>
-<xs:documentation>The nonstop operation of a transport vehicle between the departure station and the arrival station. Can be used for aircrafts as well as other transport vehicles such as train or bus etc. 
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Dated Operating Flight] Flight Identifier Date
- - Scheduled Departure Station
- - Repeat Number.</xs:documentation>
+<xs:documentation>The nonstop operation of a transport vehicle between the departure station and the arrival station. Can be used for aircrafts as well as other transport vehicles such as train or bus etc.</xs:documentation>
 </xs:annotation>
 <xs:sequence>
 <xs:element name="AirlineTaxonomy" type="AirlineTaxonomyType" minOccurs="0" maxOccurs="unbounded">
@@ -5379,40 +5344,19 @@
 </xs:complexType>
 <xs:complexType name="DatedOperatingSegmentListType">
 <xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated operating segments used in the contained message.</xs:documentation>
 </xs:annotation>
 <xs:sequence>
 <xs:element name="DatedOperatingSegment" type="DatedOperatingSegmentType" minOccurs="1" maxOccurs="unbounded">
 <xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.</xs:documentation>
 </xs:annotation>
 </xs:element>
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="DatedOperatingSegmentType">
 <xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.</xs:documentation>
 </xs:annotation>
 <xs:sequence>
 <xs:element name="CarrierDesigCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
@@ -5430,7 +5374,16 @@
 <xs:documentation>Uniquely identifies a leg within the context of one message.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedOperatingSegmentId" type="ID_Type" minOccurs="1" maxOccurs="1"></xs:element>
+<xs:element name="DatedOperatingSegmentId" type="ID_Type" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Unique identifier of a dated operating segment used in a message.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="DisclosureRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Uniquely Identifies a disclosure within the context of one message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="Duration" type="DurationType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Total segment time including the combined air time and connection times of any legs.</xs:documentation>
@@ -5456,12 +5409,6 @@
 <xs:documentation>Defines the operational flight segment type (e.g. Open, Passive, Service).
  
  Encoding Scheme: IATA PADIS 1.4 Codeset FST - Flight Segment Type</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="StatusCode" type="CodeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Flight Status, examples: SO, Flight Canceled. Refer PADIS codeset 
- 1245.</xs:documentation>
 </xs:annotation>
 </xs:element>
 </xs:sequence>
@@ -5686,11 +5633,6 @@
 <xs:element name="BookingRef" type="BookingRefType" minOccurs="0" maxOccurs="3">
 <xs:annotation>
 <xs:documentation>Information related to a booking or reservation.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="BookingStatusCode" type="ServiceBookingStatusCodeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Indicates the current status of a Service booking.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DeliveryCode" type="CodeType" minOccurs="0" maxOccurs="1">
@@ -6508,27 +6450,17 @@
 </xs:element>
 <xs:element name="DatedMarketingSegmentList" type="DatedMarketingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
- Business Identifier Fields:
- - (Marketing) [Carrier] Airline Designator
- - Marketing Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated marketing segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1"></xs:element>
+<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>A list of dated operating legs used in the contained message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="DatedOperatingSegmentList" type="DatedOperatingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated operating segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="IssueDate" type="DateType" minOccurs="0" maxOccurs="1">
@@ -7479,11 +7411,6 @@
  - [Individual] (no identifier available)</xs:documentation>
 </xs:annotation>
 <xs:sequence>
-<xs:element name="ARNK_Ind" type="IndType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>When TRUE, indicates an ARNK (ARrival uNKown) condition, i.e. a gap between current segment departure and previous segment arrival location, implying an unknown passenger movement.</xs:documentation>
-</xs:annotation>
-</xs:element>
 <xs:element name="Arrival" type="TransportPointType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>This is a transport point location.</xs:documentation>
@@ -8453,27 +8380,17 @@
 </xs:element>
 <xs:element name="DatedMarketingSegmentList" type="DatedMarketingSegmentListType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
-<xs:documentation>The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
- Business Identifier Fields:
- - (Marketing) [Carrier] Airline Designator
- - Marketing Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated marketing segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>A list of dated operating legs used in the contained message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="DatedOperatingSegmentList" type="DatedOperatingSegmentListType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated operating segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DisclosureList" type="DisclosureListType" minOccurs="0" maxOccurs="1">
@@ -8611,27 +8528,17 @@
 </xs:element>
 <xs:element name="DatedMarketingSegmentList" type="DatedMarketingSegmentListType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
-<xs:documentation>The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
- Business Identifier Fields:
- - (Marketing) [Carrier] Airline Designator
- - Marketing Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated marketing segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>A list of dated operating legs used in the contained message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="DatedOperatingSegmentList" type="DatedOperatingSegmentListType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated operating segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="RetailerOrderInfo" type="RetailerOrderInfoType" minOccurs="1" maxOccurs="1">
@@ -8670,27 +8577,17 @@
 </xs:element>
 <xs:element name="DatedMarketingSegmentList" type="DatedMarketingSegmentListType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
-<xs:documentation>The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
- Business Identifier Fields:
- - (Marketing) [Carrier] Airline Designator
- - Marketing Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated marketing segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>A list of dated operating legs used in the contained message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="DatedOperatingSegmentList" type="DatedOperatingSegmentListType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated operating segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DisclosureList" type="DisclosureListType" minOccurs="0" maxOccurs="1">
@@ -9046,11 +8943,6 @@
 <xs:element name="BookingRef" type="BookingRefType" minOccurs="0" maxOccurs="3">
 <xs:annotation>
 <xs:documentation>Information related to a booking or reservation.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="BookingStatusCode" type="ServiceBookingStatusCodeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Indicates the current status of a Service booking.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DescText" type="TextType" minOccurs="0" maxOccurs="1">
@@ -9623,8 +9515,16 @@
 <xs:documentation>Enumeration set for the measurement system code BDT. {codeListAgencyName}PADIS{/codeListAgencyName} </xs:documentation>
 </xs:annotation>
 <xs:restriction base="xs:token">
-<xs:enumeration value="Imperial"></xs:enumeration>
-<xs:enumeration value="Metric"></xs:enumeration>
+<xs:enumeration value="Imperial">
+<xs:annotation>
+<xs:documentation>The imperial measurement system.</xs:documentation>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="Metric">
+<xs:annotation>
+<xs:documentation>The metric measurement system.</xs:documentation>
+</xs:annotation>
+</xs:enumeration>
 </xs:restriction>
 </xs:simpleType>
 <xs:simpleType name="MeasurementSystemCodeType">
@@ -10791,27 +10691,17 @@
 </xs:element>
 <xs:element name="DatedMarketingSegmentList" type="DatedMarketingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
- Business Identifier Fields:
- - (Marketing) [Carrier] Airline Designator
- - Marketing Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated marketing segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1"></xs:element>
+<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>A list of dated operating legs used in the contained message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="DatedOperatingSegmentList" type="DatedOperatingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated operating segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DisclosureList" type="DisclosureListType" minOccurs="0" maxOccurs="1">
@@ -11489,11 +11379,6 @@
 <xs:documentation>Information related to a booking or reservation.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="BookingStatusCode" type="ServiceBookingStatusCodeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Indicates the current status of a Service booking.</xs:documentation>
-</xs:annotation>
-</xs:element>
 <xs:element name="DeliveryStatusCode" type="ServiceDeliveryStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Indicates the current status of a Service delivery</xs:documentation>
@@ -11701,14 +11586,9 @@
 </xs:element>
 <xs:element name="Service" type="ServiceKeyType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
-<xs:documentation>The instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order. 
+<xs:documentation>Service Key specialization of an instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
  At the time of shopping, a service can be sold to multiple passengers on a given journey. 
- At time of order, the services should be applied to a single passenger on a single segment.
- Business Identifier Fields:
- - [Shopping Response] Shopping Response ID 
- - [Offer] Offer ID
- - [Offer Item] Offer Item ID
- - Service ID</xs:documentation>
+ At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
 </xs:annotation>
 </xs:element>
 </xs:sequence>
@@ -11909,27 +11789,17 @@
 </xs:element>
 <xs:element name="DatedMarketingSegmentList" type="DatedMarketingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
- Business Identifier Fields:
- - (Marketing) [Carrier] Airline Designator
- - Marketing Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated marketing segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1"></xs:element>
+<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>A list of dated operating legs used in the contained message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="DatedOperatingSegmentList" type="DatedOperatingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated operating segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DisclosureList" type="DisclosureListType" minOccurs="0" maxOccurs="unbounded">
@@ -13149,17 +13019,16 @@
  - [Individual] (no identifier available)</xs:documentation>
 </xs:annotation>
 <xs:sequence>
-<xs:element name="ARNK_Ind" type="IndType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>When TRUE, indicates an ARNK (ARrival uNKown) condition, i.e. a gap between current segment departure and previous segment arrival location, implying an unknown passenger movement.</xs:documentation>
-</xs:annotation>
-</xs:element>
 <xs:element name="CabinTypeAssociationChoice" type="CabinTypeAssociationChoiceType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>A choice of Cabin Type Association to leg(s) or a segment</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedMarketingSegmentRefId" type="ID_Type" minOccurs="1" maxOccurs="1"></xs:element>
+<xs:element name="DatedMarketingSegmentRefId" type="ID_Type" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>A reference to a unique identifier of a dated marketing segment used in a message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="MarketingCarrierRBD_Code" type="RBD_CodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Code used to identify a particular RBD (e.g. P, J, W, M, etc.).</xs:documentation>
@@ -13189,7 +13058,11 @@
  Additionally the passenger can be in a requested selected group of passengers whom wish to not share with the remaining passengers in the booking . E.g could be a group of a family members in a larger group booking.</xs:documentation>
 </xs:annotation>
 <xs:sequence>
-<xs:element name="PaxRefID" type="ID_Type" minOccurs="1" maxOccurs="1"></xs:element>
+<xs:element name="PaxRefID" type="ID_Type" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Reference to a Passenger ID within this message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="SharingInd" type="IndType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Identifies if the passenger wants to stop sharing his data with the other passengers not in his group.</xs:documentation>
@@ -15151,7 +15024,11 @@
 <xs:documentation>Further defines the types of Point of Sale</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="TravelAgencyInd" type="IndType" minOccurs="1" maxOccurs="1"></xs:element>
+<xs:element name="TravelAgencyInd" type="IndType" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Unique Agency Seller ID. Example: CTRV</xs:documentation>
+</xs:annotation>
+</xs:element>
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="POS_Type">
@@ -15401,10 +15278,14 @@
 </xs:complexType>
 <xs:complexType name="PriceCalendarDateType">
 <xs:annotation>
-<xs:documentation>Price Calendar Date</xs:documentation>
+<xs:documentation>A Price Calendar Date</xs:documentation>
 </xs:annotation>
 <xs:sequence>
-<xs:element name="Date" type="DateType" minOccurs="1" maxOccurs="1"></xs:element>
+<xs:element name="Date" type="DateType" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>A date.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="OriginDestRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Association to one Origin/Destination instance. Example: od1</xs:documentation>
@@ -15424,7 +15305,7 @@
 </xs:element>
 <xs:element name="PriceCalendarDate" type="PriceCalendarDateType" minOccurs="1" maxOccurs="unbounded">
 <xs:annotation>
-<xs:documentation>Price Calendar Date</xs:documentation>
+<xs:documentation>A Price Calendar Date</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="PricedPTC" type="PTC_OfferParametersType" minOccurs="0" maxOccurs="unbounded">
@@ -16462,10 +16343,26 @@
 <xs:documentation>Enum values for Reporting Type Code BDT. {codeListAgencyName}IATA AIDM{/codeListAgencyName} </xs:documentation>
 </xs:annotation>
 <xs:restriction base="xs:token">
-<xs:enumeration value="Airline"></xs:enumeration>
-<xs:enumeration value="ARC"></xs:enumeration>
-<xs:enumeration value="BSP"></xs:enumeration>
-<xs:enumeration value="Not applicable"></xs:enumeration>
+<xs:enumeration value="Airline">
+<xs:annotation>
+<xs:documentation>Airline reporting type code</xs:documentation>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="ARC">
+<xs:annotation>
+<xs:documentation>ARC reporting type code</xs:documentation>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="BSP">
+<xs:annotation>
+<xs:documentation>BSP reporting type code</xs:documentation>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="Not applicable">
+<xs:annotation>
+<xs:documentation>Not applicable reporting type code</xs:documentation>
+</xs:annotation>
+</xs:enumeration>
 </xs:restriction>
 </xs:simpleType>
 <xs:simpleType name="ReportingTypeCodeType">
@@ -17557,7 +17454,13 @@
 <xs:documentation>Reference to a Passenger Segment ID from a previously returned Offer.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="Service" type="ServiceIdKeyType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="Service" type="ServiceIdKeyType" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>Service Id key specialization of an instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+ At the time of shopping, a service can be sold to multiple passengers on a given journey. 
+ At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
+</xs:annotation>
+</xs:element>
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="SeatAvailOfferRequestType">
@@ -17644,27 +17547,17 @@
 </xs:element>
 <xs:element name="DatedMarketingSegmentList" type="DatedMarketingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
- Business Identifier Fields:
- - (Marketing) [Carrier] Airline Designator
- - Marketing Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated marketing segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1"></xs:element>
+<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>A list of dated operating legs used in the contained message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="DatedOperatingSegmentList" type="DatedOperatingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated operating segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DisclosureList" type="DisclosureListType" minOccurs="0" maxOccurs="1">
@@ -18530,29 +18423,6 @@
 </xs:element>
 </xs:sequence>
 </xs:complexType>
-<xs:simpleType name="ServiceBookingStatusCodeContentType">
-<xs:annotation>
-<xs:documentation>shows the possible statuses of a service Booking item. </xs:documentation>
-</xs:annotation>
-<xs:restriction base="xs:token">
-<xs:enumeration value="CONFIRMED">
-<xs:annotation>
-<xs:documentation>Inventory owner confirms he is able to provide the Service.</xs:documentation>
-</xs:annotation>
-</xs:enumeration>
-<xs:enumeration value="REQUESTED">
-<xs:annotation>
-<xs:documentation>OM requests the Service from the Inventory owner.</xs:documentation>
-</xs:annotation>
-</xs:enumeration>
-</xs:restriction>
-</xs:simpleType>
-<xs:simpleType name="ServiceBookingStatusCodeType">
-<xs:annotation>
-<xs:documentation>Represents the current status of a service booking item</xs:documentation>
-</xs:annotation>
-<xs:restriction base="ServiceBookingStatusCodeContentType"></xs:restriction>
-</xs:simpleType>
 <xs:complexType name="ServiceBundleType">
 <xs:annotation>
 <xs:documentation>A set of services offered for sale as a single service.</xs:documentation>
@@ -18770,27 +18640,17 @@
 </xs:element>
 <xs:element name="DatedMarketingSegmentList" type="DatedMarketingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
- Business Identifier Fields:
- - (Marketing) [Carrier] Airline Designator
- - Marketing Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated marketing segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1"></xs:element>
+<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>A list of dated operating legs used in the contained message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="DatedOperatingSegmentList" type="DatedOperatingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated operating segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DisclosureList" type="DisclosureListType" minOccurs="0" maxOccurs="1">
@@ -18904,27 +18764,17 @@
 </xs:element>
 <xs:element name="DatedMarketingSegmentList" type="DatedMarketingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
- Business Identifier Fields:
- - (Marketing) [Carrier] Airline Designator
- - Marketing Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated marketing segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1"></xs:element>
+<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>A list of dated operating legs used in the contained message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="DatedOperatingSegmentList" type="DatedOperatingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated operating segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="Order" type="OrderKeyType" minOccurs="0" maxOccurs="1">
@@ -19011,11 +18861,6 @@
 <xs:documentation>Information related to a booking or reservation.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="BookingStatusCode" type="ServiceBookingStatusCodeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Indicates the current status of a Service booking.</xs:documentation>
-</xs:annotation>
-</xs:element>
 <xs:element name="DeliveryStatusCode" type="ServiceDeliveryStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Indicates the current status of a Service delivery</xs:documentation>
@@ -19058,6 +18903,11 @@
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="ServiceIdKeyType">
+<xs:annotation>
+<xs:documentation>Service Id key specialization of an instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+ At the time of shopping, a service can be sold to multiple passengers on a given journey. 
+ At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
+</xs:annotation>
 <xs:sequence>
 <xs:element name="ServiceID" type="ID_Type" minOccurs="1" maxOccurs="1">
 <xs:annotation>
@@ -19068,14 +18918,9 @@
 </xs:complexType>
 <xs:complexType name="ServiceKeyType">
 <xs:annotation>
-<xs:documentation>The instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order. 
+<xs:documentation>Service Key specialization of an instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
  At the time of shopping, a service can be sold to multiple passengers on a given journey. 
- At time of order, the services should be applied to a single passenger on a single segment.
- Business Identifier Fields:
- - [Shopping Response] Shopping Response ID 
- - [Offer] Offer ID
- - [Offer Item] Offer Item ID
- - Service ID</xs:documentation>
+ At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
 </xs:annotation>
 <xs:sequence>
 <xs:element name="BookingRef" type="BookingRefType" minOccurs="0" maxOccurs="3">
@@ -19162,7 +19007,13 @@
 <xs:documentation>Reference to a Passenger Segment ID from a previously returned Offer.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="Service" type="ServiceIdKeyType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="Service" type="ServiceIdKeyType" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>Service Id key specialization of an instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+ At the time of shopping, a service can be sold to multiple passengers on a given journey. 
+ At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
+</xs:annotation>
+</xs:element>
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="ServiceListOfferRequestType">
@@ -19264,27 +19115,17 @@
 </xs:element>
 <xs:element name="DatedMarketingSegmentList" type="DatedMarketingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
- Business Identifier Fields:
- - (Marketing) [Carrier] Airline Designator
- - Marketing Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated marketing segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1"></xs:element>
+<xs:element name="DatedOperatingLegList" type="DatedOperatingLegListType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>A list of dated operating legs used in the contained message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="DatedOperatingSegmentList" type="DatedOperatingSegmentListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
+<xs:documentation>A list of dated operating segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="FareWaiver" type="FareWaiverType" minOccurs="0" maxOccurs="unbounded">
@@ -19437,14 +19278,9 @@
 </xs:element>
 <xs:element name="Service" type="ServiceKeyType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
-<xs:documentation>The instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order. 
+<xs:documentation>Service Key specialization of an instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
  At the time of shopping, a service can be sold to multiple passengers on a given journey. 
- At time of order, the services should be applied to a single passenger on a single segment.
- Business Identifier Fields:
- - [Shopping Response] Shopping Response ID 
- - [Offer] Offer ID
- - [Offer Item] Offer Item ID
- - Service ID</xs:documentation>
+ At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="SpecialService" type="SpecialServiceType" minOccurs="0" maxOccurs="1">
@@ -19737,14 +19573,6 @@
 <xs:documentation>Uniquely identifies a Passenger Journey within the context of one message.</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="PaxSegment" type="ShoppingRequestPaxSegmentType" minOccurs="1" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>Transportation of a passenger on a Dated Operating Segment.
- - [Dated Marketing Segment] (All identifying fields)
- - [Order] Order ID
- - [Individual] (no identifier available)</xs:documentation>
-</xs:annotation>
-</xs:element>
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="ShoppingRequestPaxSegmentListType">
@@ -19781,7 +19609,11 @@
 <xs:documentation>A choice of Cabin Type Association to leg(s) or a segment</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="DatedMarketingSegmentRefId" type="ID_Type" minOccurs="1" maxOccurs="1"></xs:element>
+<xs:element name="DatedMarketingSegmentRefId" type="ID_Type" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>A reference to a unique identifier of a dated marketing segment used in a message.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="PaxSegmentID" type="ID_Type" minOccurs="1" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Uniquely identifies a Passenger Segment within the context of one message.</xs:documentation>
@@ -20252,11 +20084,6 @@
 <xs:element name="BookingRef" type="BookingRefType" minOccurs="0" maxOccurs="3">
 <xs:annotation>
 <xs:documentation>Information related to a booking or reservation.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="BookingStatusCode" type="ServiceBookingStatusCodeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Indicates the current status of a Service booking.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="OrderedServiceAssociation" type="OrderedServiceAssociationType" minOccurs="1" maxOccurs="1">

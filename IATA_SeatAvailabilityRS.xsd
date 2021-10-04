@@ -58,6 +58,7 @@ The message also returns multi-media content at the message level with media con
 <xs:keyref name = "PaxIDKeyKeyRef4" refer="PaxIDKey"><xs:selector xpath="./Response/ALaCarteOffer/PTC_OfferParameters/PaxRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxSegmentIDKeyKeyRef2" refer="PaxSegmentIDKey"><xs:selector xpath="./Response/DataLists/ContactInfoList/ContactInfo/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "DatedOperatingLegIDKeyKeyRef2" refer="DatedOperatingLegIDKey"><xs:selector xpath="./Response/DataLists/DatedOperatingSegmentList/DatedOperatingSegment/DatedOperatingLegRefID"/><xs:field xpath="."/></xs:keyref>
+<xs:keyref name = "DisclosureIDKeyKeyRef2" refer="DisclosureIDKey"><xs:selector xpath="./Response/DataLists/DatedOperatingSegmentList/DatedOperatingSegment/DisclosureRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxJourneyIDKeyKeyRef2" refer="PaxJourneyIDKey"><xs:selector xpath="./Response/DataLists/OriginDestList/OriginDest/PaxJourneyRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxSegmentIDKeyKeyRef3" refer="PaxSegmentIDKey"><xs:selector xpath="./Response/DataLists/PaxJourneyList/PaxJourney/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "ContactInfoIDKeyKeyRef1" refer="ContactInfoIDKey"><xs:selector xpath="./Response/DataLists/PaxList/Pax/ContactInfoRefID"/><xs:field xpath="."/></xs:keyref>

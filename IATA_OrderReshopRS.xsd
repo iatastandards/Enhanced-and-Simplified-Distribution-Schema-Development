@@ -48,6 +48,7 @@ In the response, the Airline can provide exact instructions as to what actions c
 <xs:key name = "ServiceDefinitionIDKey" ><xs:selector xpath = "./Response/DataLists/ServiceDefinitionList/ServiceDefinition" /><xs:field xpath="ServiceDefinitionID"/> </xs:key>
 <xs:keyref name = "PaxSegmentIDKeyKeyRef1" refer="PaxSegmentIDKey"><xs:selector xpath="./Response/DataLists/ContactInfoList/ContactInfo/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "DatedOperatingLegIDKeyKeyRef1" refer="DatedOperatingLegIDKey"><xs:selector xpath="./Response/DataLists/DatedOperatingSegmentList/DatedOperatingSegment/DatedOperatingLegRefID"/><xs:field xpath="."/></xs:keyref>
+<xs:keyref name = "DisclosureIDKeyKeyRef1" refer="DisclosureIDKey"><xs:selector xpath="./Response/DataLists/DatedOperatingSegmentList/DatedOperatingSegment/DisclosureRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxJourneyIDKeyKeyRef1" refer="PaxJourneyIDKey"><xs:selector xpath="./Response/DataLists/OriginDestList/OriginDest/PaxJourneyRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxSegmentIDKeyKeyRef2" refer="PaxSegmentIDKey"><xs:selector xpath="./Response/DataLists/PaxJourneyList/PaxJourney/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "ContactInfoIDKeyKeyRef1" refer="ContactInfoIDKey"><xs:selector xpath="./Response/DataLists/PaxList/Pax/ContactInfoRefID"/><xs:field xpath="."/></xs:keyref>
@@ -77,7 +78,7 @@ In the response, the Airline can provide exact instructions as to what actions c
 <xs:keyref name = "PenaltyIDKeyKeyRef5" refer="PenaltyIDKey"><xs:selector xpath="./Response/ReshopResults/RepricedOffer/RepricedOfferItem/OriginalOrderItem/FareDetail/PenaltyRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PenaltyIDKeyKeyRef6" refer="PenaltyIDKey"><xs:selector xpath="./Response/ReshopResults/RepricedOffer/RepricedOfferItem/PenaltyRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "BaggageDisclosureIDKeyKeyRef1" refer="BaggageDisclosureIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/ALaCarteOffer/BaggageDisclosureRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "DisclosureIDKeyKeyRef1" refer="DisclosureIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/ALaCarteOffer/DisclosureRefID"/><xs:field xpath="."/></xs:keyref>
+<xs:keyref name = "DisclosureIDKeyKeyRef2" refer="DisclosureIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/ALaCarteOffer/DisclosureRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxIDKeyKeyRef10" refer="PaxIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/ALaCarteOffer/OfferItem/CancelRestrictions/PaxRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxIDKeyKeyRef11" refer="PaxIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/ALaCarteOffer/OfferItem/ChangeRestrictions/PaxRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "DatedOperatingLegIDKeyKeyRef3" refer="DatedOperatingLegIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/ALaCarteOffer/OfferItem/Eligibility/OfferFlightAssociations/DatedOperatingLegRef/DatedOperatingLegRefID"/><xs:field xpath="."/></xs:keyref>
@@ -167,7 +168,7 @@ In the response, the Airline can provide exact instructions as to what actions c
 <xs:keyref name = "PriceClassIDKeyKeyRef11" refer="PriceClassIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/Offer/DeleteOrderItem/PriceDifferential/OldPrice/FareDetail/FareComponent/PriceClassRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxIDKeyKeyRef42" refer="PaxIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/Offer/DeleteOrderItem/PriceDifferential/OldPrice/FareDetail/PaxRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PenaltyIDKeyKeyRef25" refer="PenaltyIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/Offer/DeleteOrderItem/PriceDifferential/OldPrice/FareDetail/PenaltyRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "DisclosureIDKeyKeyRef2" refer="DisclosureIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/Offer/DisclosureRefID"/><xs:field xpath="."/></xs:keyref>
+<xs:keyref name = "DisclosureIDKeyKeyRef3" refer="DisclosureIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/Offer/DisclosureRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxJourneyIDKeyKeyRef6" refer="PaxJourneyIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/Offer/JourneyOverview/JourneyPriceClass/PaxJourneyRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PriceClassIDKeyKeyRef12" refer="PriceClassIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/Offer/JourneyOverview/JourneyPriceClass/PriceClassRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PriceClassIDKeyKeyRef13" refer="PriceClassIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/Offer/JourneyOverview/PriceClassRefID"/><xs:field xpath="."/></xs:keyref>
@@ -265,7 +266,7 @@ In the response, the Airline can provide exact instructions as to what actions c
 <xs:keyref name = "PriceClassIDKeyKeyRef22" refer="PriceClassIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/RequotedOffer/DeleteOrderItem/PriceDifferential/OldPrice/FareDetail/FareComponent/PriceClassRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxIDKeyKeyRef79" refer="PaxIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/RequotedOffer/DeleteOrderItem/PriceDifferential/OldPrice/FareDetail/PaxRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PenaltyIDKeyKeyRef47" refer="PenaltyIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/RequotedOffer/DeleteOrderItem/PriceDifferential/OldPrice/FareDetail/PenaltyRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "DisclosureIDKeyKeyRef3" refer="DisclosureIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/RequotedOffer/DisclosureRefID"/><xs:field xpath="."/></xs:keyref>
+<xs:keyref name = "DisclosureIDKeyKeyRef4" refer="DisclosureIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/RequotedOffer/DisclosureRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxJourneyIDKeyKeyRef10" refer="PaxJourneyIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/RequotedOffer/JourneyOverview/JourneyPriceClass/PaxJourneyRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PriceClassIDKeyKeyRef23" refer="PriceClassIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/RequotedOffer/JourneyOverview/JourneyPriceClass/PriceClassRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PriceClassIDKeyKeyRef24" refer="PriceClassIDKey"><xs:selector xpath="./Response/ReshopResults/ReshopOffers/RequotedOffer/JourneyOverview/PriceClassRefID"/><xs:field xpath="."/></xs:keyref>
