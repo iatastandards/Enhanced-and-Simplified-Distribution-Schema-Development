@@ -2827,45 +2827,9 @@
 </xs:complexType>
 <xs:simpleType name="CabinTypeCodeContentType">
 <xs:annotation>
-<xs:documentation>Specifies the Cabin Type Code enum values as defined by PADIS. {codeListAgencyName}IATA{/codeListAgencyName} {codeListName}PADIS Codeset 9873{/codeListName} </xs:documentation>
+<xs:documentation>Specifies the Cabin Type Code as defined by PADIS 9873 {codeListAgencyName}PADIS{/codeListAgencyName} {codeListName}Cabin class of service, coded{/codeListName} {codeListIdentifier}9873{/codeListIdentifier} </xs:documentation>
 </xs:annotation>
-<xs:restriction base="xs:token">
-<xs:enumeration value="1">
-<xs:annotation>
-<xs:documentation>First class, Highest class of service (First Class Category)</xs:documentation>
-</xs:annotation>
-</xs:enumeration>
-<xs:enumeration value="2">
-<xs:annotation>
-<xs:documentation>Second class, Medium class of service (Business Class Category)</xs:documentation>
-</xs:annotation>
-</xs:enumeration>
-<xs:enumeration value="3">
-<xs:annotation>
-<xs:documentation>Third class, lowest class of service (all economy/coach class categories)</xs:documentation>
-</xs:annotation>
-</xs:enumeration>
-<xs:enumeration value="4">
-<xs:annotation>
-<xs:documentation>Economy/coach premium</xs:documentation>
-</xs:annotation>
-</xs:enumeration>
-<xs:enumeration value="5">
-<xs:annotation>
-<xs:documentation>Economy/coach</xs:documentation>
-</xs:annotation>
-</xs:enumeration>
-<xs:enumeration value="6">
-<xs:annotation>
-<xs:documentation>Economy/coach discounted</xs:documentation>
-</xs:annotation>
-</xs:enumeration>
-<xs:enumeration value="7">
-<xs:annotation>
-<xs:documentation>All</xs:documentation>
-</xs:annotation>
-</xs:enumeration>
-</xs:restriction>
+<xs:restriction base="xs:token"></xs:restriction>
 </xs:simpleType>
 <xs:simpleType name="CabinTypeCodeType">
 <xs:annotation>
@@ -17525,12 +17489,81 @@
 <xs:documentation>This is request using Order(s)</xs:documentation>
 </xs:annotation>
 <xs:sequence>
-<xs:element name="Order" type="ServiceRequestOrderType" minOccurs="1" maxOccurs="1">
+<xs:element name="Order" type="SeatAvailRequestOrderType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>A specialized order used in a service list request defined as a uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
+<xs:documentation>A specialized order used in a Seat Availability request defined as a uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
  Comment:
  A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
  An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="SeatAvailRequestOrderItemType">
+<xs:annotation>
+<xs:documentation>A seat availability request individually priced item within a Service Request Order, made up of one or more Services. May or may not be a selected Offer Item (e.g. non-chargeable Services available on request such as a wheelchair).</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="DatedOperatingLegRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>Reference to a Leg ID from a previously returned Offer.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="OrderItemID" type="ID_Type" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Carrier assigned ID which exists uniquely within an Order.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="PaxRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>Reference to a Passenger ID from a previously returned Offer.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="PaxSegmentRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>Reference to a Passenger Segment ID from a previously returned Offer.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="Service" type="ServiceKeyType" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>Service Key specialization of an instance of a specific flight or Service Definition as it has been offered (and eventually ordered and consumed) in the context of a specific Offer and/or Order.
+ At the time of shopping, a service can be sold to multiple passengers on a given journey. 
+ At time of order, the services should be applied to a single passenger on a single segment.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="SpecialService" type="SpecialServiceType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Special service information</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="SeatAvailRequestOrderType">
+<xs:annotation>
+<xs:documentation>A specialized order used in a Seat Availability request defined as a uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
+ Comment:
+ A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
+ An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="OrderID" type="ID_Type" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Carrier assigned ID which uniquely identifies a specific Order across several messages.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="OrderItem" type="SeatAvailRequestOrderItemType" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>A seat availability request individually priced item within a Service Request Order, made up of one or more Services. May or may not be a selected Offer Item (e.g. non-chargeable Services available on request such as a wheelchair).</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
 </xs:annotation>
 </xs:element>
 </xs:sequence>
@@ -19148,6 +19181,11 @@
 <xs:documentation>Any person except members of the crew carried or to be carried with the consent of the carrier, on board of any transport vehicle such as aircraft, train, bus, ship. Holds the attributes specific to a one booking, from shopping to fulfillment.</xs:documentation>
 </xs:annotation>
 </xs:element>
+<xs:element name="PaxSegmentList" type="PaxSegmentListType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Segment data list definition.</xs:documentation>
+</xs:annotation>
+</xs:element>
 <xs:element name="PaymentFunctions" type="PaymentFunctionsCriteriaType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
 <xs:documentation>Is the container of all payment relevant functions.</xs:documentation>
@@ -19410,6 +19448,43 @@
 </xs:element>
 </xs:sequence>
 </xs:complexType>
+<xs:complexType name="ShopandReshopRequestPaxSegmentType">
+<xs:annotation>
+<xs:documentation>Transportation of a passenger on a Dated Operating Segment.
+ - [Dated Marketing Segment] (All identifying fields)
+ - [Order] Order ID
+ - [Individual] (no identifier available)</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="AirlineTaxonomy" type="AirlineTaxonomyType" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>Used in the context of the Airline Taxonomy to define a product or service to the seller or to request a collection of products and services from an airline. For more information on what values should be placed within these fields, see the implementation guide at:
+ https://guides.developer.iata.org/docs/airline-taxonomy</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="CabinTypeAssociationChoice" type="CabinTypeAssociationChoiceType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>A choice of Cabin Type Association to leg(s) or a segment</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="DatedMarketingSegmentRefId" type="ID_Type" minOccurs="1" maxOccurs="1"></xs:element>
+<xs:element name="PaxSegmentID" type="ID_Type" minOccurs="1" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Uniquely identifies a Passenger Segment within the context of one message.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="RichMedia" type="MediaResourceRefType" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>An external resource such as an Image, Video, PDF or other which is available for display</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="SettlementInfo" type="SettlementInfoType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>Information related to the value of a product or service as it pertains to interline transactions.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
 <xs:complexType name="ShoppingRequestCabinTypeType">
 <xs:annotation>
 <xs:documentation>Shopping Request specialisation of Cabin Type
@@ -19449,6 +19524,16 @@
 <xs:element name="ContactInfoList" type="ContactInfoListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Contact info data list definition.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="DatedMarketingSegmentList" type="DatedMarketingSegmentListType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>A list of dated marketing segments used in the contained message.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="DatedOperatingSegmentList" type="DatedOperatingSegmentListType" minOccurs="0" maxOccurs="1">
+<xs:annotation>
+<xs:documentation>A list of dated operating segments used in the contained message.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DisclosureList" type="DisclosureListType" minOccurs="0" maxOccurs="1">
@@ -19573,6 +19658,14 @@
 <xs:documentation>Uniquely identifies a Passenger Journey within the context of one message.</xs:documentation>
 </xs:annotation>
 </xs:element>
+<xs:element name="PaxSegment" type="ShopandReshopRequestPaxSegmentType" minOccurs="1" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>Transportation of a passenger on a Dated Operating Segment.
+ - [Dated Marketing Segment] (All identifying fields)
+ - [Order] Order ID
+ - [Individual] (no identifier available)</xs:documentation>
+</xs:annotation>
+</xs:element>
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="ShoppingRequestPaxSegmentListType">
@@ -19612,6 +19705,11 @@
 <xs:element name="DatedMarketingSegmentRefId" type="ID_Type" minOccurs="1" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>A reference to a unique identifier of a dated marketing segment used in a message.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="FareBasisCode" type="CodeType" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>Fare basis code. Example: Y26</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="PaxSegmentID" type="ID_Type" minOccurs="1" maxOccurs="1">
