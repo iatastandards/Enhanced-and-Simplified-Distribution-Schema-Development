@@ -7117,11 +7117,6 @@
  Encoding scheme: IATA PADIS Codeset IPT - Instant Purchase Type</xs:documentation>
 </xs:annotation>
 </xs:element>
-<xs:element name="PenaltyRefID" type="ID_Type" minOccurs="0" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>Reference to a Penalty ID.</xs:documentation>
-</xs:annotation>
-</xs:element>
 <xs:element name="Remark" type="RemarkType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
 <xs:documentation>Supplementary information.</xs:documentation>
@@ -17883,6 +17878,11 @@
 <xs:element name="MarketingInfo" type="DescType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
 <xs:documentation>An account or representation of the certain or major aspects, characteristics, or features of a person, object, or event.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="RichMedia" type="MediaResourceRefType" minOccurs="0" maxOccurs="unbounded">
+<xs:annotation>
+<xs:documentation>An external resource such as an Image, Video, PDF or other which is available for display</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="SeatCharacteristicCode" type="SeatCharacteristicCodeType" minOccurs="0" maxOccurs="unbounded">

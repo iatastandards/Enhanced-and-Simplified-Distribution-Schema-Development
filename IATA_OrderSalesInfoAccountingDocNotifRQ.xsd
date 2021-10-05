@@ -55,12 +55,11 @@
 <xs:keyref name = "DisclosureIDKeyKeyRef2" refer="DisclosureIDKey"><xs:selector xpath="./Request/Order/OrderItem/DisclosureRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxIDKeyKeyRef2" refer="PaxIDKey"><xs:selector xpath="./Request/Order/OrderItem/FareDetail/FareComponent/CancelRestrictions/PaxRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxIDKeyKeyRef3" refer="PaxIDKey"><xs:selector xpath="./Request/Order/OrderItem/FareDetail/FareComponent/ChangeRestrictions/PaxRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PenaltyIDKeyKeyRef1" refer="PenaltyIDKey"><xs:selector xpath="./Request/Order/OrderItem/FareDetail/FareComponent/FareRule/PenaltyRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxSegmentIDKeyKeyRef5" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/Order/OrderItem/FareDetail/FareComponent/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PriceClassIDKeyKeyRef1" refer="PriceClassIDKey"><xs:selector xpath="./Request/Order/OrderItem/FareDetail/FareComponent/PriceClassRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxIDKeyKeyRef4" refer="PaxIDKey"><xs:selector xpath="./Request/Order/OrderItem/FareDetail/PaxRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PenaltyIDKeyKeyRef2" refer="PenaltyIDKey"><xs:selector xpath="./Request/Order/OrderItem/FareDetail/PenaltyRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PenaltyIDKeyKeyRef3" refer="PenaltyIDKey"><xs:selector xpath="./Request/Order/OrderItem/PenaltyRefID"/><xs:field xpath="."/></xs:keyref>
+<xs:keyref name = "PenaltyIDKeyKeyRef1" refer="PenaltyIDKey"><xs:selector xpath="./Request/Order/OrderItem/FareDetail/PenaltyRefID"/><xs:field xpath="."/></xs:keyref>
+<xs:keyref name = "PenaltyIDKeyKeyRef2" refer="PenaltyIDKey"><xs:selector xpath="./Request/Order/OrderItem/PenaltyRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxSegmentIDKeyKeyRef6" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/Order/OrderItem/Service/BookingRef/BookingEntity/Org/ContactInfo/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "PaxSegmentIDKeyKeyRef7" refer="PaxSegmentIDKey"><xs:selector xpath="./Request/Order/OrderItem/Service/OrderServiceAssociation/PaxSegmentRef/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
 <xs:keyref name = "SeatProfileIDKeyKeyRef2" refer="SeatProfileIDKey"><xs:selector xpath="./Request/Order/OrderItem/Service/OrderServiceAssociation/SeatOnLeg/Seat/SeatProfileRefID"/><xs:field xpath="."/></xs:keyref>
