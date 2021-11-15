@@ -239,7 +239,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OrderItemStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Indicates the current status of an Order Item.</xs:documentation>
+<xs:documentation>Status of the Order Item Status instance. See ATSB Codeset OrderItem for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="WebAddressURI" type="URI_Type" minOccurs="0" maxOccurs="1">
@@ -337,8 +337,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OrderStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Indicates the current status of an Order
- E.g. OK (Confirmed)</xs:documentation>
+<xs:documentation>Status of the Order Status instance. See ATSB Codeset OrderStatus for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="TotalPrice" type="AccountedPriceType" minOccurs="0" maxOccurs="1">
@@ -464,7 +463,7 @@
 </xs:element>
 <xs:element name="DeliveryStatusCode" type="ServiceDeliveryStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Indicates the current status of a Service delivery</xs:documentation>
+<xs:documentation>Status of the Service Delivery Service Status instance. See ATSB Codeset DeliveryService for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DescText" type="TextType" minOccurs="0" maxOccurs="1">
@@ -513,7 +512,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OrderServiceStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Status of the Service instance. See PADIS Codelist 4405 for possible values.</xs:documentation>
+<xs:documentation>Status of the Order Service Status instance. See ATSB Codeset OrderService for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="UnchangedInd" type="IndType" minOccurs="0" maxOccurs="1">
@@ -2782,30 +2781,6 @@
 </xs:annotation>
 <xs:restriction base="CabinComponentTypeCodeContentType"></xs:restriction>
 </xs:simpleType>
-<xs:complexType name="CabinOrRBD_Type">
-<xs:annotation>
-<xs:documentation>Cabin Or RBD</xs:documentation>
-</xs:annotation>
-<xs:choice>
-<xs:element name="CabinType" type="ShoppingRequestCabinTypeType" minOccurs="1" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Shopping Request specialisation of Cabin Type
- base type definition:
- Type of compartment of an aircraft, offering specific services (e.g. business class, economy).
- Business Identifier Fields:
- - Cabin Type Code</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="RBD" type="RBD_Type" minOccurs="1" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Reservation Booking Designator. A categorization used to facilitate access to inventory, application of filed fares, and to identify cabin entitlement. Identified using a single alpha character. E.g. 'J' for Business Class Premium, 'D' for Business Discounted.
- There will typically be several RBDs defined for a given Cabin Type.
- Business Identifier Fields:
- - RBD Code</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:choice>
-</xs:complexType>
 <xs:complexType name="CabinTypeAssociationChoiceType">
 <xs:annotation>
 <xs:documentation>A choice of Cabin Type Association to leg(s) or a segment</xs:documentation>
@@ -2827,7 +2802,7 @@
 </xs:complexType>
 <xs:simpleType name="CabinTypeCodeContentType">
 <xs:annotation>
-<xs:documentation>Specifies the Cabin Type Code as defined by PADIS 9873 {codeListAgencyName}PADIS{/codeListAgencyName} {codeListName}Cabin class of service, coded{/codeListName} {codeListIdentifier}9873{/codeListIdentifier} </xs:documentation>
+<xs:documentation>Specifies the Cabin Type Code as defined by ATSB codeset 9873 {codeListAgencyName}ATSB{/codeListAgencyName} {codeListName}Cabin class of service, coded{/codeListName} {codeListIdentifier}9873{/codeListIdentifier} </xs:documentation>
 </xs:annotation>
 <xs:restriction base="xs:token"></xs:restriction>
 </xs:simpleType>
@@ -2861,7 +2836,7 @@
 <xs:sequence>
 <xs:element name="CabinTypeCode" type="CabinTypeCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Cabin Type Code as defined by PADIS codeset 9873 (e.g. 1,2,3 etc)</xs:documentation>
+<xs:documentation>Cabin Type Code as defined by ATSB codeset 9873.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="CabinTypeName" type="NameType" minOccurs="0" maxOccurs="1">
@@ -3479,71 +3454,6 @@
 </xs:element>
 </xs:choice>
 </xs:complexType>
-<xs:complexType name="ChangeOrderType">
-<xs:annotation>
-<xs:documentation>A change order is a specialization of Order defines as a uniquely identified record of the agreement of one party with another to receive products and services under specified terms and conditions. Order supports the sale of a flexible range of airline products and services that are not necessarily Journey based (e.g. subscription services). 
- Comment:
- A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
- An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="Commission" type="CommissionType" minOccurs="0" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>An amount of money, typically a set percentage of the value involved, paid to an agent in a commercial transaction.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="CreationDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>The date time by which the order is created.
- Examples: 2018-09-05T15:52:01Z</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="DepositTimeLimitDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>The date by which a deposit must be paid for an order
- Examples: 2015-01-13T13:59:38Z</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="LastModifiedDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>The date time by which the order is modified.
- Examples: 2018-09-05T15:52:01Z</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="NamingTimeLimitDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>The time by which an Order must be completed with individual passenger names.
- Examples: 2015-01-13T13:59:38Z</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="OrderID" type="ID_Type" minOccurs="1" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Carrier assigned ID which uniquely identifies a specific Order across several messages.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="OrderVersionNumber" type="OrderVersionNumberType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Version of the Order used to track the evolution of an Order and the changes made to it.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="OwnerCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="StatusCode" type="OrderStatusCodeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Indicates the current status of an Order
- E.g. OK (Confirmed)</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="WebAddressURI" type="URI_Type" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Deep linking into another site to complete the transaction. E.g. to bring the customer directly to a page to continue with a purchase of a specific offer.</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
 <xs:complexType name="ChangeRestrictionsType">
 <xs:annotation>
 <xs:documentation>These are a set of qualifying conditions/rules/restriction that are related to a constrained priced grouping of services for a Change/modification action.</xs:documentation>
@@ -3750,7 +3660,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OrderItemStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Indicates the current status of an Order Item.</xs:documentation>
+<xs:documentation>Status of the Order Item Status instance. See ATSB Codeset OrderItem for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="WebAddressURI" type="URI_Type" minOccurs="0" maxOccurs="1">
@@ -3840,8 +3750,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OrderStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Indicates the current status of an Order
- E.g. OK (Confirmed)</xs:documentation>
+<xs:documentation>Status of the Order Status instance. See ATSB Codeset OrderStatus for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="TotalPrice" type="PriceType" minOccurs="0" maxOccurs="1">
@@ -3901,7 +3810,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OrderServiceStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Status of the Service instance. See PADIS Codelist 4405 for possible values.</xs:documentation>
+<xs:documentation>Status of the Order Service Status instance. See ATSB Codeset OrderService for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="UnchangedInd" type="IndType" minOccurs="0" maxOccurs="1">
@@ -4528,38 +4437,6 @@
 <xs:element name="RelationshipToPax" type="TextType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Relationship to the passenger e.g. used for when this individual is an emergency contact</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-<xs:complexType name="CorporationType">
-<xs:annotation>
-<xs:documentation>A company or group of people authorized to act as a single entity (legally a person) and recognized as such in law.</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="ContactInfo" type="ContactInfoType" minOccurs="0" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>The electronic or geographic address which a party has provided as the contact channel. For example, contact email, contact postal address, contact phone number.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="CorporateCodeText" type="TextType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Corporate code assigned to a corporate buyer used for accessing special fares.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="CorporateID" type="ID_Type" minOccurs="1" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Unique identifier of this corporation.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="IATA_Number" type="NumberType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>IATA issued identification number.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="Name" type="NameType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Corporation name</xs:documentation>
 </xs:annotation>
 </xs:element>
 </xs:sequence>
@@ -5617,7 +5494,7 @@
 </xs:element>
 <xs:element name="DeliveryStatusCode" type="ServiceDeliveryStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Indicates the current status of a Service delivery</xs:documentation>
+<xs:documentation>Status of the Service Delivery Service Status instance. See ATSB Codeset DeliveryService for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DeliveryStatusDescText" type="TextType" minOccurs="0" maxOccurs="1">
@@ -5672,7 +5549,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OrderServiceStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Status of the Service instance. See PADIS Codelist 4405 for possible values.</xs:documentation>
+<xs:documentation>Status of the Order Service Status instance. See ATSB Codeset OrderService for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="UnchangedInd" type="IndType" minOccurs="0" maxOccurs="1">
@@ -6533,28 +6410,6 @@
 </xs:element>
 </xs:sequence>
 </xs:complexType>
-<xs:complexType name="EnabledSystemType">
-<xs:annotation>
-<xs:documentation>NDC-enabled system.</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="ContactInfo" type="ContactInfoType" minOccurs="0" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>The electronic or geographic address which a party has provided as the contact channel. For example, contact email, contact postal address, contact phone number.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="Name" type="ProperNameType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Name of the enabled system.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="SystemID" type="ID_Type" minOccurs="1" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Identifier of the enabled system.</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
 <xs:complexType name="EncryptedDataType">
 <xs:annotation>
 <xs:documentation>Payment Card details passed onto airline in an encrypted format.</xs:documentation>
@@ -6593,18 +6448,6 @@
 <xs:element name="Last4DigitsText" type="Last4DigitsTextType" minOccurs="1" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>The last four digits of the Payment Card Number, passed as part of an encrypted card workflow.</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-<xs:complexType name="ErrorListType">
-<xs:annotation>
-<xs:documentation>A list of Error types.</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="Error" type="ErrorType" minOccurs="1" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>Contains information related to errors detected during processing of the preceding request.</xs:documentation>
 </xs:annotation>
 </xs:element>
 </xs:sequence>
@@ -7358,82 +7201,6 @@
  There will typically be several RBDs defined for a given Cabin Type.
  Business Identifier Fields:
  - RBD Code</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-<xs:complexType name="FlightDetailsPaxSegmentType">
-<xs:annotation>
-<xs:documentation>Transportation of a passenger on a Dated Operating Segment.
- - [Dated Marketing Segment] (All identifying fields)
- - [Order] Order ID
- - [Individual] (no identifier available)</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="Arrival" type="TransportPointType" minOccurs="1" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>This is a transport point location.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="CabinType" type="CabinTypeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Type of compartment of an aircraft, offering specific services (e.g. business class, economy).
- Business Identifier Fields:
- - Cabin Type Code</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="Dep" type="TransportPointType" minOccurs="1" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>This is a transport point location.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="Duration" type="DurationType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Total segment time including the combined air time and connection times of any legs.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="MarketingCarrierFlightNumberText" type="FlightNumberTextType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>The numerical designation of a flight as it is marketed by a carrier.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="OperatingCarrierInfo" type="OperatingCarrierDatedOperatingSegmentType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="PaxSegmentID" type="ID_Type" minOccurs="1" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Uniquely identifies a Passenger Segment within the context of one message.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="SecureFlightInd" type="IndType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>When TRUE, this segment is subject to US TSA 'Secure Flight' passenger prescreening program.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="SegmentTypeCode" type="SegmentTypeCodeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Defines the operational flight segment type (e.g. Open, Passive, Service).
- 
- Encoding Scheme: IATA PADIS 1.4 Codeset FST - Flight Segment Type</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="SettlementInfo" type="SettlementInfoType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Information related to the value of a product or service as it pertains to interline transactions.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="TicketlessInd" type="IndType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>When TRUE, there are no ticket records, as defined by IATA Resolutions, expected to be issued for this segment.</xs:documentation>
 </xs:annotation>
 </xs:element>
 </xs:sequence>
@@ -8460,7 +8227,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OrderItemStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Indicates the current status of an Order Item.</xs:documentation>
+<xs:documentation>Status of the Order Item Status instance. See ATSB Codeset OrderItem for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="WebAddressURI" type="URI_Type" minOccurs="0" maxOccurs="1">
@@ -8969,12 +8736,6 @@
 </xs:element>
 </xs:sequence>
 </xs:complexType>
-<xs:complexType name="InventoryReleaseNotifType">
-<xs:annotation>
-<xs:documentation>Notification payload information.</xs:documentation>
-</xs:annotation>
-<xs:sequence></xs:sequence>
-</xs:complexType>
 <xs:complexType name="JourneyDurationCriteriaType">
 <xs:annotation>
 <xs:documentation>Total journey travel time per bound preferences. This includes the sum of all flight durations as well as connection times.</xs:documentation>
@@ -9409,8 +9170,7 @@
 </xs:element>
 <xs:element name="OrderStatusCode" type="OrderStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Indicates the current status of an Order
- E.g. OK (Confirmed)</xs:documentation>
+<xs:documentation>Status of the Order Status instance. See ATSB Codeset OrderStatus for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="PaxGroup" type="PaxGroupType" minOccurs="0" maxOccurs="1">
@@ -9582,18 +9342,6 @@
 </xs:annotation>
 <xs:restriction base="MessageFunctionCodeContentType"></xs:restriction>
 </xs:simpleType>
-<xs:complexType name="MessageProcessingType">
-<xs:annotation>
-<xs:documentation>Marketing messages.</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="MarketingMessage" type="MarketingMessageType" minOccurs="0" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>Marketing message: Additional, supplementary information about the document or service.</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
 <xs:complexType name="MetadataType">
 <xs:annotation>
 <xs:documentation>Message wide metadata information.</xs:documentation>
@@ -9990,18 +9738,6 @@
 </xs:annotation>
 <xs:restriction base="ObjectNameCodeContentType"></xs:restriction>
 </xs:simpleType>
-<xs:complexType name="OfferAssociationListType">
-<xs:annotation>
-<xs:documentation>Associations to Offers and Offer Items.</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="OfferAssociation" type="OfferAssociationType" minOccurs="1" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>A set of associations to Offers and Offer Items.</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
 <xs:complexType name="OfferAssociationType">
 <xs:annotation>
 <xs:documentation>A set of associations to Offers and Offer Items.</xs:documentation>
@@ -10148,7 +9884,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OfferedServiceStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>A status for the Offered Service, as defined in ATSB Codeset Offered Service Status Code.</xs:documentation>
+<xs:documentation>Status of the Offered Service Status instance. See ATSB Codeset OfferedService for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="ValidatingCarrier" type="CarrierType" minOccurs="0" maxOccurs="1">
@@ -10506,73 +10242,6 @@
 <xs:element name="Remark" type="RemarkType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
 <xs:documentation>Supplementary information.</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-<xs:complexType name="OperatingCarrierDatedOperatingSegmentType">
-<xs:annotation>
-<xs:documentation>An operation between board point and any subsequent off point within the same flight designator. Could be one or more legs. Could also be used for other transport vehicles such as train or bus etc.
- Business Identifier Fields:
- - (Operating) [Carrier] Airline Designator
- - Operating Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="CarrierDesigCode" type="AirlineDesigCodeType" minOccurs="1" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Airline code assigned to a carrier. Either ICAO-defined 3-character code or IATA-defined 2-character code.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="CarrierName" type="NameType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Commercial name of the carrier.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="DisclosureRefID" type="ID_Type" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>References a Disclosure ID.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="Duration" type="DurationType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Total segment time including the combined air time and connection times of any legs.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="OperatingCarrierFlightNumberText" type="FlightNumberTextType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>The numerical designation of a flight as it is operated by a carrier.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="OperationalSuffixText" type="OperationalSuffixTextType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Used to distinguish two flights having the same flight number and departing from their respective Origin Stations on the same date.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="RBD_Code" type="RBD_CodeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Code used to identify a particular RBD (e.g. P, J, W, M, etc.).</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="SecureFlightInd" type="IndType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>When TRUE, this segment is subject to US TSA 'Secure Flight' passenger prescreening program.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="SegmentTypeCode" type="SegmentTypeCodeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Defines the operational flight segment type (e.g. Open, Passive, Service).
- 
- Encoding Scheme: IATA PADIS 1.4 Codeset FST - Flight Segment Type</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="StatusCode" type="CodeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Flight Status, examples: SO, Flight Canceled. Refer PADIS codeset 
- 1245.</xs:documentation>
 </xs:annotation>
 </xs:element>
 </xs:sequence>
@@ -11182,7 +10851,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OrderItemStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Indicates the current status of an Order Item.</xs:documentation>
+<xs:documentation>Status of the Order Item Status instance. See ATSB Codeset OrderItem for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="WebAddressURI" type="URI_Type" minOccurs="0" maxOccurs="1">
@@ -11272,8 +10941,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OrderStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Indicates the current status of an Order
- E.g. OK (Confirmed)</xs:documentation>
+<xs:documentation>Status of the Order Status instance. See ATSB Codeset OrderStatus for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="TotalPrice" type="PriceType" minOccurs="0" maxOccurs="1">
@@ -11340,7 +11008,7 @@
 </xs:element>
 <xs:element name="DeliveryStatusCode" type="ServiceDeliveryStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Indicates the current status of a Service delivery</xs:documentation>
+<xs:documentation>Status of the Service Delivery Service Status instance. See ATSB Codeset DeliveryService for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DescText" type="TextType" minOccurs="0" maxOccurs="1">
@@ -11375,7 +11043,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OrderStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Status of the Service instance. See PADIS Codelist 4405 for possible values.</xs:documentation>
+<xs:documentation>Status of the Order Status instance. See ATSB Codeset OrderStatus for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="UnchangedInd" type="IndType" minOccurs="0" maxOccurs="1">
@@ -11595,8 +11263,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OrderStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Indicates the current status of an Order
- E.g. OK (Confirmed)</xs:documentation>
+<xs:documentation>Status of the Order Status instance. See ATSB Codeset OrderStatus for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 </xs:sequence>
@@ -11606,23 +11273,6 @@
 <xs:documentation>Placeholder for parameter information.</xs:documentation>
 </xs:annotation>
 <xs:sequence>
-<xs:element name="Remark" type="RemarkType" minOccurs="0" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>Supplementary information.</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-<xs:complexType name="OrderListProcessingType">
-<xs:annotation>
-<xs:documentation>Placeholder for processing information.</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="MarketingMessage" type="MarketingMessageType" minOccurs="0" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>Marketing message: Additional, supplementary information about the document or service.</xs:documentation>
-</xs:annotation>
-</xs:element>
 <xs:element name="Remark" type="RemarkType" minOccurs="0" maxOccurs="unbounded">
 <xs:annotation>
 <xs:documentation>Supplementary information.</xs:documentation>
@@ -13431,40 +13081,6 @@
 <xs:element name="PaymentMethodCriteria" type="PaymentMethodCriteriaType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Contains information relating to payer preference. This could relate to the seller or the customer depending on the preference expressed within the container.</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-<xs:complexType name="PaymentAssociatedProcessingFunctionsType">
-<xs:annotation>
-<xs:documentation>Processing Specialization of Payment Functions: Is the container of all payment relevant functions.</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="OrderAssociation" type="OrderAssociationType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Reference to an Order or Order Items for which this payment method applies.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="PaymentProcessingSummary" type="PaymentProcessingSummaryType" minOccurs="0" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>Information relating to a payment transaction including payment status.</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-<xs:complexType name="PaymentAssociatedRefundFunctionsCriteriaType">
-<xs:annotation>
-<xs:documentation>Refund Specialization of Payment Functions: Is the container of all payment relevant functions.</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="OrderAssociation" type="OrderAssociationType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Reference to an Order or Order Items for which this payment method applies.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="RefundMethodCriteria" type="RefundMethodCriteriaType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Contains information relating to refund preference. This could relate to the seller or the customer depending on the preference expressed within the container.</xs:documentation>
 </xs:annotation>
 </xs:element>
 </xs:sequence>
@@ -16592,65 +16208,6 @@
 </xs:element>
 </xs:choice>
 </xs:complexType>
-<xs:complexType name="ResponseParametersOrderCancelType">
-<xs:annotation>
-<xs:documentation>Information related to how response results should be returned.</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="BDC" type="BDC_Type" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>For use in NDC Interline: The carrier whose baggage allowances and charges apply.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="CurParameter" type="CurParameterType" minOccurs="0" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>Currency related parameters intended to influence which currency the shopping results are displayed in.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="Device" type="DeviceType" minOccurs="1" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Device upon which the secure transaction will occur.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="DeviceLocation" type="DeviceLocationType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Location of device</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="LangUsage" type="LangUsageType" minOccurs="0" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>Language Code representation.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="MeasurementSystemCode" type="MeasurementSystemCodeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Measurement system code. Examples: Imperial, Metric</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="PaxGroup" type="PaxGroupType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>A number of individual passengers traveling under one commercial name that associates them. E.g. a Tour group or a group for sales allotment from airline to agency.
- Group bookings are subject to special booking rules and may be eligible for special fare rules. Usage and nature of groups is left to bilateral agreements.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="PricingParameter" type="PricingParameterType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Pricing Parameters, including Simple Pricing, Award Travel, Auto Exchange, Override Currency and Tax Exemption.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="ReasonCode" type="CodeType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Should be used for the Seller to communicate the reason for cancellation to the Seller (and for the Airline to respond with advice on the cancellation request.
- Uses PADIS REA Codeset.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="Remark" type="RemarkType" minOccurs="0" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>Supplementary information.</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
 <xs:complexType name="ResponseParametersOrderChangeType">
 <xs:annotation>
 <xs:documentation>Information related to how response results should be returned.</xs:documentation>
@@ -16875,28 +16432,6 @@
 <xs:element name="ServiceDefinitionList" type="ServiceDefinitionListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Service Definition data list definition.</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-<xs:complexType name="RetailPartnerType">
-<xs:annotation>
-<xs:documentation>A company that partners with a manufacturer or producer to market and sell the manufacturer's products, services, or technologies.</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="ContactInfo" type="ContactInfoType" minOccurs="0" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>The electronic or geographic address which a party has provided as the contact channel. For example, contact email, contact postal address, contact phone number.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="Name" type="NameType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Retail partner name.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="RetailPartnerID" type="ID_Type" minOccurs="1" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Unique Retailer ID</xs:documentation>
 </xs:annotation>
 </xs:element>
 </xs:sequence>
@@ -18896,7 +18431,7 @@
 </xs:element>
 <xs:element name="DeliveryStatusCode" type="ServiceDeliveryStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Indicates the current status of a Service delivery</xs:documentation>
+<xs:documentation>Status of the Service Delivery Service Status instance. See ATSB Codeset DeliveryService for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="DescText" type="TextType" minOccurs="0" maxOccurs="1">
@@ -19120,18 +18655,6 @@
  Comment:
  A 'PNR', 'super PNR' and 'ticket' are all today's versions of airline implementations of aspects of an Order. 
  An Order may support non-homogeneity, i.e. each passenger in an Order may hold different sets of order items at different prices.</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-<xs:complexType name="ServiceListProcessingType">
-<xs:annotation>
-<xs:documentation>Marketing messages for Service List</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="MarketingMessage" type="RemarkType" minOccurs="0" maxOccurs="unbounded">
-<xs:annotation>
-<xs:documentation>Supplementary information.</xs:documentation>
 </xs:annotation>
 </xs:element>
 </xs:sequence>
@@ -19584,46 +19107,6 @@
 <xs:element name="TermsList" type="TermsListType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
 <xs:documentation>Offer/Order Terms list</xs:documentation>
-</xs:annotation>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-<xs:complexType name="ShoppingRequestDatedMarketingSegmentType">
-<xs:annotation>
-<xs:documentation>This is a Shopping Request specialisation of Dated Marketing Segment.
- Base type definition:
- The commercial designation under which a Dated Operating Segment can be booked, either under the operating carrier's designator or that of another carrier (codeshare).
- Business Identifier Fields:
- - (Marketing) [Carrier] Airline Designator
- - Marketing Carrier Flight Number
- - Operational Suffix
- - [Transport Departure] Scheduled Date Time
- - (Transport Departure) [Station] IATA Location Code
- - (Transport Arrival) [Station] IATA Location Code</xs:documentation>
-</xs:annotation>
-<xs:sequence>
-<xs:element name="CabinOrRBD" type="CabinOrRBD_Type" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>Cabin Or RBD</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="Carrier" type="CarrierType" minOccurs="1" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>The organization which carries the passenger, baggage, or goods, and/or commits to delivering the carriage as well as any related services such as issuance of ticket, creation of Order, etc.
- Business Identifier Fields:
- - Airline Designator Code
- - Duplicate Designator Indicator
- - Name</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="MarketingCarrierFlightNumberText" type="FlightNumberTextType" minOccurs="1" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>The numerical designation of a flight as it is marketed by a carrier.</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="OperationalSuffixText" type="OperationalSuffixTextType" minOccurs="0" maxOccurs="1">
-<xs:annotation>
-<xs:documentation>An Operational Suffix</xs:documentation>
 </xs:annotation>
 </xs:element>
 </xs:sequence>
@@ -20235,7 +19718,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OrderServiceStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Status of the Service instance. See PADIS Codelist 4405 for possible values.</xs:documentation>
+<xs:documentation>Status of the Order Service Status instance. See ATSB Codeset OrderService for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="UnchangedInd" type="IndType" minOccurs="0" maxOccurs="1">
@@ -20368,7 +19851,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OrderItemStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Indicates the current status of an Order Item.</xs:documentation>
+<xs:documentation>Status of the Order Item Status instance. See ATSB Codeset OrderItem for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="WebAddressURI" type="URI_Type" minOccurs="0" maxOccurs="1">
@@ -20430,8 +19913,7 @@
 </xs:element>
 <xs:element name="StatusCode" type="OrderStatusCodeType" minOccurs="0" maxOccurs="1">
 <xs:annotation>
-<xs:documentation>Indicates the current status of an Order
- E.g. OK (Confirmed)</xs:documentation>
+<xs:documentation>Status of the Order Status instance. See ATSB Codeset OrderStatus for possible values.</xs:documentation>
 </xs:annotation>
 </xs:element>
 <xs:element name="TotalPrice" type="PriceType" minOccurs="0" maxOccurs="1">

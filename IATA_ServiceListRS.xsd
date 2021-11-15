@@ -34,40 +34,5 @@ The message also returns multi-media content at the message level and media refe
 </xs:element>
 </xs:sequence>
 </xs:complexType>
-<xs:key name = "BaggageAllowanceIDKey" ><xs:selector xpath = "./Response/DataLists/BaggageAllowanceList/BaggageAllowance" /><xs:field xpath="BaggageAllowanceID"/> </xs:key>
-<xs:key name = "BaggageDisclosureIDKey" ><xs:selector xpath = "./Response/DataLists/BaggageDisclosureList/BaggageDisclosure" /><xs:field xpath="BaggageDisclosureID"/> </xs:key>
-<xs:key name = "ContactInfoIDKey" ><xs:selector xpath = "./Response/DataLists/ContactInfoList/ContactInfo" /><xs:field xpath="ContactInfoID"/> </xs:key>
-<xs:key name = "DatedOperatingLegIDKey" ><xs:selector xpath = "./Response/DataLists/DatedOperatingLegList/DatedOperatingLeg" /><xs:field xpath="DatedOperatingLegID"/> </xs:key>
-<xs:key name = "DisclosureIDKey" ><xs:selector xpath = "./Response/DataLists/DisclosureList/Disclosure" /><xs:field xpath="DisclosureID"/> </xs:key>
-<xs:key name = "PaxJourneyIDKey" ><xs:selector xpath = "./Response/DataLists/PaxJourneyList/PaxJourney" /><xs:field xpath="PaxJourneyID"/> </xs:key>
-<xs:key name = "PaxIDKey" ><xs:selector xpath = "./Response/DataLists/PaxList/Pax" /><xs:field xpath="PaxID"/> </xs:key>
-<xs:key name = "PaxSegmentIDKey" ><xs:selector xpath = "./Response/DataLists/PaxSegmentList/PaxSegment" /><xs:field xpath="PaxSegmentID"/> </xs:key>
-<xs:key name = "PenaltyIDKey" ><xs:selector xpath = "./Response/DataLists/PenaltyList/Penalty" /><xs:field xpath="PenaltyID"/> </xs:key>
-<xs:key name = "PriceClassIDKey" ><xs:selector xpath = "./Response/DataLists/PriceClassList/PriceClass" /><xs:field xpath="PriceClassID"/> </xs:key>
-<xs:key name = "SeatProfileIDKey" ><xs:selector xpath = "./Response/DataLists/SeatProfileList/SeatProfile" /><xs:field xpath="SeatProfileID"/> </xs:key>
-<xs:key name = "ServiceDefinitionIDKey" ><xs:selector xpath = "./Response/DataLists/ServiceDefinitionList/ServiceDefinition" /><xs:field xpath="ServiceDefinitionID"/> </xs:key>
-<xs:keyref name = "BaggageDisclosureIDKeyKeyRef1" refer="BaggageDisclosureIDKey"><xs:selector xpath="./Response/ALaCarteOffer/BaggageDisclosureRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "DisclosureIDKeyKeyRef1" refer="DisclosureIDKey"><xs:selector xpath="./Response/ALaCarteOffer/DisclosureRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PaxIDKeyKeyRef1" refer="PaxIDKey"><xs:selector xpath="./Response/ALaCarteOffer/OfferItem/CancelRestrictions/PaxRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PaxIDKeyKeyRef2" refer="PaxIDKey"><xs:selector xpath="./Response/ALaCarteOffer/OfferItem/ChangeRestrictions/PaxRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "DatedOperatingLegIDKeyKeyRef1" refer="DatedOperatingLegIDKey"><xs:selector xpath="./Response/ALaCarteOffer/OfferItem/Eligibility/OfferFlightAssociations/DatedOperatingLegRef/DatedOperatingLegRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PaxJourneyIDKeyKeyRef1" refer="PaxJourneyIDKey"><xs:selector xpath="./Response/ALaCarteOffer/OfferItem/Eligibility/OfferFlightAssociations/PaxJourneyRef/PaxJourneyRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef1" refer="PaxSegmentIDKey"><xs:selector xpath="./Response/ALaCarteOffer/OfferItem/Eligibility/OfferFlightAssociations/PaxSegmentReferences/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PaxIDKeyKeyRef3" refer="PaxIDKey"><xs:selector xpath="./Response/ALaCarteOffer/OfferItem/Eligibility/PaxRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PriceClassIDKeyKeyRef1" refer="PriceClassIDKey"><xs:selector xpath="./Response/ALaCarteOffer/OfferItem/Eligibility/PriceClassRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "ServiceDefinitionIDKeyKeyRef1" refer="ServiceDefinitionIDKey"><xs:selector xpath="./Response/ALaCarteOffer/OfferItem/Service/ServiceDefinitionRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PenaltyIDKeyKeyRef1" refer="PenaltyIDKey"><xs:selector xpath="./Response/ALaCarteOffer/PenaltyRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PaxIDKeyKeyRef4" refer="PaxIDKey"><xs:selector xpath="./Response/ALaCarteOffer/PTC_OfferParameters/PaxRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef2" refer="PaxSegmentIDKey"><xs:selector xpath="./Response/DataLists/ContactInfoList/ContactInfo/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "DatedOperatingLegIDKeyKeyRef2" refer="DatedOperatingLegIDKey"><xs:selector xpath="./Response/DataLists/DatedOperatingSegmentList/DatedOperatingSegment/DatedOperatingLegRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "DisclosureIDKeyKeyRef2" refer="DisclosureIDKey"><xs:selector xpath="./Response/DataLists/DatedOperatingSegmentList/DatedOperatingSegment/DisclosureRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PaxJourneyIDKeyKeyRef2" refer="PaxJourneyIDKey"><xs:selector xpath="./Response/DataLists/OriginDestList/OriginDest/PaxJourneyRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef3" refer="PaxSegmentIDKey"><xs:selector xpath="./Response/DataLists/PaxJourneyList/PaxJourney/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "ContactInfoIDKeyKeyRef1" refer="ContactInfoIDKey"><xs:selector xpath="./Response/DataLists/PaxList/Pax/ContactInfoRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PaxIDKeyKeyRef5" refer="PaxIDKey"><xs:selector xpath="./Response/DataLists/PaxList/Pax/PaxRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "DatedOperatingLegIDKeyKeyRef3" refer="DatedOperatingLegIDKey"><xs:selector xpath="./Response/DataLists/PaxSegmentList/PaxSegment/CabinTypeAssociationChoice/LegCabinAssociations/LegsAssociatedCabin/DatedOperatingLegRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "BaggageAllowanceIDKeyKeyRef1" refer="BaggageAllowanceIDKey"><xs:selector xpath="./Response/DataLists/ServiceDefinitionList/ServiceDefinition/ServiceDefinitionAssociation/BaggageAllowanceRef/BaggageAllowanceRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "SeatProfileIDKeyKeyRef1" refer="SeatProfileIDKey"><xs:selector xpath="./Response/DataLists/ServiceDefinitionList/ServiceDefinition/ServiceDefinitionAssociation/SeatProfileRef/SeatProfileRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "ServiceDefinitionIDKeyKeyRef2" refer="ServiceDefinitionIDKey"><xs:selector xpath="./Response/DataLists/ServiceDefinitionList/ServiceDefinition/ServiceDefinitionAssociation/ServiceBundle/ServiceDefinitionRefID"/><xs:field xpath="."/></xs:keyref>
-<xs:keyref name = "PaxSegmentIDKeyKeyRef4" refer="PaxSegmentIDKey"><xs:selector xpath="./Response/Processing/PaxGroup/ContactInfo/PaxSegmentRefID"/><xs:field xpath="."/></xs:keyref></xs:element>
+</xs:element>
 </xs:schema>
